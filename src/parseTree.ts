@@ -52,6 +52,7 @@ function cleanNodes(data: Record<string, any>) {
     for (const [id, nodeRaw] of Object.entries(data.nodes)) {
         const node = nodeRaw as Record<string, any>;
         if ('ascendancyName' in node) continue;
+        if ('isProxy' in node) continue;
         if (node.isMastery === true) {
             const { masteryEffects, activeEffectImage, activeIcon, ...rest } = node;
             cleanedNodes[id] = rest;
@@ -95,6 +96,10 @@ function cleanGroups(data: Record<string, any>) {
     const validNodeIds = new Set(Object.keys(data.nodes));
     for (const [groupId, groupRaw] of Object.entries(data.groups)) {
         const group = groupRaw as Record<string, any>;
+        if (group.isProxy) {
+            delete data.groups[groupId];
+            continue;
+        } 
         if (Array.isArray(group.nodes)) {
             group.nodes = group.nodes.filter((id: string) => validNodeIds.has(id));
             if (group.nodes.length === 0) {
@@ -120,6 +125,9 @@ function filterSpriteCoords(data: Record<string, any>) {
         });
     }
     for (const [spriteKey, spriteObj] of Object.entries(data.sprites)) {
+        if (['jewelRadius', 'line', 'frame', 'jewel', 'groupBackground', 'startNode', 'background'].includes(spriteKey)) {
+            continue;
+        }
         if (typeof spriteObj === 'object') {
             for (const [imgKey, imgData] of Object.entries(spriteObj)) {
                 if (imgData && typeof imgData === 'object' && imgData.coords && typeof imgData.coords === 'object') {
@@ -180,7 +188,7 @@ function writeOutputFiles(data: Record<string, any>) {
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
-    fs.writeFileSync(outputPath, JSON.stringify(data), 'utf-8');
+    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8');
     console.log('Cleaned file written (compact):', outputPath);
     try {
         const { gzipSync } = require('zlib');
