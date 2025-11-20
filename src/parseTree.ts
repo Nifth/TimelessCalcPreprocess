@@ -53,6 +53,8 @@ function cleanNodes(data: Record<string, any>) {
         const node = nodeRaw as Record<string, any>;
         if ('ascendancyName' in node) continue;
         if ('isProxy' in node) continue;
+        if ('classStartIndex' in node) continue;
+        if (node.isBlighted === true) continue;
         if (node.isMastery === true) {
             const { masteryEffects, activeEffectImage, activeIcon, ...rest } = node;
             cleanedNodes[id] = rest;
