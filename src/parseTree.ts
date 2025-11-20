@@ -1,8 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const inputPath = path.resolve(__dirname, '../data/data.json');
-const outputPath = path.resolve(__dirname, '../output/data.cleaned.json');
+/**
+ * Set the version to use for input/output folders. Default: 'default'.
+ * You can pass a version as a CLI argument: node parseTree.js 3.21.0
+ */
+const version = process.argv[2] || 'default';
+const inputPath = path.resolve(__dirname, `../data/${version}/data.json`);
+const outputDir = path.resolve(__dirname, `../output/${version}`);
+const outputPath = path.join(outputDir, 'data.cleaned.json');
 const allowedSprites = [
     'jewelRadius', 'line', 'frame', 'masteryInactive', 'groupBackground',
     'jewel', 'keystoneInactive', 'keystoneActive', 'background',
@@ -171,6 +177,9 @@ function shortenImageNames(data: Record<string, any>) {
  * Writes the cleaned data to a compact JSON file and a gzip-compressed version for frontend use.
  */
 function writeOutputFiles(data: Record<string, any>) {
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
     fs.writeFileSync(outputPath, JSON.stringify(data), 'utf-8');
     console.log('Cleaned file written (compact):', outputPath);
     try {
