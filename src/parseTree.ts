@@ -8,9 +8,10 @@ import * as path from 'path';
 const version = process.argv[2] || 'default';
 const inputPath = path.resolve(__dirname, `../data/${version}/data.json`);
 const outputDir = path.resolve(__dirname, `../output/${version}`);
-const outputPath = path.join(outputDir, 'data.cleaned.json');
+const outputPath = path.join(outputDir, 'tree.json');
 const allowedSprites = [
     'jewelRadius', 'line', 'frame', 'masteryInactive', 'groupBackground',
+    'startNode', 'mastery',
     'jewel', 'keystoneInactive', 'keystoneActive', 'background',
     'normalActive', 'notableActive', 'normalInactive', 'notableInactive'
 ];
@@ -53,7 +54,6 @@ function cleanNodes(data: Record<string, any>) {
         const node = nodeRaw as Record<string, any>;
         if ('ascendancyName' in node) continue;
         if ('isProxy' in node) continue;
-        if ('classStartIndex' in node) continue;
         if (node.isBlighted === true) continue;
         if (node.isMastery === true) {
             const { masteryEffects, activeEffectImage, activeIcon, ...rest } = node;
@@ -201,6 +201,54 @@ function writeOutputFiles(data: Record<string, any>) {
     }
 }
 
+function generateNodePosition(data: Record<string, any>)
+{
+    const orbitRadii = data.constants.orbitRadii;
+    const skillsPerOrbit = data.constants.skillsPerOrbit
+    Object.entries(data.groups).forEach(([_, group]: [any, any]) => {
+        group.nodes.forEach((nodeId: string, idx: number) => {
+            const node = data.nodes[nodeId];
+            if (!node) return;
+
+            const orbit = node.orbit ?? group.orbits?.[0] ?? 0;
+            const orbitIndex = node.orbitIndex ?? idx;
+            const radius = orbitRadii[orbit] || 0;
+            const angle = (2 * Math.PI * orbitIndex) /
+                (node.orbit != null ? (skillsPerOrbit?.[orbit] || 1) : group.nodes.length);
+            const nodeX = group.x + radius * Math.sin(angle);
+            const nodeY = group.y - radius * Math.cos(angle);
+            data.nodes[nodeId].x = nodeX;
+            data.nodes[nodeId].y = nodeY;
+        });
+    });
+}
+
+function generateSocketNodes(data: Record<string, any>)
+{
+    const socketSlots = data.jewelSlots;
+    const radius = 1800;
+    const socketNodes =  {};
+
+    socketSlots.forEach(socketNodeId => {
+        const nodes = [];
+        const socketNode = data.nodes[socketNodeId];
+        if (!socketNode || socketNode.expansionJewel?.parent) return;
+        Object.entries(data.nodes).forEach(([nodeId, node]: [string, any]) => {
+            if (node.isMastery || !node.group || node.classStartIndex !== undefined || node.isJewelSocket) return;
+            if (calculateDistance(socketNode, node) <= radius) {
+                nodes.push(nodeId);
+            }
+        })
+        socketNodes[socketNodeId] = nodes;
+    })
+    data.socketNodes = socketNodes;
+}
+
+function calculateDistance(nodeA, nodeB)
+{
+    return Math.sqrt(Math.pow(nodeB.x - nodeA.x, 2) + Math.pow(nodeB.y - nodeA.y, 2));
+}
+
 /**
  * Loads, cleans, and writes the processed data.
  */
@@ -214,6 +262,8 @@ function cleanData() {
     cleanGroups(data);
     filterSpriteCoords(data);
     shortenImageNames(data);
+    generateNodePosition(data);
+    generateSocketNodes(data);
     writeOutputFiles(data);
 }
 
