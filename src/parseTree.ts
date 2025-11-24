@@ -205,6 +205,7 @@ function generateNodePosition(data: Record<string, any>)
 {
     const orbitRadii = data.constants.orbitRadii;
     const skillsPerOrbit = data.constants.skillsPerOrbit
+    const orbitAngles = calcOrbitAngles(skillsPerOrbit);
     Object.entries(data.groups).forEach(([_, group]: [any, any]) => {
         group.nodes.forEach((nodeId: string, idx: number) => {
             const node = data.nodes[nodeId];
@@ -213,14 +214,39 @@ function generateNodePosition(data: Record<string, any>)
             const orbit = node.orbit ?? group.orbits?.[0] ?? 0;
             const orbitIndex = node.orbitIndex ?? idx;
             const radius = orbitRadii[orbit] || 0;
-            const angle = (2 * Math.PI * orbitIndex) /
-                (node.orbit != null ? (skillsPerOrbit?.[orbit] || 1) : group.nodes.length);
+            const angle = orbitAngles[orbit][orbitIndex]
             const nodeX = group.x + radius * Math.sin(angle);
             const nodeY = group.y - radius * Math.cos(angle);
             data.nodes[nodeId].x = nodeX;
             data.nodes[nodeId].y = nodeY;
         });
     });
+}
+
+function calcOrbitAngles(skillsperOrbit: number[])
+{
+    let orbitAngles = [];
+    skillsperOrbit.forEach((nodePerOrbit, key) => {
+        let orbitAngle = [];
+        if (nodePerOrbit == 16) {
+            orbitAngle = [0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330];
+        } else if (nodePerOrbit == 40) {
+            orbitAngle = [
+                0, 10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130, 135, 140, 150, 160, 170, 180, 190, 200, 210, 220, 225,
+                230, 240, 250, 260, 270, 280, 290, 300, 310, 315, 320, 330, 340, 350
+            ];
+        } else {
+            for (let index = 0; index < nodePerOrbit; index++) {
+                orbitAngle.push(360 * index / nodePerOrbit)
+            }
+        }
+        for (let index = 0; index < orbitAngle.length; index++) {
+            orbitAngle[index] = orbitAngle[index] * (Math.PI / 180);
+        }
+        orbitAngles.push(orbitAngle);
+    })
+
+    return orbitAngles;
 }
 
 function generateSocketNodes(data: Record<string, any>)
