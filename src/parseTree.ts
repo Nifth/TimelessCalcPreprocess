@@ -10,9 +10,8 @@ const inputPath = path.resolve(__dirname, `../data/${version}/data.json`);
 const outputDir = path.resolve(__dirname, `../output/${version}`);
 const outputPath = path.join(outputDir, 'tree.json');
 const allowedSprites = [
-    'jewelRadius', 'line', 'frame', 'masteryInactive', 'groupBackground',
-    'startNode', 'mastery',
-    'jewel', 'keystoneInactive', 'keystoneActive', 'background',
+    'jewelRadius', 'frame', 'masteryInactive', 'groupBackground',
+    'startNode', 'mastery', 'keystoneInactive', 'keystoneActive',
     'normalActive', 'notableActive', 'normalInactive', 'notableInactive'
 ];
 
@@ -127,7 +126,7 @@ function filterSpriteCoords(data: Record<string, any>) {
         });
     }
     for (const [spriteKey, spriteObj] of Object.entries(data.sprites)) {
-        if (['jewelRadius', 'line', 'frame', 'jewel', 'groupBackground', 'startNode', 'background'].includes(spriteKey)) {
+        if (['jewelRadius', 'frame', 'jewel', 'groupBackground', 'startNode'].includes(spriteKey)) {
             continue;
         }
         if (typeof spriteObj === 'object') {
