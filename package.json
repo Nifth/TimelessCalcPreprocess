@@ -7,9 +7,12 @@
     "start": "ts-node src/parseTree.ts",
     "parse-tree": "ts-node src/parseTree.ts",
     "parse-jewels": "ts-node src/parseJewels.ts",
-    "generate-mods": "ts-node src/generateMods.ts"
+    "generate-mods": "ts-node src/generateMods.ts",
+    "jewels": "ts-node src/DatafileGenerator/Program.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prompts": "^2.4.2"
+  },
   "devDependencies": {
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
