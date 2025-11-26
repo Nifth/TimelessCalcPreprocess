@@ -1,198 +1,154 @@
 // Program.ts
-import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, createWriteStream } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { performance } from 'node:perf_hooks';
-import { deflateSync } from 'node:zlib';
+import { createGzip } from 'node:zlib';
 import { DataManager } from './Data/DataManager';
 import { GeneratorSettings } from './GeneratorSettings';
 import { PassiveSkillNode } from './Data/Models/PassiveSkill';
 import { TimelessJewel } from './Game/TimelessJewel';
 import { AlternateTreeManager } from './Game/AlternateTreeManager';
 
-const MAX_BYTES_IN_FILE = 5 * 1024 * 1024;
-const CSV_FILE = 'node_indices.csv';
+const OUTPUT_DIR = resolve('public/data');
+const CHUNK_SIZE = 500; // seeds par chunk
+const FLUSH_EVERY = 100; // flush toutes les 100 lignes
+// Mapping des bijoux
+const JEWELS = [
+  { index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
+  { index: 3, name: 'BrutalRestraint', min: 500, max: 8000, step: 1 },
+  { index: 4, name: 'MilitantFaith', min: 2000, max: 10000, step: 1 },
+  { index: 5, name: 'ElegantHubris', min: 2000, max: 160000, step: 20 },
+  // Glorious Vanity plus tard
+] as const;
 
 async function main() {
-  console.log('\x1b[36mSpinning up! DatafileGenerator v1.2\x1b[0m\n');
+  console.log('Spinning up! DatafileGenerator → JSONL.gz\n');
 
-  // HARDCODÉ — MODIFIE ICI
+  // --- Chargement données ---
   GeneratorSettings.AlternatePassiveAdditionsFilePath = resolve('data/alternatepassiveadditions.json');
   GeneratorSettings.AlternatePassiveSkillsFilePath = resolve('data/alternatepassiveskills.json');
   GeneratorSettings.PassiveSkillsFilePath = resolve('data/data.json');
-  const outputDir = resolve('output');
-  const compression: 'compressed' | 'uncompressed' | 'both' = 'both';
 
-  // Vérification
   if (!existsSync(GeneratorSettings.AlternatePassiveAdditionsFilePath)) {
     console.error('Fichier manquant:', GeneratorSettings.AlternatePassiveAdditionsFilePath);
     process.exit(1);
   }
 
-  console.log('\x1b[32mLoading...\x1b[0m');
+  console.log('Chargement des données...');
   if (!DataManager.Initialize()) {
-    console.error('Échec du chargement des données.');
+    console.error('Échec du chargement.');
     process.exit(1);
-    // todo: corrigé la casse
   }
-  console.log('Total nodes:', DataManager.PassiveSkills?.length);
+  console.log(`Nodes: ${DataManager.PassiveSkills?.length}`);
+  console.log(`Additions: ${DataManager.AlternatePassiveAdditions?.length}\n`);
 
-  const numAdditions = DataManager.AlternatePassiveAdditions?.length ?? 0;
-  if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
+  // --- Création dossier public/data ---
+  if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  const notables = getModifiableNodes(true);
-  const smalls = getModifiableNodes(false);
-  notables.sort((a, b) => a.GraphIdentifier - b.GraphIdentifier);
-  smalls.sort((a, b) => a.GraphIdentifier - b.GraphIdentifier);
-  const allNodes = [...notables, ...smalls];
-
-  // CSV
-  const csv = ['PassiveSkillGraphId,Name,Datafile Parsing Index'];
-  allNodes.forEach((n, i) => {
-    const name = n.Name.includes(',') ? `"${n.Name}"` : n.Name;
-    csv.push(`${n.GraphIdentifier},${name},${i}`);
-  });
-  writeFileSync(join(outputDir, CSV_FILE), csv.join('\n'));
-
-  console.log('\x1b[32mProcessing...\x1b[0m');
-
-  for (let type = 2; type >= 2; type--) { // skip 1 (GV)
+  // --- Génération par bijou ---
+  for (const jewel of JEWELS) {
     const start = performance.now();
-    const info = getJewelTypeInfo(type);
-    console.log(`Processing ${info.name}`);
-    /*const data = await generateRegular(notables, type, info, numAdditions);
-    const file = `${info.name}.bin`;
-    const path = join(outputDir, file);
-
-    if (compression === 'both') {
-      if (existsSync(path)) rmSync(path);
-      writeFileSync(path, data);
-    }
-
-    if (compression === 'both') {
-      const zip = deflateSync(data);
-      const zipPath = join(outputDir, `${info.name}.zip`);
-      if (existsSync(zipPath)) rmSync(zipPath);
-      writeFileSync(zipPath, zip);
-    }*/
-
-    console.log(`${info.name} → ${(performance.now() - start) / 1000}s`);
-    const debugSeed = type === 2 ? 10000 : type === 5 ? 2000 : info.min;
-    await generateJsonOutput(notables, type, info, debugSeed, outputDir);
+    await generateJewelJsonl(jewel);
+    const duration = ((performance.now() - start) / 1000).toFixed(1);
+    console.log(`${jewel.name} → ${duration}s\n`);
   }
 
-  console.log('\x1b[32mDone!\x1b[0m');
+  console.log('Terminé ! Fichiers dans /public/data');
 }
 
-function getModifiableNodes(notablesOnly: boolean): PassiveSkillNode[] {
-  return (DataManager.PassiveSkills ?? [])
-    .filter(n => n.IsModifiable && (notablesOnly ? n.IsNotable : !n.IsNotable));
-}
+async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
+  const { index, name, min, max, step } = jewel;
+  const version = DataManager.AlternateTreeVersions!.find(v => v.Index === index);
+  if (!version) throw new Error(`Version ${index} introuvable`);
 
-function getJewelTypeInfo(type: number) {
-  const map: Record<number, any> = {
-    2: { min: 10000, max: 18000, inc: 1, name: 'LethalPride' },
-    3: { min: 500, max: 8000, inc: 1, name: 'BrutalRestraint' },
-    4: { min: 2000, max: 10000, inc: 1, name: 'MilitantFaith' },
-    5: { min: 2000, max: 160000, inc: 20, name: 'ElegantHubris' },
+  const notables = DataManager.PassiveSkills!
+    .filter(n => n.IsNotable && n.IsModifiable);
+
+  console.log(`${name}: ${notables.length} nodes notables, seeds ${min}→${max} (step ${step})`);
+
+  const filePath = join(OUTPUT_DIR, `${name}.jsonl.gz`);
+  const writeStream = createWriteStream(filePath);
+  const gzip = createGzip();
+  writeStream.on('error', err => console.error('Write error:', err));
+  gzip.on('error', err => console.error('Gzip error:', err));
+
+  gzip.pipe(writeStream);
+  let lineBuffer = '';
+  let lineCount = 0;
+
+  const flush = () => {
+    if (lineBuffer) {
+      gzip.write(lineBuffer);
+      lineBuffer = '';
+      lineCount = 0;
+    }
   };
-  return map[type] || process.exit(1);
-}
+  let processed = 0;
 
-async function generateRegular(
-  notables: PassiveSkillNode[],
-  type: number,
-  info: { min: number; max: number; inc: number },
-  numAdditions: number
-): Promise<Uint8Array> {
-  const { min, max, inc } = info;
-  const seedCount = Math.floor((max - min) / inc) + 1;
-  const buffer = new Uint8Array(seedCount * notables.length);
-  let filteredNotables = notables.filter(n => n.name == 'Gravepact')
+  for (let seed = min; seed <= max; seed += step) {
+    const timelessJewel = new TimelessJewel(version, seed);
+    let replacedMap = {};
+    let addedMap = {};
+    let index = 0;
 
-  // PARALLÉLISATION PAR NŒUD
-  Promise.all(
-    filteredNotables.map(async (node, nodeIdx) => {
-      for (let s = min; s <= max; s += inc) {
-        const seedIdx = Math.floor((s - min) / inc);
-        const jewel = new TimelessJewel(
-          DataManager.AlternateTreeVersions!.find(v => v.Index === type)!,
-          s
-        );
-        const manager = new AlternateTreeManager(node, jewel);
+    for (const node of notables) {
+      const manager = new AlternateTreeManager(node, timelessJewel);
+      const replaced = manager.IsPassiveSkillReplaced();
 
-        let value = 0;
-        if (manager.IsPassiveSkillReplaced()) {
-          const result = manager.ReplacePassiveSkill();
-          value = result.AlternatePassiveSkill._rid + numAdditions;
+      if (replaced) {
+        const res = manager.ReplacePassiveSkill();
+        const v = res.StatRolls[0] ?? 0;
+        if (!replacedMap[res.AlternatePassiveSkill._rid]) {
+          replacedMap[res.AlternatePassiveSkill._rid] = [index]
         } else {
-          const adds = manager.AugmentPassiveSkill();
-          if (adds.length > 0) {
-            value = adds[0].AlternatePassiveAddition._rid;
+          replacedMap[res.AlternatePassiveSkill._rid].push(index)
+        }
+      } else {
+        const adds = manager.AugmentPassiveSkill();
+        if (adds.length > 0) {
+          const add = adds[0];
+          const v = add.StatRolls[0] ?? 0;
+          if (!addedMap[add.AlternatePassiveAddition._rid]) {
+            addedMap[add.AlternatePassiveAddition._rid] =  [index]
+          } else {
+            addedMap[add.AlternatePassiveAddition._rid].push(index)
           }
         }
-
-        buffer[nodeIdx * seedCount + seedIdx] = value & 0xFF;
       }
-    })
-  );
-
-  return buffer;
-}
-
-async function generateJsonOutput(
-  notables: PassiveSkillNode[],
-  type: number,
-  info: { min: number; max: number; inc: number; name: string },
-  seed: number,
-  outputDir: string
-): Promise<void> {
-  const jewel = new TimelessJewel(
-    DataManager.AlternateTreeVersions!.find(v => v.Index === type)!,
-    seed
-  );
-
-  const result: Record<string, any> = {
-    jewel: info.name,
-    seed,
-    nodes: {}
-  };
-
-  for (const node of notables) {
-    const manager = new AlternateTreeManager(node, jewel);
-    const entry: any = {
-      name: node.Name
-    };
-
-    if (manager.IsPassiveSkillReplaced()) {
-      const replace = manager.ReplacePassiveSkill();
-      const skill = DataManager.AlternatePassiveSkills!.find(s => s._rid === replace.AlternatePassiveSkill._rid);
-      entry.replacement = skill?.Name || 'Unknown';
-      entry.stats = Object.values(replace.StatRolls);
-      entry.additions = replace.AlternatePassiveAdditionInformations.map(add => {
-        const addData = DataManager.AlternatePassiveAdditions!.find(a => a._rid === add.AlternatePassiveAddition._rid);
-        return {
-          name: addData?.StatsKeys[0] || 'Unknown',
-          value: add.StatRolls[0] || 0
-        };
-      });
-    } else {
-      const adds = manager.AugmentPassiveSkill();
-      entry.replacement = null;
-      entry.additions = adds.map(add => {
-        const addData = DataManager.AlternatePassiveAdditions!.find(a => a._rid === add.AlternatePassiveAddition._rid);
-        return {
-          name: addData?.StatsKeys[0] || 'Unknown',
-          value: add.StatRolls[0] || 0
-        };
-      });
+      index++;
     }
+    let entry = {};
+    entry = { r: replacedMap, a: addedMap }
 
-    result.nodes[node.GraphIdentifier] = entry;
+    lineBuffer += JSON.stringify(entry) + '\n';
+    lineCount++;
+
+    if (lineCount >= FLUSH_EVERY) {
+      flush();
+    }
+    
+    replacedMap = {};
+    addedMap = {};
+    entry = {};
+
+    // Log progression
+    if ((seed - min) % (step * 1000) === 0) {
+      process.stdout.write(`\r  → Seed ${seed}...`);
+      flush(); // force flush
+    }
   }
 
-  const fileName = `${info.name}_${seed}.json`;
-  writeFileSync(join(outputDir, fileName), JSON.stringify(result, null, 2));
-  console.log(`JSON debug: ${fileName}`);
+  flush();
+  gzip.end();
+  await new Promise<void>((r, reject) => {
+    writeStream.on('finish', () => r());
+    writeStream.on('error', reject);
+  });
+  console.log(`\r  → ${name}.jsonl.gz généré`);
 }
 
-main().catch(console.error);
+// --- Lancement ---
+main().catch(err => {
+  console.error('Erreur fatale:', err);
+  process.exit(1);
+});
