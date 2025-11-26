@@ -2,7 +2,7 @@
 // Porté depuis le fichier C# du même nom
 // Représente le conteneur principal du fichier skill tree JSON (ex: passive_skill_tree.json)
 
-import { PassiveSkill } from './PassiveSkill';
+import { PassiveSkill, PassiveSkillNode } from './PassiveSkill';
 
 /**
  * Structure racine du fichier de données de l’arbre de passifs.
@@ -10,7 +10,7 @@ import { PassiveSkill } from './PassiveSkill';
  */
 export interface TreeDataFile {
   /** Map des nœuds passifs : clé string → PassiveSkill */
-  readonly nodes: Readonly<Record<string, PassiveSkill>>;
+  readonly nodes: Readonly<Record<string, PassiveSkillNode>>;
 }
 
 /* -------------------------------------------------------------------------- */

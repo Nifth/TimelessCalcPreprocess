@@ -7,50 +7,51 @@
  * Peut inclure plusieurs stats avec des valeurs min/max, ainsi qu’un nombre aléatoire d’ajouts.
  */
 export interface AlternatePassiveSkill {
+  readonly Name: string;
   /** Index unique de cette compétence (correspond à `_rid` dans le JSON) */
-  readonly Index: number;
+  readonly _rid: number;
 
   /** Version de l’arbre alternatif auquel cette compétence appartient */
-  readonly AlternateTreeVersionIndex: number;
+  readonly AlternateTreeVersionsKey: number;
 
   /** Liste des indices de stats associées à cette compétence */
-  readonly StatIndices: readonly number[];
+  readonly StatsKeys: readonly number[];
 
   /** Valeur minimale de la première stat */
-  readonly StatAMinimumValue: number;
+  readonly Stat1Min: number;
 
   /** Valeur maximale de la première stat */
-  readonly StatAMaximumValue: number;
+  readonly Stat1Max: number;
 
   /** Valeur minimale de la deuxième stat */
-  readonly StatBMinimumValue: number;
+  readonly Stat2Min: number;
 
   /** Valeur maximale de la deuxième stat */
-  readonly StatBMaximumValue: number;
+  readonly Stat2Max: number;
 
   /** Valeur minimale de la troisième stat (Unknown10) */
-  readonly StatCMinimumValue: number;
+  readonly Unknown10: number;
 
   /** Valeur maximale de la troisième stat (Unknown11) */
-  readonly StatCMaximumValue: number;
+  readonly Unknown11: number;
 
   /** Valeur minimale de la quatrième stat (Unknown12) */
-  readonly StatDMinimumValue: number;
+  readonly Unknown12: number;
 
   /** Valeur maximale de la quatrième stat (Unknown13) */
-  readonly StatDMaximumValue: number;
+  readonly Unknown13: number;
 
   /** Types de passifs auxquels cette compétence peut s’appliquer */
-  readonly ApplicablePassiveTypes: readonly number[];
+  readonly PassiveType: readonly number[];
 
   /** Poids de spawn (pondération pour le tirage aléatoire) */
   readonly SpawnWeight: number;
 
   /** Nombre minimum d’ajouts aléatoires (additions) à appliquer */
-  readonly MinimumAdditions: number;
+  readonly RandomMin: number;
 
   /** Nombre maximum d’ajouts aléatoires à appliquer */
-  readonly MaximumAdditions: number;
+  readonly RandomMax: number;
 }
 
 /* -------------------------------------------------------------------------- */

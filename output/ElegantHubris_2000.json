@@ -1,0 +1,14 @@
+{
+  "jewel": "ElegantHubris",
+  "seed": 2000,
+  "nodes": {
+    "21413": {
+      "name": "Combat Stamina",
+      "replacement": "City Walls",
+      "stats": [
+        12
+      ],
+      "additions": []
+    }
+  }
+}

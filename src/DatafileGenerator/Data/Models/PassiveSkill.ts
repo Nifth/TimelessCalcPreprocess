@@ -4,37 +4,37 @@
 
 export interface PassiveSkill {
   /** Identifiant unique dans le graphe de l’arbre (clé "skill") */
-  readonly GraphIdentifier: number;
+  readonly skill: number;
 
   /** Nom du nœud */
-  readonly Name: string;
+  readonly name: string;
 
   /** Liste des stats en texte brut (ex: "+10 to Strength") */
   readonly StatStrings: readonly string[];
 
   /** Est-ce un nœud Blight ? */
-  readonly IsBlight: boolean;
+  readonly isBlight: boolean;
 
   /** Est-ce un socket de bijou ? */
-  readonly IsJewelSocket: boolean;
+  readonly isJewelSocket: boolean;
 
   /** Est-ce un nœud notable ? */
-  readonly IsNotable: boolean;
+  readonly isNotable: boolean;
 
   /** Est-ce un keystone ? */
-  readonly IsKeyStone: boolean;
+  readonly isKeystone: boolean;
 
   /** Est-ce un nœud de maîtrise (mastery) ? */
-  readonly IsMastery: boolean;
+  readonly isMastery: boolean;
 
   /** Est-ce un proxy (nœud virtuel) ? */
-  readonly IsProxy: boolean;
+  readonly isProxy: boolean;
 
   /** Nom de l’ascendance (si applicable) */
-  readonly AscName: string;
+  readonly ascendancyName: string;
 
   /** Orbite (0-6 pour petits/grands, null pour clusters) */
-  readonly Orbit: number | null;
+  readonly orbit: number | null;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -43,45 +43,48 @@ export interface PassiveSkill {
 
 export class PassiveSkillNode implements PassiveSkill {
   // --- Propriétés du JSON ---
-  public readonly GraphIdentifier: number;
-  public readonly Name: string;
+  public readonly skill: number;
+  public readonly name: string;
   public readonly StatStrings: readonly string[];
-  public readonly IsBlight: boolean;
-  public readonly IsJewelSocket: boolean;
-  public readonly IsNotable: boolean;
-  public readonly IsKeyStone: boolean;
-  public readonly IsMastery: boolean;
-  public readonly IsProxy: boolean;
-  public readonly AscName: string;
-  public readonly Orbit: number | null;
+  
+  public readonly isBlight: boolean;
+  public readonly isJewelSocket: boolean;
+  public readonly isNotable: boolean;
+  public readonly isKeystone: boolean;
+  public readonly isMastery: boolean;
+  public readonly isProxy: boolean;
+  public readonly ascendancyName: string;
+  public readonly orbit: number | null;
 
   constructor(data: PassiveSkill) {
     Object.assign(this, data);
   }
 
-  /** Est-ce un nœud d’ascendance ? */
+  get GraphIdentifier(): number { return this.skill; }
+
+  get Name(): string { return this.name; }
+  get IsBlight(): boolean { return this.isBlight; }
+  get IsJewelSocket(): boolean { return this.isJewelSocket; }
+  get IsNotable(): boolean { return this.isNotable; }
+  get IsKeyStone(): boolean { return this.isKeystone; }
+  get IsMastery(): boolean { return this.isMastery; }
+  get IsProxy(): boolean { return this.isProxy; }
+
   get IsAscendancy(): boolean {
-    return this.AscName !== null && this.AscName !== '';
+    return this.ascendancyName !== null && this.ascendancyName !== '' && this.ascendancyName !== undefined;
   }
 
-  /** Est-ce un cluster jewel ? */
   get IsCluster(): boolean {
-    return this.Orbit === null;
+    return this.orbit === null;
   }
 
-  /** Est-ce un nœud d’attribut (+10 Str/Dex/Int) ? */
   get IsAttribute(): boolean {
     return (
       this.StatStrings.length === 1 &&
-      (
-        this.StatStrings[0] === '+10 to Strength' ||
-        this.StatStrings[0] === '+10 to Dexterity' ||
-        this.StatStrings[0] === '+10 to Intelligence'
-      )
+      ['+10 to Strength', '+10 to Dexterity', '+10 to Intelligence'].includes(this.StatStrings[0])
     );
   }
 
-  /** Peut-il être modifié par un Timeless Jewel ? */
   get IsModifiable(): boolean {
     return !(
       this.IsCluster ||

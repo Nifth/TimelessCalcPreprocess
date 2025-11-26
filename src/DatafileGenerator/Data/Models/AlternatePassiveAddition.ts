@@ -8,28 +8,28 @@
  */
 export interface AlternatePassiveAddition {
   /** Index unique de cet ajout (correspond à `_rid` dans le JSON) */
-  readonly Index: number;
+  readonly _rid: number;
 
   /** Version de l'arbre alternatif auquel cet ajout appartient */
-  readonly AlternateTreeVersionIndex: number;
+  readonly AlternateTreeVersionsKey: number;
 
   /** Liste des indices de stats (référencés dans une table globale de stats) */
-  readonly StatIndices: readonly number[];
+  readonly StatsKeys: readonly number[];
 
   /** Valeur minimale de la première stat */
-  readonly StatAMinimumValue: number;
+  readonly Stat1Min: number;
 
   /** Valeur maximale de la première stat */
-  readonly StatAMaximumValue: number;
+  readonly Stat1Max: number;
 
   /** Valeur minimale de la deuxième stat (Unknown7 dans le dump) */
-  readonly StatBMinimumValue: number;
+  readonly Stat2Min: number;
 
   /** Valeur maximale de la deuxième stat (Unknown8 dans le dump) */
-  readonly StatBMaximumValue: number;
+  readonly Stat2Max: number;
 
   /** Types de passifs auxquels cet ajout peut s'appliquer */
-  readonly ApplicablePassiveTypes: readonly number[];
+  readonly PassiveType: readonly number[];
 
   /** Poids de spawn (utilisé pour la pondération lors du tirage aléatoire) */
   readonly SpawnWeight: number;

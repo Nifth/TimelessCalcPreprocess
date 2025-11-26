@@ -1,47 +1,13 @@
-// DatafileGenerator/Game/AlternateTreeManager.ts
-// Port complet du fichier C# AlternateTreeManager.cs
-// Gère la logique de remplacement/augmentation des nœuds passifs par les Timeless Jewels
-// Utilise un RNG déterministe (basé sur seed + position du nœud) pour simuler les "rolls"
-
+// Game/AlternateTreeManager.ts
 import { DataManager, PassiveSkillType } from '../Data/DataManager';
 import { AlternatePassiveAddition } from '../Data/Models/AlternatePassiveAddition'; // Ajuste les imports selon structure
 import { AlternatePassiveSkill } from '../Data/Models/AlternatePassiveSkill';
 import { PassiveSkillNode } from '../Data/Models/PassiveSkill';
 import { TimelessJewel } from './TimelessJewel';
 import { RandomNumberGenerator } from '../Random/RandomNumberGenerator';
+import { AlternatePassiveSkillInformation } from './AlternatePassiveSkillInformation';
+import { AlternatePassiveAdditionInformation } from './AlternatePassiveAdditionInformation';
 
-/* -------------------------------------------------------------------------- */
-/*  Interfaces/Classes pour les résultats (équivalent aux records C#)         */
-/* -------------------------------------------------------------------------- */
-export class AlternatePassiveAdditionInformation {
-  public readonly addition: AlternatePassiveAddition;
-  public readonly statRolls: Readonly<Record<number, number>>;
-
-  constructor(addition: AlternatePassiveAddition, statRolls: Record<number, number>) {
-    this.addition = addition;
-    this.statRolls = Object.freeze({ ...statRolls });
-  }
-}
-
-export class AlternatePassiveSkillInformation {
-  public readonly skill: AlternatePassiveSkill;
-  public readonly statRolls: Readonly<Record<number, number>>;
-  public readonly additions: readonly AlternatePassiveAdditionInformation[];
-
-  constructor(
-    skill: AlternatePassiveSkill,
-    statRolls: Record<number, number>,
-    additions: AlternatePassiveAdditionInformation[]
-  ) {
-    this.skill = skill;
-    this.statRolls = Object.freeze({ ...statRolls });
-    this.additions = Object.freeze(additions);
-  }
-}
-
-/* -------------------------------------------------------------------------- */
-/*  Classe principale                                                         */
-/* -------------------------------------------------------------------------- */
 export class AlternateTreeManager {
   public readonly PassiveSkill: PassiveSkillNode;
   public readonly TimelessJewel: TimelessJewel;
@@ -49,182 +15,184 @@ export class AlternateTreeManager {
   constructor(passiveSkill: PassiveSkillNode, timelessJewel: TimelessJewel) {
     if (!passiveSkill) throw new Error('passiveSkill is required');
     if (!timelessJewel) throw new Error('timelessJewel is required');
-
     this.PassiveSkill = passiveSkill;
     this.TimelessJewel = timelessJewel;
   }
 
-  /** Détermine si le nœud doit être remplacé (dépend du type et de la version) */
+  // ========================================================================
+  // IsPassiveSkillReplaced
+  // ========================================================================
   public IsPassiveSkillReplaced(): boolean {
     if (this.PassiveSkill.IsKeyStone) return true;
 
     if (this.PassiveSkill.IsNotable) {
-      if (this.TimelessJewel.AlternateTreeVersion.NotableReplacementSpawnWeight >= 100) return true;
+      const spawnWeight = this.TimelessJewel.AlternateTreeVersion.NotableReplacementSpawnWeight;
+      if (spawnWeight >= 100) return true;
 
       const rng = new RandomNumberGenerator(this.PassiveSkill, this.TimelessJewel);
-      return rng.generateRange(0, 100) < this.TimelessJewel.AlternateTreeVersion.NotableReplacementSpawnWeight;
+      const roll = rng.generateRange(0, 100); // [0, 100] inclusive → 101 values
+      return roll < spawnWeight;
     }
 
-    if (DataManager.GetPassiveSkillType(this.PassiveSkill) === PassiveSkillType.SmallAttribute) {
+    const type = DataManager.GetPassiveSkillType(this.PassiveSkill);
+    if (type === PassiveSkillType.SmallAttribute) {
       return this.TimelessJewel.AlternateTreeVersion.AreSmallAttributePassiveSkillsReplaced;
     }
 
     return this.TimelessJewel.AlternateTreeVersion.AreSmallNormalPassiveSkillsReplaced;
   }
 
-  /** Remplace le nœud : sélectionne une nouvelle skill + rolls + additions optionnelles */
+  // ========================================================================
+  // ReplacePassiveSkill
+  // ========================================================================
   public ReplacePassiveSkill(): AlternatePassiveSkillInformation {
+    // --- Keystone ---
     if (this.PassiveSkill.IsKeyStone) {
-      const skill = DataManager.GetAlternatePassiveSkillKeyStone(this.TimelessJewel);
-      if (!skill) throw new Error('Keystone replacement not found'); // Assume exists
-
-      const statRolls: Record<number, number> = {
-        0: skill.StatAMinimumValue, // Fixed to minimum
-      };
-
-      return new AlternatePassiveSkillInformation(skill, statRolls, []);
+      const keystone = DataManager.GetAlternatePassiveSkillKeyStone(this.TimelessJewel);
+      const statRolls: Record<number, number> = { 0: keystone.Stat1Min };
+      return new AlternatePassiveSkillInformation(keystone, statRolls, []);
     }
 
-    // Remplacement normal (notable/small)
-    const applicableSkills = DataManager.GetApplicableAlternatePassiveSkills(this.PassiveSkill, this.TimelessJewel);
+    // --- Normal replacement ---
+    const applicable = DataManager.GetApplicableAlternatePassiveSkills(this.PassiveSkill, this.TimelessJewel);
+    let rolledSkill: AlternatePassiveSkill | null = null;
     const rng = new RandomNumberGenerator(this.PassiveSkill, this.TimelessJewel);
 
-    const type = DataManager.GetPassiveSkillType(this.PassiveSkill);
-    if (type === PassiveSkillType.Notable) {
-      rng.generateRange(0, 100); // Dummy roll pour seed l'état RNG (déterministe)
+    // Dummy roll for notables
+    if (DataManager.GetPassiveSkillType(this.PassiveSkill) === PassiveSkillType.Notable) {
+      rng.generateRange(0, 100);
     }
 
-    let rolledSkill: AlternatePassiveSkill | null = null;
     let currentSpawnWeight = 0;
-
-    for (const skill of applicableSkills) {
+    for (const skill of applicable) {
       currentSpawnWeight += skill.SpawnWeight;
       const roll = rng.generate(currentSpawnWeight);
       if (roll < skill.SpawnWeight) {
         rolledSkill = skill;
+        break;
       }
     }
 
-    if (!rolledSkill) throw new Error('No skill rolled'); // Assume data ensures one
+    if (!rolledSkill) throw new Error('Failed to roll replacement skill');
 
-    // Roll des stats de la skill (0-3 max)
-    const statRollRanges: Record<number, { minimumRoll: number; maximumRoll: number }> = {
-      0: { minimumRoll: rolledSkill.StatAMinimumValue, maximumRoll: rolledSkill.StatAMaximumValue },
-      1: { minimumRoll: rolledSkill.StatBMinimumValue, maximumRoll: rolledSkill.StatBMaximumValue },
-      2: { minimumRoll: rolledSkill.StatCMinimumValue, maximumRoll: rolledSkill.StatCMaximumValue },
-      3: { minimumRoll: rolledSkill.StatDMinimumValue, maximumRoll: rolledSkill.StatDMaximumValue },
+    // --- Stat rolls ---
+    const statRanges: Record<number, { min: number; max: number }> = {
+      0: { min: rolledSkill.Stat1Min, max: rolledSkill.Stat1Max },
+      1: { min: rolledSkill.Stat2Min, max: rolledSkill.Stat2Max },
+      2: { min: rolledSkill.Unknown10, max: rolledSkill.Unknown11 },
+      3: { min: rolledSkill.Unknown12, max: rolledSkill.Unknown13 },
     };
 
     const statRolls: Record<number, number> = {};
-    for (let i = 0; i < Math.min(rolledSkill.StatIndices.length, 4); i++) {
-      let rollValue = statRollRanges[i].minimumRoll;
-      if (statRollRanges[i].maximumRoll > statRollRanges[i].minimumRoll) {
-        rollValue = rng.generateRange(statRollRanges[i].minimumRoll, statRollRanges[i].maximumRoll);
+    for (let i = 0; i < Math.min(rolledSkill.StatsKeys.length, 4); i++) {
+      const { min, max } = statRanges[i];
+      let value = min;
+      if (max > min) {
+        value = rng.generateRange(min, max);
       }
-      statRolls[i] = rollValue;
+      statRolls[i] = value;
     }
 
-    // Additions optionnelles
-    if (rolledSkill.MinimumAdditions === 0 && rolledSkill.MaximumAdditions === 0) {
-      return new AlternatePassiveSkillInformation(rolledSkill, statRolls, []);
-    }
-
-    const minAdditions = this.TimelessJewel.AlternateTreeVersion.MinimumAdditions + rolledSkill.MinimumAdditions;
-    const maxAdditions = this.TimelessJewel.AlternateTreeVersion.MaximumAdditions + rolledSkill.MaximumAdditions;
-
-    let additionCount = minAdditions;
-    if (maxAdditions > minAdditions) {
-      additionCount = rng.generateRange(minAdditions, maxAdditions);
+    // --- Additions ---
+    const minAdd = this.TimelessJewel.AlternateTreeVersion.MinimumAdditions + rolledSkill.RandomMin;
+    const maxAdd = this.TimelessJewel.AlternateTreeVersion.MaximumAdditions + rolledSkill.RandomMax;
+    let addCount = minAdd;
+    if (maxAdd > minAdd) {
+      addCount = rng.generateRange(minAdd, maxAdd);
     }
 
     const additions: AlternatePassiveAdditionInformation[] = [];
-    for (let i = 0; i < additionCount; i++) {
+    for (let i = 0; i < addCount; i++) {
       let rolledAddition: AlternatePassiveAddition | null = null;
       while (!rolledAddition) {
-        rolledAddition = this.rollAlternatePassiveAddition(rng);
+        rolledAddition = this.RollAlternatePassiveAddition(rng);
       }
 
-      // Roll stats addition (0-1 max)
-      const addStatRanges: Record<number, { minimumRoll: number; maximumRoll: number }> = {
-        0: { minimumRoll: rolledAddition.StatAMinimumValue, maximumRoll: rolledAddition.StatAMaximumValue },
-        1: { minimumRoll: rolledAddition.StatBMinimumValue, maximumRoll: rolledAddition.StatBMaximumValue },
+      const addRanges: Record<number, { min: number; max: number }> = {
+        0: { min: rolledAddition.Stat1Min, max: rolledAddition.Stat1Max },
+        1: { min: rolledAddition.Stat2Min, max: rolledAddition.Stat2Max },
       };
 
-      const addStatRolls: Record<number, number> = {};
-      for (let j = 0; j < Math.min(rolledAddition.StatIndices.length, 2); j++) {
-        let rollValue = addStatRanges[j].minimumRoll;
-        if (addStatRanges[j].maximumRoll > addStatRanges[j].minimumRoll) {
-          rollValue = rng.generateRange(addStatRanges[j].minimumRoll, addStatRanges[j].maximumRoll);
+      const addRolls: Record<number, number> = {};
+      for (let j = 0; j < Math.min(rolledAddition.StatsKeys.length, 2); j++) {
+        const { min, max } = addRanges[j];
+        let value = min;
+        if (max > min) {
+          value = rng.generateRange(min, max);
         }
-        addStatRolls[j] = rollValue;
+        addRolls[j] = value;
       }
 
-      additions.push(new AlternatePassiveAdditionInformation(rolledAddition, addStatRolls));
+      additions.push(new AlternatePassiveAdditionInformation(rolledAddition, addRolls));
     }
 
     return new AlternatePassiveSkillInformation(rolledSkill, statRolls, additions);
   }
 
-  /** Augmente un nœud existant avec des additions (sans remplacement) */
+  // ========================================================================
+  // AugmentPassiveSkill
+  // ========================================================================
   public AugmentPassiveSkill(): readonly AlternatePassiveAdditionInformation[] {
     const rng = new RandomNumberGenerator(this.PassiveSkill, this.TimelessJewel);
 
-    const type = DataManager.GetPassiveSkillType(this.PassiveSkill);
-    if (type === PassiveSkillType.Notable) {
-      rng.generateRange(0, 100); // Dummy pour cohérence RNG
+    // Dummy roll for notables
+    if (DataManager.GetPassiveSkillType(this.PassiveSkill) === PassiveSkillType.Notable) {
+      rng.generateRange(0, 100);
     }
 
-    const minAdditions = this.TimelessJewel.AlternateTreeVersion.MinimumAdditions;
-    const maxAdditions = this.TimelessJewel.AlternateTreeVersion.MaximumAdditions;
-
-    let additionCount = minAdditions;
-    if (maxAdditions > minAdditions) {
-      additionCount = rng.generateRange(minAdditions, maxAdditions);
+    const minAdd = this.TimelessJewel.AlternateTreeVersion.MinimumAdditions;
+    const maxAdd = this.TimelessJewel.AlternateTreeVersion.MaximumAdditions;
+    let addCount = minAdd;
+    if (maxAdd > minAdd) {
+      addCount = rng.generateRange(minAdd, maxAdd);
     }
 
     const additions: AlternatePassiveAdditionInformation[] = [];
-    for (let i = 0; i < additionCount; i++) {
+    for (let i = 0; i < addCount; i++) {
       let rolledAddition: AlternatePassiveAddition | null = null;
       while (!rolledAddition) {
-        rolledAddition = this.rollAlternatePassiveAddition(rng);
+        rolledAddition = this.RollAlternatePassiveAddition(rng);
       }
 
-      // Roll stats (identique à Replace)
-      const addStatRanges: Record<number, { minimumRoll: number; maximumRoll: number }> = {
-        0: { minimumRoll: rolledAddition.StatAMinimumValue, maximumRoll: rolledAddition.StatAMaximumValue },
-        1: { minimumRoll: rolledAddition.StatBMinimumValue, maximumRoll: rolledAddition.StatBMaximumValue },
+      const addRanges: Record<number, { min: number; max: number }> = {
+        0: { min: rolledAddition.Stat1Min, max: rolledAddition.Stat1Max },
+        1: { min: rolledAddition.Stat2Min, max: rolledAddition.Stat2Max },
       };
 
-      const addStatRolls: Record<number, number> = {};
-      for (let j = 0; j < Math.min(rolledAddition.StatIndices.length, 2); j++) {
-        let rollValue = addStatRanges[j].minimumRoll;
-        if (addStatRanges[j].maximumRoll > addStatRanges[j].minimumRoll) {
-          rollValue = rng.generateRange(addStatRanges[j].minimumRoll, addStatRanges[j].maximumRoll);
+      const addRolls: Record<number, number> = {};
+      for (let j = 0; j < Math.min(rolledAddition.StatsKeys.length, 2); j++) {
+        const { min, max } = addRanges[j];
+        let value = min;
+        if (max > min) {
+          value = rng.generateRange(min, max);
         }
-        addStatRolls[j] = rollValue;
+        addRolls[j] = value;
       }
 
-      additions.push(new AlternatePassiveAdditionInformation(rolledAddition, addStatRolls));
+      additions.push(new AlternatePassiveAdditionInformation(rolledAddition, addRolls));
     }
 
     return Object.freeze(additions);
   }
 
-  /** Sélection pondérée déterministe d'une addition */
-  private rollAlternatePassiveAddition(rng: RandomNumberGenerator): AlternatePassiveAddition | null {
-    if (!rng) throw new Error('randomNumberGenerator is required');
+  // ========================================================================
+  // RollAlternatePassiveAddition
+  // ========================================================================
+  private RollAlternatePassiveAddition(rng: RandomNumberGenerator): AlternatePassiveAddition | null {
+    if (!rng) throw new Error('rng is required');
 
     const applicable = DataManager.GetApplicableAlternatePassiveAdditions(this.PassiveSkill, this.TimelessJewel);
     const totalSpawnWeight = applicable.reduce((sum, a) => sum + a.SpawnWeight, 0);
+    if (totalSpawnWeight === 0) return null;
 
-    const additionRoll = rng.generate(totalSpawnWeight);
+    const roll = rng.generate(totalSpawnWeight);
+    let current = roll;
 
-    let roll = additionRoll;
     for (const addition of applicable) {
-      if (addition.SpawnWeight > roll) {
+      if (addition.SpawnWeight > current) {
         return addition;
       }
-      roll -= addition.SpawnWeight;
+      current -= addition.SpawnWeight;
     }
 
     return null;

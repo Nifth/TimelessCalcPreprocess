@@ -1,15 +1,7 @@
-// DatafileGenerator/Random/RandomNumberGenerator.ts
-// Port complet du fichier C# RandomNumberGenerator.cs
-// Générateur déterministe basé sur seed + GraphIdentifier (identique à PoE)
-
-import { PassiveSkill } from '../Data/Models/PassiveSkill';
+// Random/RandomNumberGenerator.ts
+import { PassiveSkill, PassiveSkillNode } from '../Data/Models/PassiveSkill';
 import { TimelessJewel } from '../Game/TimelessJewel';
 
-/**
- * Générateur de nombres pseudo-aléatoires déterministe.
- * Utilisé pour simuler les "rolls" des Timeless Jewels.
- * Identique au comportement du jeu Path of Exile.
- */
 export class RandomNumberGenerator {
   private static readonly INITIAL_STATE_CONSTANT_0 = 0x40336050;
   private static readonly INITIAL_STATE_CONSTANT_1 = 0xCFA3723C;
@@ -18,23 +10,18 @@ export class RandomNumberGenerator {
 
   private state: Uint32Array;
 
-  constructor(passiveSkill: PassiveSkill, timelessJewel: TimelessJewel) {
-    if (!timelessJewel) {
-      throw new Error('timelessJewel is required');
-    }
+  constructor(passiveSkill: PassiveSkillNode, timelessJewel: TimelessJewel) {
+    if (!timelessJewel) throw new Error('timelessJewel is required');
 
     this.state = new Uint32Array(5);
     this.initialize([passiveSkill.GraphIdentifier, timelessJewel.Seed]);
   }
 
-  /**
-   * Génère un entier dans [0, exclusiveMaximumValue)
-   * @param exclusiveMaximumValue Valeur exclusive max
-   */
+  // --- Public API ---
   public generate(exclusiveMaximumValue: number): number {
-    if (exclusiveMaximumValue <= 0) return 0;
-
-    const maximumValue = exclusiveMaximumValue - 1;
+    this.logStep('Before generate');
+   if (exclusiveMaximumValue <= 0) return 0;
+    const max = exclusiveMaximumValue - 1;
     let roundState = 0;
     let value = 0;
 
@@ -42,39 +29,32 @@ export class RandomNumberGenerator {
       do {
         value = (this.generateUInt() | (2 * (value << 31))) >>> 0;
         roundState = (0xFFFFFFFF | (2 * (roundState << 31))) >>> 0;
-      } while (roundState < maximumValue);
+      } while (roundState < max);
     } while (
-      (value / exclusiveMaximumValue) >= roundState &&
-      (roundState % exclusiveMaximumValue) !== maximumValue
+      (Math.floor(value / exclusiveMaximumValue) >= roundState) &&
+      ((roundState % exclusiveMaximumValue) !== max)
     );
-
+    this.logStep('After generate');
     return value % exclusiveMaximumValue;
   }
 
-  /**
-   * Génère un entier dans [minimumValue, maximumValue]
-   * @param minimumValue Valeur minimale inclusive
-   * @param maximumValue Valeur maximale inclusive
-   */
-  public generateRange(minimumValue: number, maximumValue: number): number {
-    let a = minimumValue + 0x80000000;
-    let b = maximumValue + 0x80000000;
+  public generateRange(min: number, max: number): number {
+    let a = min + 0x80000000 >>> 0;
+    let b = max + 0x80000000 >>> 0;
+    if (min >= 0x80000000) a = (min + 0x80000000) >>> 0;
+    if (max >= 0x80000000) b = (max + 0x80000000) >>> 0;
 
-    if (minimumValue >= 0x80000000) a = minimumValue + 0x80000000;
-    if (maximumValue >= 0x80000000) b = maximumValue + 0x80000000;
-
-    const roll = this.generate((b - a) + 1);
-    return ((roll + a) >>> 0) - 0x80000000;
+    const roll = this.generate((b - a + 1) >>> 0);
+    return ((roll + a + 0x80000000) >>> 0);  // ← + 0x80000000 comme C#
   }
 
-  // --- Méthodes privées ---
-
+  // --- Private ---
   private static manipulateAlpha(value: number): number {
-    return ((value ^ (value >>> 27)) * 0x19660D) >>> 0;
+    return ((value ^ (value >> 27)) * 0x19660D) >>> 0;
   }
 
   private static manipulateBravo(value: number): number {
-    return ((value ^ (value >>> 27)) * 0x5D588B65) >>> 0;
+    return ((value ^ (value >> 27)) * 0x5D588B65) >>> 0;
   }
 
   private initialize(seeds: number[]): void {
@@ -144,8 +124,8 @@ export class RandomNumberGenerator {
     this.state[3] = (a ^ (b << 10)) >>> 0;
     this.state[4] = b;
 
-    const mask1 = (b & 1) === 1 ? 0x8F7011EE : 0;
-    const mask2 = (b & 1) === 1 ? 0xFC78FF1F : 0;
+    const mask1 = (b & 1) ? 0x8F7011EE : 0;
+    const mask2 = (b & 1) ? 0xFC78FF1F : 0;
 
     this.state[2] ^= mask1;
     this.state[3] ^= mask2;
@@ -167,12 +147,12 @@ export class RandomNumberGenerator {
     this.generateNextState();
     return this.temper();
   }
+
+  // --- DEBUG ---
+  public debugState(): string {
+    return `[${this.state[0].toString(16)}, ${this.state[1].toString(16)}, ${this.state[2].toString(16)}, ${this.state[3].toString(16)}, ${this.state[4].toString(16)}]`;
+  }
+  private logStep(msg: string) {
+    console.log(msg, this.debugState());
+  }
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Exemple d’utilisation                                                    */
-/* -------------------------------------------------------------------------- */
-
-// const rng = new RandomNumberGenerator(node, jewel);
-// const roll = rng.generate(100); // 0..99
-// const rangeRoll = rng.generateRange(10, 20); // 10..20

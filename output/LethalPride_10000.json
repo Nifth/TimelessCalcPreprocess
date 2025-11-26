@@ -1,0 +1,16 @@
+{
+  "jewel": "LethalPride",
+  "seed": 10000,
+  "nodes": {
+    "49445": {
+      "name": "Deep Breaths",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    }
+  }
+}

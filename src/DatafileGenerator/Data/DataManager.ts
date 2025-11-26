@@ -16,11 +16,12 @@ import { GeneratorSettings } from '../GeneratorSettings';
 // Énumération des types de nœuds passifs (équivalent à PassiveSkillType en C#)
 // --------------------------------------------------------------------------
 export enum PassiveSkillType {
-  JewelSocket = 0,
-  KeyStone = 1,
-  Notable = 2,
-  SmallAttribute = 3,
-  SmallNormal = 4,
+  None,
+  SmallAttribute,
+  SmallNormal,
+  Notable,
+  KeyStone,
+  JewelSocket
 }
 
 // --------------------------------------------------------------------------
@@ -31,7 +32,7 @@ export class DataManager {
   private static _alternatePassiveAdditions: readonly AlternatePassiveAddition[] | null = null;
   private static _alternatePassiveSkills: readonly AlternatePassiveSkill[] | null = null;
   private static _alternateTreeVersions: readonly AlternateTreeVersion[] | null = null;
-  private static _passiveSkills: readonly PassiveSkill[] | null = null;
+  private static _passiveSkills: readonly PassiveSkillNode[] | null = null;
 
   // Getters publics (lecture seule)
   public static get AlternatePassiveAdditions(): readonly AlternatePassiveAddition[] | null {
@@ -46,7 +47,7 @@ export class DataManager {
     return this._alternateTreeVersions;
   }
 
-  public static get PassiveSkills(): readonly PassiveSkill[] | null {
+  public static get PassiveSkills(): readonly PassiveSkillNode[] | null {
     return this._passiveSkills;
   }
 
@@ -68,7 +69,7 @@ export class DataManager {
     } else {
       // Supprime la racine et extrait les valeurs
       const { root, ...nodes } = treeData.nodes;
-      this._passiveSkills = Object.values(nodes);
+      this._passiveSkills = Object.values(nodes).map(raw => new PassiveSkillNode(raw as PassiveSkill));
     }
 
     return !!(
@@ -108,8 +109,8 @@ export class DataManager {
       const type = this.GetPassiveSkillType(passiveSkill);
 
       if (
-        addition.AlternateTreeVersionIndex !== timelessJewel.AlternateTreeVersion.Index ||
-        !addition.ApplicablePassiveTypes.includes(type as unknown as number)
+        addition.AlternateTreeVersionsKey !== timelessJewel.AlternateTreeVersion.Index ||
+        !addition.PassiveType.includes(type as unknown as number)
       ) {
         continue;
       }
@@ -127,12 +128,12 @@ export class DataManager {
     if (!timelessJewel) throw new Error('timelessJewel is required');
 
     const candidate = (this._alternatePassiveSkills ?? []).find(
-      (s) => s.AlternateTreeVersionIndex === timelessJewel.AlternateTreeVersion.Index
+      (s) => s.AlternateTreeVersionsKey === timelessJewel.AlternateTreeVersion.Index
     );
 
     if (
       !candidate ||
-      !candidate.ApplicablePassiveTypes.includes(PassiveSkillType.KeyStone as unknown as number)
+      !candidate.PassiveType.includes(PassiveSkillType.KeyStone as unknown as number)
     ) {
       return null;
     }
@@ -156,8 +157,8 @@ export class DataManager {
       const type = this.GetPassiveSkillType(passiveSkill);
 
       if (
-        skill.AlternateTreeVersionIndex !== timelessJewel.AlternateTreeVersion.Index ||
-        !skill.ApplicablePassiveTypes.includes(type as unknown as number)
+        skill.AlternateTreeVersionsKey !== timelessJewel.AlternateTreeVersion.Index ||
+        !skill.PassiveType.includes(type as unknown as number)
       ) {
         continue;
       }
