@@ -1,158 +1,184 @@
 // Random/RandomNumberGenerator.ts
-import { PassiveSkill, PassiveSkillNode } from '../Data/Models/PassiveSkill';
+import { PassiveSkill } from '../Data/Models/PassiveSkill';
 import { TimelessJewel } from '../Game/TimelessJewel';
 
 export class RandomNumberGenerator {
-  private static readonly INITIAL_STATE_CONSTANT_0 = 0x40336050;
-  private static readonly INITIAL_STATE_CONSTANT_1 = 0xCFA3723C;
-  private static readonly INITIAL_STATE_CONSTANT_2 = 0x3CAC5F6F;
-  private static readonly INITIAL_STATE_CONSTANT_3 = 0x3793FDFF;
+    private static readonly C0 = 0x40336050 >>> 0;
+    private static readonly C1 = 0xCFA3723C >>> 0;
+    private static readonly C2 = 0x3CAC5F6F >>> 0;
+    private static readonly C3 = 0x3793FDFF >>> 0;
 
-  private state: Uint32Array;
+    private state = new Uint32Array(5);
 
-  constructor(passiveSkill: PassiveSkillNode, timelessJewel: TimelessJewel) {
-    if (!timelessJewel) throw new Error('timelessJewel is required');
+    constructor(passiveSkill: { GraphIdentifier: number }, timelessJewel: { Seed: number }) {
+        if (!timelessJewel) throw new Error("timelessJewel is null");
 
-    this.state = new Uint32Array(5);
-    this.initialize([passiveSkill.GraphIdentifier, timelessJewel.Seed]);
-  }
+        const seeds = Uint32Array.from([
+            passiveSkill.GraphIdentifier >>> 0,
+            timelessJewel.Seed >>> 0
+        ]);
 
-  // --- Public API ---
-  public generate(exclusiveMaximumValue: number): number {
-    this.logStep('Before generate');
-   if (exclusiveMaximumValue <= 0) return 0;
-    const max = exclusiveMaximumValue - 1;
-    let roundState = 0;
-    let value = 0;
-
-    do {
-      do {
-        value = (this.generateUInt() | (2 * (value << 31))) >>> 0;
-        roundState = (0xFFFFFFFF | (2 * (roundState << 31))) >>> 0;
-      } while (roundState < max);
-    } while (
-      (Math.floor(value / exclusiveMaximumValue) >= roundState) &&
-      ((roundState % exclusiveMaximumValue) !== max)
-    );
-    this.logStep('After generate');
-    return value % exclusiveMaximumValue;
-  }
-
-  public generateRange(min: number, max: number): number {
-    let a = min + 0x80000000 >>> 0;
-    let b = max + 0x80000000 >>> 0;
-    if (min >= 0x80000000) a = (min + 0x80000000) >>> 0;
-    if (max >= 0x80000000) b = (max + 0x80000000) >>> 0;
-
-    const roll = this.generate((b - a + 1) >>> 0);
-    return ((roll + a + 0x80000000) >>> 0);  // ← + 0x80000000 comme C#
-  }
-
-  // --- Private ---
-  private static manipulateAlpha(value: number): number {
-    return ((value ^ (value >> 27)) * 0x19660D) >>> 0;
-  }
-
-  private static manipulateBravo(value: number): number {
-    return ((value ^ (value >> 27)) * 0x5D588B65) >>> 0;
-  }
-
-  private initialize(seeds: number[]): void {
-    this.state[0] = 0;
-    this.state[1] = RandomNumberGenerator.INITIAL_STATE_CONSTANT_0;
-    this.state[2] = RandomNumberGenerator.INITIAL_STATE_CONSTANT_1;
-    this.state[3] = RandomNumberGenerator.INITIAL_STATE_CONSTANT_2;
-    this.state[4] = RandomNumberGenerator.INITIAL_STATE_CONSTANT_3;
-
-    let index = 1;
-    for (let i = 0; i < seeds.length; i++) {
-      const roundState = RandomNumberGenerator.manipulateAlpha(
-        this.state[(index % 4) + 1] ^
-        this.state[((index + 1) % 4) + 1] ^
-        this.state[(((index + 4) - 1) % 4) + 1]
-      ) >>> 0;
-
-      this.state[((index + 1) % 4) + 1] = (this.state[((index + 1) % 4) + 1] + roundState) >>> 0;
-      const temp = (roundState + seeds[i] + index) >>> 0;
-      this.state[(((index + 1) + 1) % 4) + 1] = (this.state[(((index + 1) + 1) % 4) + 1] + temp) >>> 0;
-      this.state[(index % 4) + 1] = temp;
-      index = (index + 1) % 4;
+        this.initialize(seeds);
     }
 
-    for (let i = 0; i < 5; i++) {
-      const roundState = RandomNumberGenerator.manipulateAlpha(
-        this.state[(index % 4) + 1] ^
-        this.state[((index + 1) % 4) + 1] ^
-        this.state[(((index + 4) - 1) % 4) + 1]
-      ) >>> 0;
+    private u32(x: number): number { return x >>> 0; }
 
-      this.state[((index + 1) % 4) + 1] = (this.state[((index + 1) % 4) + 1] + roundState) >>> 0;
-      const temp = (roundState + index) >>> 0;
-      this.state[(((index + 1) + 1) % 4) + 1] = (this.state[(((index + 1) + 1) % 4) + 1] + temp) >>> 0;
-      this.state[(index % 4) + 1] = temp;
-      index = (index + 1) % 4;
+    private static alpha(v: number): number {
+        const x = (v ^ (v >>> 27)) >>> 0;
+        return RandomNumberGenerator.mul32(x, 0x19660D);
     }
 
-    for (let i = 0; i < 4; i++) {
-      const roundState = RandomNumberGenerator.manipulateBravo(
-        this.state[(index % 4) + 1] +
-        this.state[((index + 1) % 4) + 1] +
-        this.state[(((index + 4) - 1) % 4) + 1]
-      ) >>> 0;
-
-      this.state[((index + 1) % 4) + 1] ^= roundState;
-      const temp = (roundState - index) >>> 0;
-      this.state[(((index + 1) + 1) % 4) + 1] ^= temp;
-      this.state[(index % 4) + 1] = temp;
-      index = (index + 1) % 4;
+    private static mul32(a: number, b: number): number {
+        a = a >>> 0;
+        b = b >>> 0;
+        let result = 0;
+        while (b > 0) {
+            if (b & 1) result = (result + a) >>> 0;
+            a = (a << 1) >>> 0;
+            b >>>= 1;
+        }
+        return result;
     }
 
-    for (let i = 0; i < 8; i++) {
-      this.generateNextState();
+    private static bravo(v: number): number {
+        const x = (v ^ (v >>> 27)) >>> 0;
+        return RandomNumberGenerator.mul32(x, 0x5D588B65);
     }
-  }
 
-  private generateNextState(): void {
-    let a = this.state[4];
-    let b = ((this.state[1] & 0x7FFFFFFF) ^ this.state[2]) ^ this.state[3];
+    public generate(exclusiveMax: number): number {
+        const max = this.u32(exclusiveMax - 1);
+        let roundState = 0 >>> 0;
+        let value = 0 >>> 0;
 
-    a ^= (a << 1) >>> 0;
-    b ^= ((b >>> 1) ^ a) >>> 0;
+        do {
+            do {
+                const rand = this.generateUInt();
 
-    this.state[1] = this.state[2];
-    this.state[2] = this.state[3];
-    this.state[3] = (a ^ (b << 10)) >>> 0;
-    this.state[4] = b;
+                // 2 * (value << 31) en 32 bits = (value << 1) & 0xFFFFFFFF
+                const rotated = (value << 1) >>> 0;
+                value = (rand | rotated) >>> 0;
 
-    const mask1 = (b & 1) ? 0x8F7011EE : 0;
-    const mask2 = (b & 1) ? 0xFC78FF1F : 0;
+                const rsRotated = (roundState << 1) >>> 0;
+                roundState = (0xFFFFFFFF | rsRotated) >>> 0;
 
-    this.state[2] ^= mask1;
-    this.state[3] ^= mask2;
+            } while (roundState < max);
 
-    this.state[0] = (this.state[0] + 1) >>> 0;
-  }
+        } while (
+            (Math.floor(value / exclusiveMax) >>> 0) >= roundState &&
+            ((roundState % exclusiveMax) >>> 0) !== max
+        );
 
-  private temper(): number {
-    let a = this.state[4];
-    let b = (this.state[1] + (this.state[3] >>> 8)) >>> 0;
-    a ^= b;
-    if ((b & 1) !== 0) {
-      a ^= 0x3793FDFF;
+        return (value % exclusiveMax) >>> 0;
     }
-    return a;
-  }
 
-  private generateUInt(): number {
-    this.generateNextState();
-    return this.temper();
-  }
+    public generateRange(min: number, max: number): number {
+        let a = this.u32(min + 0x80000000);
+        let b = this.u32(max + 0x80000000);
 
-  // --- DEBUG ---
-  public debugState(): string {
-    return `[${this.state[0].toString(16)}, ${this.state[1].toString(16)}, ${this.state[2].toString(16)}, ${this.state[3].toString(16)}, ${this.state[4].toString(16)}]`;
-  }
-  private logStep(msg: string) {
-    console.log(msg, this.debugState());
-  }
+        if ((min >>> 0) >= 0x80000000) a = this.u32(min + 0x80000000);
+        if ((max >>> 0) >= 0x80000000) b = this.u32(max + 0x80000000);
+
+        const range = this.u32(b - a + 1);
+        const roll = this.generate(range);
+        return this.u32(roll + a - 0x80000000);
+    }
+
+    private initialize(seeds: Uint32Array): void {
+        this.state[0] = 0;
+        this.state[1] = RandomNumberGenerator.C0;
+        this.state[2] = RandomNumberGenerator.C1;
+        this.state[3] = RandomNumberGenerator.C2;
+        this.state[4] = RandomNumberGenerator.C3;
+        let index = 1;
+
+        // Phase 1: seeds
+        for (let i = 0; i < seeds.length; i++) {
+            const idx1 = (index % 4) + 1;
+            const idx2 = ((index + 1) % 4) + 1;
+            const idx3 = (((index + 4) - 1) % 4) + 1;
+
+            const rs = RandomNumberGenerator.alpha(
+                this.state[idx1] ^ this.state[idx2] ^ this.state[idx3]
+            );
+
+            this.state[idx2] = this.u32(this.state[idx2] + rs);
+            const temp = this.u32(rs + seeds[i] + index);
+            this.state[((index + 1 + 1) % 4) + 1] = this.u32(this.state[((index + 1 + 1) % 4) + 1] + temp);
+            this.state[idx1] = temp;
+            index = (index + 1) % 4;
+        }
+        // Phase 2: 5 rounds
+        for (let i = 0; i < 5; i++) {
+            const idx1 = (index % 4) + 1;
+            const idx2 = ((index + 1) % 4) + 1;
+            const idx3 = (((index + 4) - 1) % 4) + 1;
+
+            const rs = RandomNumberGenerator.alpha(
+                this.state[idx1] ^ this.state[idx2] ^ this.state[idx3]
+            );
+
+            this.state[idx2] = this.u32(this.state[idx2] + rs);
+            const temp = this.u32(rs + index);
+            this.state[((index + 1 + 1) % 4) + 1] = this.u32(this.state[((index + 1 + 1) % 4) + 1] + temp);
+            this.state[idx1] = temp;
+            index = (index + 1) % 4;
+        }
+        // Phase 3: 4 rounds bravo
+        for (let i = 0; i < 4; i++) {
+            const idx1 = (index % 4) + 1;
+            const idx2 = ((index + 1) % 4) + 1;
+            const idx3 = (((index + 4) - 1) % 4) + 1;
+
+            const sum = this.u32(this.state[idx1] + this.state[idx2] + this.state[idx3]);
+            let rs = RandomNumberGenerator.bravo(sum);
+            this.state[idx2] ^= rs;
+
+            const temp = this.u32(rs - index);
+            this.state[((index + 1 + 1) % 4) + 1] ^= temp;
+
+            this.state[idx1] = temp;
+
+            index = (index + 1) % 4;
+        }
+        // Phase 4: 8 warm-up
+        for (let i = 0; i < 8; i++) {
+            this.generateNextState();
+        }
+    }
+
+    private generateNextState(): void {
+        const a = this.state[4];
+        const b = (this.state[1] & 0x7FFFFFFF) ^ this.state[2] ^ this.state[3];
+
+        const na = a ^ ((a << 1) >>> 0);
+        const nb = b ^ (((b >>> 1) ^ na) >>> 0);
+
+        this.state[1] = this.state[2];
+        this.state[2] = this.state[3];
+        this.state[3] = (na ^ ((nb << 10) >>> 0)) >>> 0;
+        this.state[4] = nb;
+
+        const mask = (nb & 1) ? 0xFFFFFFFF : 0;
+        this.state[2] ^= (mask & 0x8F7011EE) >>> 0;
+        this.state[3] ^= (mask & 0xFC78FF1F) >>> 0;
+
+        this.state[0] = this.u32(this.state[0] + 1);
+    }
+
+    private temper(): number {
+        let a = this.state[4];
+        let b = this.u32(this.state[1] + (this.state[3] >>> 8));
+        a ^= b;
+        if (b & 1) a ^= 0x3793FDFF;
+        return a >>> 0;
+    }
+
+    private generateUInt(): number {
+        this.generateNextState();
+        return this.temper();
+    }
+
+    public getState(): Uint32Array {
+        return new Uint32Array(this.state);
+    }
 }

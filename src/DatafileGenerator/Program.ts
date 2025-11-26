@@ -40,38 +40,6 @@ async function main() {
   if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
 
   const notables = getModifiableNodes(true);
-  const testNode = notables.find(n => n.GraphIdentifier === 49445); // ou un notable connu
-  if (!testNode) {
-    console.error('Nœud test non trouvé');
-    process.exit(1);
-  }
-
-  const jewel = new TimelessJewel(
-    DataManager.AlternateTreeVersions!.find(v => v.Index === 2)!,
-    10000
-  );
-
-  const manager = new AlternateTreeManager(testNode, jewel);
-  const replaced = manager.IsPassiveSkillReplaced();
-  console.log('Replaced:', replaced);
-
-  if (replaced) {
-    const result = manager.ReplacePassiveSkill();
-    console.log('→ Replacement:', result.AlternatePassiveSkill.Name);
-    console.log('→ Stats:', Object.values(result.StatRolls));
-    console.log('→ Additions:', result.AlternatePassiveAdditionInformations.map(a => ({
-      name: a.AlternatePassiveAddition.StatsKeys[0] || 'Unknown',
-      value: a.StatRolls[0]
-    })));
-  } else {
-    const adds = manager.AugmentPassiveSkill();
-    console.log('→ Additions:', adds.map(a => ({
-      name: a.AlternatePassiveAddition.StatsKeys[0] || 'Unknown',
-      value: a.StatRolls[0]
-    })));
-  }
-  return;
-
   const smalls = getModifiableNodes(false);
   notables.sort((a, b) => a.GraphIdentifier - b.GraphIdentifier);
   smalls.sort((a, b) => a.GraphIdentifier - b.GraphIdentifier);
@@ -189,9 +157,7 @@ async function generateJsonOutput(
     nodes: {}
   };
 
-  let filteredNotables = notables.filter(n => n.name == 'Deep Breaths')
-  for (const node of filteredNotables) {
-    console.log(node);
+  for (const node of notables) {
     const manager = new AlternateTreeManager(node, jewel);
     const entry: any = {
       name: node.Name
@@ -211,7 +177,6 @@ async function generateJsonOutput(
       });
     } else {
       const adds = manager.AugmentPassiveSkill();
-      console.log(adds);
       entry.replacement = null;
       entry.additions = adds.map(add => {
         const addData = DataManager.AlternatePassiveAdditions!.find(a => a._rid === add.AlternatePassiveAddition._rid);
@@ -221,7 +186,6 @@ async function generateJsonOutput(
         };
       });
     }
-    console.log(entry);
 
     result.nodes[node.GraphIdentifier] = entry;
   }

@@ -2,13 +2,7783 @@
   "jewel": "LethalPride",
   "seed": 10000,
   "nodes": {
-    "49445": {
-      "name": "Deep Breaths",
+    "6": {
+      "name": "Twin Terrors",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "33": {
+      "name": "Lord of Drought",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "37": {
+      "name": "Martial Prowess",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "68": {
+      "name": "Hulking Corpses",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "203": {
+      "name": "Vinespike Cordial",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "408": {
+      "name": "Cooked Alive",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "529": {
+      "name": "Poisonous Fangs",
       "replacement": null,
       "additions": [
         {
           "name": 211,
           "value": 20
+        }
+      ]
+    },
+    "544": {
+      "name": "Surveillance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "570": {
+      "name": "Dazzling Strikes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "784": {
+      "name": "Conjured Wall",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "861": {
+      "name": "Aggressive Bastion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "907": {
+      "name": "Introspection",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "981": {
+      "name": "Furious Assault",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "1006": {
+      "name": "Potency of Will",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "1066": {
+      "name": "Seal Mender",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "1067": {
+      "name": "Wind-up",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "1325": {
+      "name": "Golem's Blood",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "1340": {
+      "name": "Rampart",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "1365": {
+      "name": "Knowledge Barrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "1382": {
+      "name": "Spirit Void",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "1405": {
+      "name": "From the Shadows",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "1478": {
+      "name": "Deadly Repartee",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "1494": {
+      "name": "Unspeakable Gifts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 8241,
+          "value": 10
+        }
+      ]
+    },
+    "1568": {
+      "name": "Fatal Blade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "1581": {
+      "name": "Non-Flammable",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "2004": {
+      "name": "Snaring Spirits",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "2220": {
+      "name": "Clarity of Purpose",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "2225": {
+      "name": "Eagle Eye",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "2264": {
+      "name": "Unholy Grace",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "2275": {
+      "name": "Nature's Concoction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "2306": {
+      "name": "Corrosive Elements",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "2550": {
+      "name": "Arsonist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "2599": {
+      "name": "Prepared Response",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "2655": {
+      "name": "Martial Momentum",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "2715": {
+      "name": "Quickstep",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "2796": {
+      "name": "Master the Fundamentals",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "2959": {
+      "name": "Season of Ice",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "2977": {
+      "name": "Overwhelming Malice",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "3195": {
+      "name": "Legacy of the Wilds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "3309": {
+      "name": "Fleetfoot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "3452": {
+      "name": "Foresight",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "3723": {
+      "name": "Wall of Muscle",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "3805": {
+      "name": "Force Multiplier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "4094": {
+      "name": "Brewed for Potency",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "4177": {
+      "name": "Spiritual Aid",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "4205": {
+      "name": "Weight Advantage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "4207": {
+      "name": "Window of Opportunity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "4354": {
+      "name": "Beacon of Hope",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "4481": {
+      "name": "Forces of Nature",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "4641": {
+      "name": "Flexible Sentry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "4833": {
+      "name": "Vigour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "4854": {
+      "name": "Asylum",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "4918": {
+      "name": "Indiscriminate Revenge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "4940": {
+      "name": "Cleaving",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "4942": {
+      "name": "Vivid Hues",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "4958": {
+      "name": "Liquid Inspiration",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "5075": {
+      "name": "Fasting",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "5126": {
+      "name": "Spinecruncher",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "5190": {
+      "name": "Burden Projection",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "5289": {
+      "name": "Battle Rouse",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "5430": {
+      "name": "Magmatic Strikes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "5456": {
+      "name": "Might",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "5574": {
+      "name": "Force of Darkness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "5624": {
+      "name": "Crusader",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "5781": {
+      "name": "Pure Agony",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "5823": {
+      "name": "Coordination",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "6233": {
+      "name": "Blast Waves",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "6237": {
+      "name": "Precision",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "6258": {
+      "name": "Blanketed Snow",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "6289": {
+      "name": "Bloodless",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "6553": {
+      "name": "Brutal Infamy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "6615": {
+      "name": "Arcing Blows",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "6696": {
+      "name": "Haunting Shout",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "6703": {
+      "name": "Raze and Pillage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "6770": {
+      "name": "Arcane Guarding",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "6783": {
+      "name": "Savage Skewering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "6799": {
+      "name": "Charisma",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "6967": {
+      "name": "Safeguard",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "7039": {
+      "name": "Doryani's Lesson",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "7069": {
+      "name": "Split Shot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "7085": {
+      "name": "Weapon Artistry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "7107": {
+      "name": "Warning Call",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "7136": {
+      "name": "Master Sapper",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "7263": {
+      "name": "Swift Venoms",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "7279": {
+      "name": "Wish for Death",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "7343": {
+      "name": "Arcing Shot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "7440": {
+      "name": "Harvester of Foes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "7555": {
+      "name": "Crackling Speed",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "7688": {
+      "name": "Enduring Bond",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "7918": {
+      "name": "Enigmatic Defence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "8001": {
+      "name": "Clever Thief",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "8135": {
+      "name": "Practical Application",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "8258": {
+      "name": "Rend",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "8458": {
+      "name": "Longshot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "8833": {
+      "name": "Heart of Ice",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "8897": {
+      "name": "Dark Messenger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "8920": {
+      "name": "Backstabbing",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "8949": {
+      "name": "Peak Vigour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "9015": {
+      "name": "Dire Torment",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "9042": {
+      "name": "Enduring Ward",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "9055": {
+      "name": "Volatile Mines",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "9194": {
+      "name": "Merciless Skewering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "9245": {
+      "name": "Readiness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "9261": {
+      "name": "Disciple of the Forbidden",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "9276": {
+      "name": "Darting Movements",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "9372": {
+      "name": "Blood Artist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "9432": {
+      "name": "Mental Rapidity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "9495": {
+      "name": "Hound's Mark",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "9535": {
+      "name": "Hunter's Gambit",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "9567": {
+      "name": "Light Eater",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "9788": {
+      "name": "Nimbleness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "9864": {
+      "name": "Growth and Decay",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "10016": {
+      "name": "Executioner",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "10115": {
+      "name": "Prodigal Perfection",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "10153": {
+      "name": "Physique",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "10355": {
+      "name": "Circling Oblivion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "10409": {
+      "name": "Sage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "10511": {
+      "name": "Tolerance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "10542": {
+      "name": "Spiked Bulwark",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "10835": {
+      "name": "Dreamer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "10952": {
+      "name": "Wrapped in Flame",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "11011": {
+      "name": "Rote Reinforcement",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "11199": {
+      "name": "Bodyguards",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "11318": {
+      "name": "Confident Combatant",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "11420": {
+      "name": "Arcanist's Dominion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "11513": {
+      "name": "Conservation of Energy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "11535": {
+      "name": "Skeletal Atrophy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "11645": {
+      "name": "Breath of Lightning",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "11661": {
+      "name": "Powerful Assault",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "11730": {
+      "name": "Endurance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "11784": {
+      "name": "Vampirism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "11820": {
+      "name": "Anointed Flesh",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "11924": {
+      "name": "Breath of Flames",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "11995": {
+      "name": "Eternal Suffering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "12033": {
+      "name": "Wicked Blade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "12143": {
+      "name": "Influence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "12149": {
+      "name": "Assert Dominance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "12400": {
+      "name": "Shrieking Bolts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "12702": {
+      "name": "Path of the Warrior",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "12795": {
+      "name": "Versatility",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "12806": {
+      "name": "Strike Leader",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "12809": {
+      "name": "Berserking",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "12867": {
+      "name": "Mindfulness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "12878": {
+      "name": "Retaliation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "13054": {
+      "name": "Overlord",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "13164": {
+      "name": "Divine Judgement",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "13375": {
+      "name": "Multishot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "13392": {
+      "name": "Grand Design",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "13549": {
+      "name": "Blacksmith",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "13703": {
+      "name": "Defiant Stand",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "13739": {
+      "name": "Always Angry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "13790": {
+      "name": "Smoking Remains",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "13812": {
+      "name": "Aerodynamics",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "13922": {
+      "name": "Steadfast",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "13935": {
+      "name": "Thrill of Battle",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "13950": {
+      "name": "Ancestral Inspiration",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "14001": {
+      "name": "Unfaltering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "14061": {
+      "name": "Misery Everlasting",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "14079": {
+      "name": "Wood, Stone, and Spell",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "14085": {
+      "name": "Thaumophage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "14412": {
+      "name": "Dragon Hunter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "14418": {
+      "name": "Master of Fear",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "14431": {
+      "name": "Martial Mastery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "14518": {
+      "name": "Fuel the Fight",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "14587": {
+      "name": "Adaptive Steel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "14606": {
+      "name": "Butchery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "14665": {
+      "name": "Divine Wrath",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "14813": {
+      "name": "Revelry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "15027": {
+      "name": "Beef",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "15046": {
+      "name": "Redemption",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "15085": {
+      "name": "Ambidexterity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "15175": {
+      "name": "Daring Ideas",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "15226": {
+      "name": "Cruel Retort",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "15290": {
+      "name": "Watchtowers",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "15344": {
+      "name": "Freedom of Movement",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "15400": {
+      "name": "Skittering Runes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "15437": {
+      "name": "Deflection",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "15538": {
+      "name": "Feast of Flesh",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "15614": {
+      "name": "Claws of the Hawk",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "15711": {
+      "name": "Blast Radius",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "15842": {
+      "name": "One With Nature",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "15852": {
+      "name": "Ethereal Feast",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "15990": {
+      "name": "Arcane Adept",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "16236": {
+      "name": "Toxic Strikes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "16243": {
+      "name": "Fusillade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "16246": {
+      "name": "Tranquility",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "16540": {
+      "name": "Doedre's Apathy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "16650": {
+      "name": "Rotten Claws",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "16703": {
+      "name": "Skull Cracking",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "16952": {
+      "name": "Cult-Leader",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "17050": {
+      "name": "Prismatic Heart",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "17066": {
+      "name": "Empowered Envoy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "17171": {
+      "name": "Flash Freeze",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "17255": {
+      "name": "Disorienting Display",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "17608": {
+      "name": "Silent Steps",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "17662": {
+      "name": "Tempt the Storm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "17769": {
+      "name": "Pure Might",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "17816": {
+      "name": "Cry Wolf",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "17905": {
+      "name": "Lasting Impression",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "18025": {
+      "name": "Hard Knocks",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "18155": {
+      "name": "No Witnesses",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "18174": {
+      "name": "Mystic Bulwark",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "18357": {
+      "name": "Feline Swiftness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "18412": {
+      "name": "Phlebotomist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "18463": {
+      "name": "Battlefield Dominator",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "18624": {
+      "name": "Doedre's Spite",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "18703": {
+      "name": "Graceful Assault",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "18707": {
+      "name": "Perfectionist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "18769": {
+      "name": "Written in Blood",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "18861": {
+      "name": "Deep Chill",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "18865": {
+      "name": "Melding",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "19069": {
+      "name": "Thick Skin",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "19103": {
+      "name": "Righteous Army",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "19144": {
+      "name": "Sentinel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "19506": {
+      "name": "Path of the Hunter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "19508": {
+      "name": "Hibernator",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "19686": {
+      "name": "Wasting Affliction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "19723": {
+      "name": "Surging Vitality",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "19730": {
+      "name": "Assured Strike",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "19794": {
+      "name": "Concussive Force",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "19858": {
+      "name": "Herbalism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "19897": {
+      "name": "Death Attunement",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "20241": {
+      "name": "Energy From Naught",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "20343": {
+      "name": "Inspired Oppression",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "20383": {
+      "name": "Careful Handling",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "20528": {
+      "name": "Instability",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "20533": {
+      "name": "Arcane Heroism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "20605": {
+      "name": "No Forgiveness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "20832": {
+      "name": "Sanctuary",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "20834": {
+      "name": "Broadside",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "20835": {
+      "name": "Brinkmanship",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "20968": {
+      "name": "Openness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "20996": {
+      "name": "Fearsome Warrior",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "21228": {
+      "name": "Piercing Shots",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "21297": {
+      "name": "High Explosives",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "21330": {
+      "name": "Quick Recovery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "21389": {
+      "name": "Runesmith",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "21413": {
+      "name": "Combat Stamina",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "21435": {
+      "name": "Cloth and Chain",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "21460": {
+      "name": "Breath of Rime",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "21602": {
+      "name": "Destructive Apparatus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "21634": {
+      "name": "Arcane Chemistry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "21688": {
+      "name": "Antivenom",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "21907": {
+      "name": "Uncompromising",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "21958": {
+      "name": "Cruel Preparation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "21973": {
+      "name": "Decay Ward",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "22002": {
+      "name": "Capacitor",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "22133": {
+      "name": "Invigorating Blaze",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "22356": {
+      "name": "Hematophagy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "22434": {
+      "name": "Surprise Sabotage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "22535": {
+      "name": "Whispers of Doom",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "22540": {
+      "name": "Feasting Fiends",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "22581": {
+      "name": "Devastator",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "22607": {
+      "name": "Storm Drinker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "22702": {
+      "name": "Serpent Stance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "22704": {
+      "name": "Untouchable",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "22706": {
+      "name": "Savage Intensity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "22972": {
+      "name": "Wandslinger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "23038": {
+      "name": "Slaughter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "23042": {
+      "name": "Aerialist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "23066": {
+      "name": "Savagery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "23113": {
+      "name": "Cold-Blooded Killer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "23232": {
+      "name": "Insatiable Killer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "23238": {
+      "name": "Quick Getaway",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "23335": {
+      "name": "Grim Oath",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "23549": {
+      "name": "Incorporeal",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "23690": {
+      "name": "Essence Infusion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "23884": {
+      "name": "Holistic Health",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "23989": {
+      "name": "Veteran Defender",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "24038": {
+      "name": "Endbringer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "24050": {
+      "name": "Coldhearted Calculation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "24067": {
+      "name": "Instinct",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "24133": {
+      "name": "Survivalist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "24256": {
+      "name": "Dynamo",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "24324": {
+      "name": "Explosive Impact",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "24357": {
+      "name": "Disciples",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "24358": {
+      "name": "Selective Precision",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "24362": {
+      "name": "Deep Thoughts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "24383": {
+      "name": "Warrior's Blood",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "24484": {
+      "name": "Combat Rhythm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "24645": {
+      "name": "Guerilla Tactics",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "24716": {
+      "name": "Battle Trance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "24721": {
+      "name": "Ribcage Crusher",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "24858": {
+      "name": "Harpooner",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "24889": {
+      "name": "Mage Bane",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "25058": {
+      "name": "Blood Siphon",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "25178": {
+      "name": "Primal Spirit",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "25282": {
+      "name": "Spiked Concoction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "25367": {
+      "name": "Blade Master",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "25409": {
+      "name": "Indomitable Army",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "25411": {
+      "name": "Infused",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "25439": {
+      "name": "Undertaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "25450": {
+      "name": "Mage Hunter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "25456": {
+      "name": "Dervish",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "25563": {
+      "name": "Cold Conduction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "25738": {
+      "name": "Relentless Pursuit",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "25938": {
+      "name": "Blizzard Caller",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "25966": {
+      "name": "Savage Response",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "25970": {
+      "name": "Acrimony",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "25989": {
+      "name": "Nomadic Teachings",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "26023": {
+      "name": "Savage Wounds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "26096": {
+      "name": "Hatchet Master",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "26179": {
+      "name": "Student of Decay",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "26197": {
+      "name": "Feed the Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "26294": {
+      "name": "Bloodletting",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "26322": {
+      "name": "Pure Guile",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "26557": {
+      "name": "Static Blows",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 8241,
+          "value": 10
+        }
+      ]
+    },
+    "26564": {
+      "name": "Vanquisher",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "26620": {
+      "name": "Corruption",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "26763": {
+      "name": "Perfected Formula",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "26839": {
+      "name": "Chip Away",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "26866": {
+      "name": "Sanctity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "26960": {
+      "name": "Forethought",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "27119": {
+      "name": "Tribal Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "27137": {
+      "name": "Sanctum of Thought",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "27163": {
+      "name": "Arcane Will",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "27190": {
+      "name": "Overprepared",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "27203": {
+      "name": "Heart and Soul",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "27301": {
+      "name": "Martial Experience",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "27308": {
+      "name": "Gravepact",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "27422": {
+      "name": "Spirit of War",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "27611": {
+      "name": "Lord of the Dead",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "27623": {
+      "name": "Harsh Lessons",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "27788": {
+      "name": "Blood Drinker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "27806": {
+      "name": "As The Thunder",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "27929": {
+      "name": "Deep Wisdom",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "28015": {
+      "name": "Iron Breaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "28034": {
+      "name": "Empowered Bond",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "28146": {
+      "name": "Brush with Death",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "28338": {
+      "name": "Righteous Path",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "28384": {
+      "name": "Powerful Ward",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "28398": {
+      "name": "Precise Retaliation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "28449": {
+      "name": "Surge of Vigour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "28503": {
+      "name": "Life Raker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "28551": {
+      "name": "Heraldry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "28635": {
+      "name": "Vicious Skewering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "28682": {
+      "name": "Overshock",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "28744": {
+      "name": "Mob Mentality",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "28754": {
+      "name": "Assassination",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "28878": {
+      "name": "Relentless",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "29049": {
+      "name": "Holy Fire",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "29096": {
+      "name": "Rot-Resistant",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "29193": {
+      "name": "Set and Forget",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "29381": {
+      "name": "Ravenous Horde",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "29450": {
+      "name": "Rattling Bellow",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "29522": {
+      "name": "Dance of Blades",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "29540": {
+      "name": "Master of Command",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "29748": {
+      "name": "Blowback",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "29764": {
+      "name": "Aggressive Defence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "29861": {
+      "name": "Explosive Runes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "30160": {
+      "name": "Fending",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "30225": {
+      "name": "Lightning Walker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "30302": {
+      "name": "Hearty",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "30439": {
+      "name": "Lava Lash",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "30471": {
+      "name": "True Strike",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "30622": {
+      "name": "Storm's Hand",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "30693": {
+      "name": "Divine Fervour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "30974": {
+      "name": "Expert Hunter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "31033": {
+      "name": "Robust",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "31257": {
+      "name": "Natural Authority",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "31333": {
+      "name": "Frantic Aspect",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "31359": {
+      "name": "Fatal Toxins",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "31440": {
+      "name": "Ancestral Echo",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "31473": {
+      "name": "Master of Wounds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "31508": {
+      "name": "Aspect of the Lynx",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "31513": {
+      "name": "Adjacent Animosity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "31585": {
+      "name": "Careful Conservationist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "31825": {
+      "name": "Paralysis",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 8241,
+          "value": 10
+        }
+      ]
+    },
+    "32031": {
+      "name": "Stubborn Student",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "32059": {
+      "name": "Titanic Impacts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "32176": {
+      "name": "Soul Thief",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "32227": {
+      "name": "Adder's Touch",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "32245": {
+      "name": "Expertise",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "32259": {
+      "name": "Mortifying Aspect",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "32345": {
+      "name": "Alacrity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "32415": {
+      "name": "Essence Rush",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "32455": {
+      "name": "Storm Weaver",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "32681": {
+      "name": "Mark the Prey",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "32738": {
+      "name": "Wall of Steel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "32853": {
+      "name": "Sione's Ambition",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "32932": {
+      "name": "Sovereignty",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "33002": {
+      "name": "Explosive Force",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "33082": {
+      "name": "Razor's Edge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "33182": {
+      "name": "Provocateur",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "33232": {
+      "name": "Self-Control",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "33287": {
+      "name": "Juggernaut",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "33435": {
+      "name": "Holy Dominion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "33482": {
+      "name": "Master of Fire",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "33545": {
+      "name": "Harrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "33582": {
+      "name": "Forceful Skewering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "33676": {
+      "name": "Antifreeze",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "33698": {
+      "name": "Will Shaper",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "33718": {
+      "name": "Champion of the Cause",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "33722": {
+      "name": "Hollow Effigy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "33725": {
+      "name": "Swagger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "33777": {
+      "name": "Devastating Devices",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "33903": {
+      "name": "Will of Blades",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "34009": {
+      "name": "Master of the Arena",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "34108": {
+      "name": "Mystical Ward",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "34173": {
+      "name": "Overcharge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "34205": {
+      "name": "Practiced Caster",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "34284": {
+      "name": "Seasoned Swordplay",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "34506": {
+      "name": "Golem Commander",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "34581": {
+      "name": "Flow of Life",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "34591": {
+      "name": "Malicious Intent",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "34595": {
+      "name": "Wicked Pall",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "34601": {
+      "name": "Proficiency",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "34661": {
+      "name": "Fire Walker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "34666": {
+      "name": "Destroyer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "34973": {
+      "name": "Measured Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "34978": {
+      "name": "Colloidal Mixture",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "35233": {
+      "name": "Discord Artisan",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "35363": {
+      "name": "Stoic Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "35430": {
+      "name": "Thunderstruck",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "35436": {
+      "name": "Kinetic Impacts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "35663": {
+      "name": "Strong Arm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "35685": {
+      "name": "Fearsome Force",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "35790": {
+      "name": "Advance Guard",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "35894": {
+      "name": "Trickery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "35958": {
+      "name": "Faith and Steel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "36276": {
+      "name": "Brand Loyalty",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "36281": {
+      "name": "Primeval Force",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "36370": {
+      "name": "Low Tolerance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "36455": {
+      "name": "Gladiatorial Combat",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "36490": {
+      "name": "Flaying",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "36645": {
+      "name": "Streamlined",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "36655": {
+      "name": "Lead By Example",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "36687": {
+      "name": "Avatar of the Hunt",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "36736": {
+      "name": "Burning Brutality",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "36776": {
+      "name": "Widespread Destruction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "36807": {
+      "name": "Gladiator's Fortitude",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "36859": {
+      "name": "Steelwood Stance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "36874": {
+      "name": "Wisdom of the Glade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "36915": {
+      "name": "Sacrifice",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "36949": {
+      "name": "Devotion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "37078": {
+      "name": "Path of the Savant",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "37326": {
+      "name": "Stamina",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "37358": {
+      "name": "Seeker Runes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "37384": {
+      "name": "Compound Injury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "37403": {
+      "name": "Infused Flesh",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "37425": {
+      "name": "Practised Reapplication",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "37478": {
+      "name": "Stormrider",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "37504": {
+      "name": "Intuition",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "37512": {
+      "name": "Bastion of Faith",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "37647": {
+      "name": "Dismembering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "37882": {
+      "name": "Doedre's Gluttony",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "38246": {
+      "name": "Presage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "38275": {
+      "name": "Unwavering Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "38399": {
+      "name": "Septic Spells",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "38516": {
+      "name": "Righteous Decree",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "38563": {
+      "name": "Tempered Arrowheads",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "38592": {
+      "name": "Unwaveringly Evil",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "38633": {
+      "name": "Pressure Points",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "38683": {
+      "name": "Winter Prowler",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "38706": {
+      "name": "Way of the Warrior",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "38790": {
+      "name": "Heavy Hitter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "38849": {
+      "name": "Searing Heat",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "38922": {
+      "name": "Goliath",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "39006": {
+      "name": "Bloodscent",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "39058": {
+      "name": "Quick and Deadly",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "39331": {
+      "name": "Heart of Iron",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "39530": {
+      "name": "Vitality Void",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "39657": {
+      "name": "Pain Forger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "39738": {
+      "name": "Fan of Blades",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "39743": {
+      "name": "Dark Arts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "39761": {
+      "name": "Counterweight",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "39874": {
+      "name": "Blast-Freeze",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "39904": {
+      "name": "Brutal Skewering",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "39986": {
+      "name": "Defiled Forces",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "40181": {
+      "name": "Elegant Form",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "40402": {
+      "name": "Invigorating Portents",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "40619": {
+      "name": "Awe and Terror",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "40645": {
+      "name": "Bone Breaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "40743": {
+      "name": "Crystal Skin",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "40828": {
+      "name": "Dark Ideation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "40849": {
+      "name": "Persistence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "40858": {
+      "name": "Adrenaline",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "40870": {
+      "name": "Snowstorm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "41056": {
+      "name": "Opportunistic Fusilade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "41119": {
+      "name": "Lethality",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "41137": {
+      "name": "Field Medicine",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "41169": {
+      "name": "Jagged Wounds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "41284": {
+      "name": "Drive the Destruction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "41305": {
+      "name": "Crushing Reply",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "41307": {
+      "name": "Deadly Inclinations",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "41420": {
+      "name": "Natural Remedies",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "41472": {
+      "name": "Discipline and Training",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "41476": {
+      "name": "Elder Power",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "41509": {
+      "name": "Mender's Wellspring",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "41594": {
+      "name": "Calamitous",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "41595": {
+      "name": "Marked for Death",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "41870": {
+      "name": "Winter's Embrace",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "41983": {
+      "name": "Vicious Bite",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "41989": {
+      "name": "Resourcefulness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "42009": {
+      "name": "Soul of Steel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "42024": {
+      "name": "Improvisor",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "42041": {
+      "name": "Profane Chemistry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "42068": {
+      "name": "Follow-Through",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "42117": {
+      "name": "Sadist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "42126": {
+      "name": "Blessed Rebirth",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "42145": {
+      "name": "Intensity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "42305": {
+      "name": "Evil Eye",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "42313": {
+      "name": "Prismatic Dance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "42338": {
+      "name": "Disorienting Wounds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "42443": {
+      "name": "Frenetic",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "42530": {
+      "name": "Fire Attunement",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "42601": {
+      "name": "Exploit Weakness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "42636": {
+      "name": "Holy Conquest",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "42648": {
+      "name": "Sap Psyche",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "42649": {
+      "name": "Snowforged",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "42686": {
+      "name": "Elemental Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "42687": {
+      "name": "Graceful Execution",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "42720": {
+      "name": "Heavy Draw",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "42795": {
+      "name": "Arcane Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "42804": {
+      "name": "Mind Drinker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "42917": {
+      "name": "Whirling Barrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "42929": {
+      "name": "Victim Maker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "43385": {
+      "name": "Winter Spirit",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "43689": {
+      "name": "Spiritual Command",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "43834": {
+      "name": "Scintillating Idea",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "44102": {
+      "name": "Efficient Explosives",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "44103": {
+      "name": "Reflexes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "44191": {
+      "name": "As The Mountain",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "44203": {
+      "name": "Wizardry",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "44207": {
+      "name": "Testudo",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "44237": {
+      "name": "Prodigious Defence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "44347": {
+      "name": "Divine Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "44544": {
+      "name": "Basics of Pain",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "44562": {
+      "name": "Shaman's Dominion",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "44670": {
+      "name": "Smite the Weak",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "44731": {
+      "name": "Master of the Maelstrom",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "44788": {
+      "name": "Potent Connections",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "44824": {
+      "name": "Mysticism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "44955": {
+      "name": "Frost Walker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "44988": {
+      "name": "Wasting",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "45067": {
+      "name": "Thrill Killer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "45128": {
+      "name": "Fan the Flames",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "45283": {
+      "name": "Cornered Prey",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "45317": {
+      "name": "Ash, Frost and Storm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "45329": {
+      "name": "Trick Shot",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "45608": {
+      "name": "Successive Detonations",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "45657": {
+      "name": "Trial of the Faith",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "45803": {
+      "name": "Veteran Soldier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "45935": {
+      "name": "Unrestrained Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "45945": {
+      "name": "Conjured Barrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "46074": {
+      "name": "Shifting Shadow",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "46264": {
+      "name": "Enduring Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "46408": {
+      "name": "Fangs of the Viper",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "46471": {
+      "name": "Powerful Bond",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "46842": {
+      "name": "Arcane Potency",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "46904": {
+      "name": "Arcane Sanctuary",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "46965": {
+      "name": "Saboteur",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "47065": {
+      "name": "Master of Blades",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "47306": {
+      "name": "Throatseeker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "47393": {
+      "name": "Spiteful Presence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "47424": {
+      "name": "Steady Torment",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "47471": {
+      "name": "Overcharged",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "47484": {
+      "name": "Depth Perception",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "47584": {
+      "name": "Special Reserve",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "47743": {
+      "name": "Farsight",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "48298": {
+      "name": "Insightfulness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "48438": {
+      "name": "Bravery",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "48550": {
+      "name": "Titanic Swings",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "48556": {
+      "name": "Heart of Darkness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "48614": {
+      "name": "Fervour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "48698": {
+      "name": "Void Barrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "48803": {
+      "name": "Molten One's Mark",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "48807": {
+      "name": "Art of the Gladiator",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "48823": {
+      "name": "Deadly Draw",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "48925": {
+      "name": "Expansive Might",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "49254": {
+      "name": "Retribution",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "49273": {
+      "name": "Touch of Cruelty",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "49318": {
+      "name": "Wrecking Ball",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "49379": {
+      "name": "Hired Killer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "49416": {
+      "name": "Adamant",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "49445": {
+      "name": "Deep Breaths",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "49459": {
+      "name": "King of the Hill",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "49538": {
+      "name": "Defiance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "49621": {
+      "name": "Acuity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "49645": {
+      "name": "Cauterisation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "49694": {
+      "name": "Peace Amidst Chaos",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "49772": {
+      "name": "Utmost Might",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "49969": {
+      "name": "Courage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "50029": {
+      "name": "Unnatural Calm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "50197": {
+      "name": "Ancestral Knowledge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "50338": {
+      "name": "Ballistics",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "50690": {
+      "name": "Replenishing Remedies",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "50820": {
+      "name": "Militarism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "50842": {
+      "name": "Veteran's Wrath",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "50858": {
+      "name": "Admonisher",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "51108": {
+      "name": "Arcane Capacitor",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "51212": {
+      "name": "Entropy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "51360": {
+      "name": "Mixed Munitions",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "51421": {
+      "name": "Pure Aptitude",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "51440": {
+      "name": "Druidic Rite",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "51467": {
+      "name": "Astonishing Affliction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "51523": {
+      "name": "Born of Chaos",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "51541": {
+      "name": "Eye of the Storm",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "51559": {
+      "name": "Smashing Strikes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "51748": {
+      "name": "Last Rites",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "51870": {
+      "name": "Purposeful Harbinger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "51881": {
+      "name": "Master Fletcher",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "52030": {
+      "name": "Burst of Energy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "52031": {
+      "name": "Disintegration",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "52058": {
+      "name": "Arcane Pyrotechnics",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "52090": {
+      "name": "Feller of Foes",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "52157": {
+      "name": "Soul Siphon",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "52230": {
+      "name": "Weathered Hunter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "52282": {
+      "name": "Tenacity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "52544": {
+      "name": "Savour the Moment",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "52714": {
+      "name": "Prowess",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "52742": {
+      "name": "Hasty Demise",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "52789": {
+      "name": "Circle of Life",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "52844": {
+      "name": "Fettle",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "53013": {
+      "name": "Atrophy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "53042": {
+      "name": "Exceptional Performance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "53067": {
+      "name": "One with the Shield",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "53114": {
+      "name": "Revenge of the Hunted",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "53118": {
+      "name": "Barbarism",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "53285": {
+      "name": "Repeater",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "53318": {
+      "name": "Battle-Hardened",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "53493": {
+      "name": "Annihilation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "53573": {
+      "name": "Arcane Expanse",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "53652": {
+      "name": "Steeped in the Profane",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "53757": {
+      "name": "Shamanistic Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "53759": {
+      "name": "Cleansed Thoughts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "53802": {
+      "name": "Essence Extraction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "53840": {
+      "name": "Vengeance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "54142": {
+      "name": "Finesse",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "54170": {
+      "name": "Eye to Eye",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "54209": {
+      "name": "Ancestral Guidance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "54268": {
+      "name": "Blade Barrier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "54382": {
+      "name": "Vital Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "54436": {
+      "name": "Cold to the Core",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "54629": {
+      "name": "Inexorable",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "54694": {
+      "name": "Light of Divinity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "54713": {
+      "name": "Force Shaper",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "54760": {
+      "name": "Expert Sabotage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "54766": {
+      "name": "Prismatic Carapace",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "54776": {
+      "name": "Mana Flows",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "54791": {
+      "name": "Claws of the Magpie",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "54798": {
+      "name": "Insulated",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "55002": {
+      "name": "Righteous Fury",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "55022": {
+      "name": "Call to the Slaughter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "55114": {
+      "name": "Utmost Intellect",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "55171": {
+      "name": "Dread March",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "55194": {
+      "name": "Settling Ash",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "55380": {
+      "name": "Clever Construction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "55381": {
+      "name": "Arcane Retaliation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "55485": {
+      "name": "Constitution",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "55714": {
+      "name": "Precise Focus",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "55772": {
+      "name": "Blacksmith's Clout",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "56029": {
+      "name": "Agility",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "56065": {
+      "name": "Burning Bright",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "56070": {
+      "name": "Exposure Therapy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "56094": {
+      "name": "One with the River",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "56146": {
+      "name": "Deliberate Brutality",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "56207": {
+      "name": "Hardened Scars",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "56274": {
+      "name": "Lasting Tempest",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "56276": {
+      "name": "Nightstalker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "56330": {
+      "name": "Flow of Battle",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "56359": {
+      "name": "Cannibalistic Rite",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "56648": {
+      "name": "Claws of the Falcon",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "56686": {
+      "name": "Ancestral Preservation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "56696": {
+      "name": "Cremator",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "56716": {
+      "name": "Heart of Thunder",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "56760": {
+      "name": "Deep Cuts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "56879": {
+      "name": "Haemorrhage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "56886": {
+      "name": "Distilled Perfection",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "57006": {
+      "name": "Vengeant Cascade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "57104": {
+      "name": "Evil Eye",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "57141": {
+      "name": "Disease Vector",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "57199": {
+      "name": "Fangs of Frost",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "57212": {
+      "name": "Ancestral Reach",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "57383": {
+      "name": "Sleepless Sentries",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "57572": {
+      "name": "Enduring Composure",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "57839": {
+      "name": "Blade of Cunning",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "57892": {
+      "name": "Primordial Bond",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "57900": {
+      "name": "Command of Steel",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "58032": {
+      "name": "Serpentine Spellslinger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "58168": {
+      "name": "High Voltage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "58189": {
+      "name": "Run Through",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "58198": {
+      "name": "Fingers of Frost",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "58218": {
+      "name": "Purity of Flesh",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "58221": {
+      "name": "Destructive Aspect",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "58248": {
+      "name": "Chilling Presence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "58382": {
+      "name": "Renowned Deeds",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "58449": {
+      "name": "Born to Fight",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "58831": {
+      "name": "Disemboweling",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "58851": {
+      "name": "Leader of the Pack",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "58904": {
+      "name": "Alchemist",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "58921": {
+      "name": "Disciple of the Slaughter",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "58944": {
+      "name": "Vicious Guard",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "58949": {
+      "name": "Renewal",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "59151": {
+      "name": "Brutal Blade",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "59307": {
+      "name": "Remarkable",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "59350": {
+      "name": "Electric Presence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "59423": {
+      "name": "Escalation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "59556": {
+      "name": "Expeditious Munitions",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "59605": {
+      "name": "Unstable Munitions",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "59646": {
+      "name": "Supercharge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "59766": {
+      "name": "Dirty Techniques",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "59866": {
+      "name": "Entrench",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "59976": {
+      "name": "Careful Counterattack",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "60002": {
+      "name": "Fury Bolts",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "60031": {
+      "name": "Prismatic Skin",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "60180": {
+      "name": "Thief's Craft",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "60501": {
+      "name": "Heart of Flame",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "60617": {
+      "name": "Magnifier",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "60619": {
+      "name": "Galvanic Hammer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "60647": {
+      "name": "Second Skin",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 449,
+          "value": 5
+        }
+      ]
+    },
+    "60690": {
+      "name": "Sublime Form",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "60737": {
+      "name": "Sleight of Hand",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "60781": {
+      "name": "Inspiring Bond",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "60864": {
+      "name": "Ancestral Might",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "60894": {
+      "name": "Wound Aggravation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "61039": {
+      "name": "Wild Hunger",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "61043": {
+      "name": "Eldritch Inspiration",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2707,
+          "value": 40
+        }
+      ]
+    },
+    "61190": {
+      "name": "Rallying Icon",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "61198": {
+      "name": "Heart of the Warrior",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "61308": {
+      "name": "Amplify",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "61474": {
+      "name": "Surefooted Striker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "61549": {
+      "name": "Forbidden Words",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "61616": {
+      "name": "Volatile Presence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "61689": {
+      "name": "Explosive Elements",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "61981": {
+      "name": "Doom Cast",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "61982": {
+      "name": "Grave Intentions",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "61998": {
+      "name": "Agent of Destruction",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 26,
+          "value": 20
+        }
+      ]
+    },
+    "62094": {
+      "name": "Taste for Blood",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "62160": {
+      "name": "Genius",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "62318": {
+      "name": "Life from Death",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "62577": {
+      "name": "Essence Surge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "62596": {
+      "name": "Mystic Talents",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "62618": {
+      "name": "Hit and Run",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "62634": {
+      "name": "Replenishing Presence",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "62706": {
+      "name": "Sublime Sensation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 108,
+          "value": 10
+        }
+      ]
+    },
+    "62707": {
+      "name": "Numbing Elixir",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "62802": {
+      "name": "Brink of Death",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "62849": {
+      "name": "Glacial Cage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "63033": {
+      "name": "Bannerman",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "63142": {
+      "name": "Skullbreaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "63150": {
+      "name": "Ironwood",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 146,
+          "value": 20
+        }
+      ]
+    },
+    "63207": {
+      "name": "Tempest Blast",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "63251": {
+      "name": "Inveterate",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "63422": {
+      "name": "Lust for Carnage",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5865,
+          "value": 5
+        }
+      ]
+    },
+    "63453": {
+      "name": "Excess Sustenance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "63607": {
+      "name": "Towering Threat",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 453,
+          "value": 60
+        }
+      ]
+    },
+    "63635": {
+      "name": "Primal Manifestation",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "63727": {
+      "name": "Gladiator's Perseverance",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "63921": {
+      "name": "Utmost Swiftness",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "63933": {
+      "name": "Totemic Zeal",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 342,
+          "value": 20
+        }
+      ]
+    },
+    "63944": {
+      "name": "Prism Weave",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "63969": {
+      "name": "Vast Power",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "63976": {
+      "name": "Shaper",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "64077": {
+      "name": "Warrior Training",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "64217": {
+      "name": "Aspect of Stone",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "64226": {
+      "name": "Roaring Challenge",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1359,
+          "value": 30
+        }
+      ]
+    },
+    "64259": {
+      "name": "Natural Vigour",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 211,
+          "value": 20
+        }
+      ]
+    },
+    "64355": {
+      "name": "Brand Equity",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1794,
+          "value": 20
+        }
+      ]
+    },
+    "64395": {
+      "name": "Blunt Trauma",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "64407": {
+      "name": "Riot Queller",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 117,
+          "value": 20
+        }
+      ]
+    },
+    "64717": {
+      "name": "Blessed",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "64782": {
+      "name": "Spring Back",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "64882": {
+      "name": "Disciple of the Unyielding",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 3898,
+          "value": 5
+        }
+      ]
+    },
+    "65053": {
+      "name": "Essence Sap",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1366,
+          "value": 20
+        }
+      ]
+    },
+    "65093": {
+      "name": "Bladedancer",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "65097": {
+      "name": "Leadership",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 575,
+          "value": 20
+        }
+      ]
+    },
+    "65107": {
+      "name": "Bastion Breaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 97,
+          "value": 10
+        }
+      ]
+    },
+    "65108": {
+      "name": "Tireless",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
+        }
+      ]
+    },
+    "65110": {
+      "name": "Vile Reinvigoration",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1347,
+          "value": 12
+        }
+      ]
+    },
+    "65117": {
+      "name": "Hex Breaker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 125,
+          "value": 4
+        }
+      ]
+    },
+    "65138": {
+      "name": "Expendability",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "65210": {
+      "name": "Heart of Oak",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 2040,
+          "value": 5
+        }
+      ]
+    },
+    "65224": {
+      "name": "Aspect of the Eagle",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 20682,
+          "value": 1
+        }
+      ]
+    },
+    "65273": {
+      "name": "Enigmatic Reach",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1333,
+          "value": 10
+        }
+      ]
+    },
+    "65308": {
+      "name": "Diamond Skin",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 1298,
+          "value": 15
+        }
+      ]
+    },
+    "65502": {
+      "name": "Heartseeker",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 14894,
+          "value": 1
+        }
+      ]
+    },
+    "65521": {
+      "name": "Self-Fulfilling Prophecy",
+      "replacement": null,
+      "additions": [
+        {
+          "name": 5563,
+          "value": 8
         }
       ]
     }
