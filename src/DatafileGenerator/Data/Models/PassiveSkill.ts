@@ -10,7 +10,7 @@ export interface PassiveSkill {
   readonly name: string;
 
   /** Liste des stats en texte brut (ex: "+10 to Strength") */
-  readonly StatStrings: readonly string[];
+  readonly stats: readonly string[];
 
   /** Est-ce un nœud Blight ? */
   readonly isBlight: boolean;
@@ -45,7 +45,7 @@ export class PassiveSkillNode implements PassiveSkill {
   // --- Propriétés du JSON ---
   public readonly skill: number;
   public readonly name: string;
-  public readonly StatStrings: readonly string[];
+  public readonly stats: readonly string[];
   
   public readonly isBlight: boolean;
   public readonly isJewelSocket: boolean;
@@ -76,6 +76,9 @@ export class PassiveSkillNode implements PassiveSkill {
 
   get IsCluster(): boolean {
     return this.orbit === null;
+  }
+  get StatStrings(): readonly string[] {
+    return this.stats;
   }
 
   get IsAttribute(): boolean {

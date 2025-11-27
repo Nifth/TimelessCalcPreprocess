@@ -5,21 +5,28 @@ import { performance } from 'node:perf_hooks';
 import { createGzip } from 'node:zlib';
 import { DataManager } from './Data/DataManager';
 import { GeneratorSettings } from './GeneratorSettings';
-import { PassiveSkillNode } from './Data/Models/PassiveSkill';
 import { TimelessJewel } from './Game/TimelessJewel';
 import { AlternateTreeManager } from './Game/AlternateTreeManager';
+import treeData from '../../output/3.27/tree.json';
 
 const OUTPUT_DIR = resolve('public/data');
-const CHUNK_SIZE = 500; // seeds par chunk
 const FLUSH_EVERY = 100; // flush toutes les 100 lignes
 // Mapping des bijoux
 const JEWELS = [
+  { index: 1, name: 'GloriousVanity', min: 100, max: 8000, step: 1 },
   { index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
   { index: 3, name: 'BrutalRestraint', min: 500, max: 8000, step: 1 },
   { index: 4, name: 'MilitantFaith', min: 2000, max: 10000, step: 1 },
   { index: 5, name: 'ElegantHubris', min: 2000, max: 160000, step: 20 },
   // Glorious Vanity plus tard
 ] as const;
+let modifiableNodeIds = [];
+Object.values(treeData.socketNodes).forEach(node => {
+  modifiableNodeIds = [...modifiableNodeIds, ...node.map((n) => {return Number(n)})];
+})
+modifiableNodeIds = modifiableNodeIds.filter((item, index, arr) => {
+  return arr.indexOf(item) === index;
+});
 
 async function main() {
   console.log('Spinning up! DatafileGenerator → JSONL.gz\n');
@@ -61,10 +68,12 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
   const version = DataManager.AlternateTreeVersions!.find(v => v.Index === index);
   if (!version) throw new Error(`Version ${index} introuvable`);
 
-  const notables = DataManager.PassiveSkills!
-    .filter(n => n.IsNotable && n.IsModifiable);
+  let nodes = index === 1 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
+    : DataManager.PassiveSkills!
+    .filter(n => n.IsNotable && n.IsModifiable)
+    .filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
 
-  console.log(`${name}: ${notables.length} nodes notables, seeds ${min}→${max} (step ${step})`);
+  console.log(`${name}: ${nodes.length} nodes, seeds ${min}→${max} (step ${step})`);
 
   const filePath = join(OUTPUT_DIR, `${name}.jsonl.gz`);
   const writeStream = createWriteStream(filePath);
@@ -83,39 +92,36 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
       lineCount = 0;
     }
   };
-  let processed = 0;
 
   for (let seed = min; seed <= max; seed += step) {
     const timelessJewel = new TimelessJewel(version, seed);
     let replacedMap = {};
     let addedMap = {};
-    let index = 0;
 
-    for (const node of notables) {
+    for (const node of nodes) {
       const manager = new AlternateTreeManager(node, timelessJewel);
       const replaced = manager.IsPassiveSkillReplaced();
 
       if (replaced) {
         const res = manager.ReplacePassiveSkill();
-        const v = res.StatRolls[0] ?? 0;
-        if (!replacedMap[res.AlternatePassiveSkill._rid]) {
-          replacedMap[res.AlternatePassiveSkill._rid] = [index]
+        const key = res.AlternatePassiveSkill._rid + '-' + JSON.stringify(res.StatRolls);
+        if (!replacedMap[key]) {
+          replacedMap[key] = [node.GraphIdentifier]
         } else {
-          replacedMap[res.AlternatePassiveSkill._rid].push(index)
+          replacedMap[key].push(node.GraphIdentifier)
         }
       } else {
         const adds = manager.AugmentPassiveSkill();
         if (adds.length > 0) {
           const add = adds[0];
-          const v = add.StatRolls[0] ?? 0;
-          if (!addedMap[add.AlternatePassiveAddition._rid]) {
-            addedMap[add.AlternatePassiveAddition._rid] =  [index]
+          const key = add.AlternatePassiveAddition._rid + '-' + JSON.stringify(add.StatRolls);
+          if (!addedMap[key]) {
+            addedMap[key] = [node.GraphIdentifier]
           } else {
-            addedMap[add.AlternatePassiveAddition._rid].push(index)
+            addedMap[key].push(node.GraphIdentifier)
           }
         }
       }
-      index++;
     }
     let entry = {};
     entry = { r: replacedMap, a: addedMap }
@@ -132,7 +138,7 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     entry = {};
 
     // Log progression
-    if ((seed - min) % (step * 1000) === 0) {
+    if ((seed - min) % (step * 100) === 0) {
       process.stdout.write(`\r  → Seed ${seed}...`);
       flush(); // force flush
     }
