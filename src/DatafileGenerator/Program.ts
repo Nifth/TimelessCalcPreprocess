@@ -1,4 +1,3 @@
-// Program.ts
 import { existsSync, mkdirSync, createWriteStream } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { performance } from 'node:perf_hooks';
@@ -7,47 +6,60 @@ import { DataManager } from './Data/DataManager';
 import { GeneratorSettings } from './GeneratorSettings';
 import { TimelessJewel } from './Game/TimelessJewel';
 import { AlternateTreeManager } from './Game/AlternateTreeManager';
-import treeData from '../../output/3.27/tree.json';
 
-const OUTPUT_DIR = resolve('public/data');
-const FLUSH_EVERY = 100; // flush toutes les 100 lignes
-// Mapping des bijoux
+const version = process.argv[2] || 'default';
+
+const loadTreeData = async (version: string) => {
+  try {
+    const module = await import(`../../output/${version}/tree.json`);
+    return module.default;
+  } catch (error) {
+    console.error('Erreur lors du chargement des données:', error);
+    return null;
+  }
+};
+
+const OUTPUT_DIR = resolve(`output/${version}`);
+const FLUSH_EVERY = 100;
 const JEWELS = [
   { index: 1, name: 'GloriousVanity', min: 100, max: 8000, step: 1 },
   { index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
   { index: 3, name: 'BrutalRestraint', min: 500, max: 8000, step: 1 },
   { index: 4, name: 'MilitantFaith', min: 2000, max: 10000, step: 1 },
   { index: 5, name: 'ElegantHubris', min: 2000, max: 160000, step: 20 },
-  // Glorious Vanity plus tard
 ] as const;
+
 let modifiableNodeIds = [];
-Object.values(treeData.socketNodes).forEach(node => {
-  modifiableNodeIds = [...modifiableNodeIds, ...node.map((n) => {return Number(n)})];
-})
-modifiableNodeIds = modifiableNodeIds.filter((item, index, arr) => {
-  return arr.indexOf(item) === index;
-});
+let treeData: any = {};
 
 async function main() {
+  treeData = await loadTreeData(version);
+  Object.values(treeData.socketNodes).forEach((node: string[]) => {
+    modifiableNodeIds = [...modifiableNodeIds, ...node.map((n) => {return Number(n)})];
+  })
+  modifiableNodeIds = modifiableNodeIds.filter((item, index, arr) => {
+    return arr.indexOf(item) === index;
+  });
   console.log('Spinning up! DatafileGenerator → JSONL.gz\n');
 
-  // --- Chargement données ---
-  GeneratorSettings.AlternatePassiveAdditionsFilePath = resolve('data/alternatepassiveadditions.json');
-  GeneratorSettings.AlternatePassiveSkillsFilePath = resolve('data/alternatepassiveskills.json');
-  GeneratorSettings.PassiveSkillsFilePath = resolve('data/data.json');
+  // --- Load data ---
+  GeneratorSettings.AlternatePassiveAdditionsFilePath = resolve(__dirname, `../../data/${version}/alternatepassiveadditions.json`);
+  GeneratorSettings.AlternatePassiveSkillsFilePath = resolve(__dirname, `../../data/${version}/alternatepassiveskills.json`);
+  GeneratorSettings.PassiveSkillsFilePath = resolve(__dirname, `../../data/${version}/data.json`);
 
   if (!existsSync(GeneratorSettings.AlternatePassiveAdditionsFilePath)) {
-    console.error('Fichier manquant:', GeneratorSettings.AlternatePassiveAdditionsFilePath);
+    console.error('Missing file:', GeneratorSettings.AlternatePassiveAdditionsFilePath);
     process.exit(1);
   }
 
-  console.log('Chargement des données...');
+  console.log('Loading data...');
   if (!DataManager.Initialize()) {
-    console.error('Échec du chargement.');
+    console.error('Loading failed.');
     process.exit(1);
   }
   console.log(`Nodes: ${DataManager.PassiveSkills?.length}`);
-  console.log(`Additions: ${DataManager.AlternatePassiveAdditions?.length}\n`);
+  console.log(`Additions: ${DataManager.AlternatePassiveAdditions?.length}`);
+  console.log(`Replace: ${DataManager.AlternatePassiveSkills?.length}\n`);
 
   // --- Création dossier public/data ---
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -60,13 +72,13 @@ async function main() {
     console.log(`${jewel.name} → ${duration}s\n`);
   }
 
-  console.log('Terminé ! Fichiers dans /public/data');
+  console.log(`Finished ! Files in output/${version}/`);
 }
 
 async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
   const { index, name, min, max, step } = jewel;
   const version = DataManager.AlternateTreeVersions!.find(v => v.Index === index);
-  if (!version) throw new Error(`Version ${index} introuvable`);
+  if (!version) throw new Error(`Version ${index} not found`);
 
   let nodes = index === 1 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
     : DataManager.PassiveSkills!
@@ -150,11 +162,10 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     writeStream.on('finish', () => r());
     writeStream.on('error', reject);
   });
-  console.log(`\r  → ${name}.jsonl.gz généré`);
+  console.log(`\r  → ${name}.jsonl.gz generated`);
 }
 
-// --- Lancement ---
 main().catch(err => {
-  console.error('Erreur fatale:', err);
+  console.error('Fatal error:', err);
   process.exit(1);
 });
