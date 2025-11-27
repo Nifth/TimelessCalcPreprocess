@@ -46,8 +46,8 @@ function cleanData() {
     const raw = fs.readFileSync(inputPath, 'utf-8');
     const data = JSON.parse(raw);
     // todo: parse stats.json pour ne garder que les clé qu'on a besoin pour additions & replace '_rid' et 'Id', rename _rid en statId
-    // todo: parse stat_description en fonction de ce qu'on vient de parser, puis réussir à le lire (split par description, puis bonne chance)
-    // todo: reformat ça bien pour avoir en sortie 1 json avec Statkey en clé, default, french etc en sortie avec la trad. variable en %1 %2
+    // todo: parse stat_description en fonction de ce qu'on vient de parser, puis réussir à le lire (split par description, filtrer celles qu'on a besoin, puis bonne chance)
+    // todo: reformat ça bien pour avoir en sortie 1 json avec Statkey en clé, label en sortie (no care des trads). variable en %1 %2
     
     removeUnusedKeys(data);
 }
