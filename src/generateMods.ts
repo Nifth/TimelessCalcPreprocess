@@ -1,24 +1,101 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-/**
- * Set the version to use for input/output folders. Default: 'default'.
- * You can pass a version as a CLI argument: node parseTree.js 3.21.0
- */
 const version = process.argv[2] || 'default';
 const inputPath = path.resolve(__dirname, `../data/${version}/data.json`);
+const replaceSkillsPath = path.resolve(__dirname, `../data/${version}/alternatepassiveskills.json`);
+const additionSkillsPath = path.resolve(__dirname, `../data/${version}/alternatepassiveadditions.json`);
+const statsPath = path.resolve(__dirname, `../data/${version}/stats.json`);
+const descriptionPath = path.resolve(__dirname, `../data/${version}/stat_descriptions.txt`);
 const outputDir = path.resolve(__dirname, `../output/${version}`);
-const outputPath = path.join(outputDir, 'mods.json');
+const outputPath = path.join(outputDir, 'translation.json');
 
 
-/**
- * Removes unused top-level keys from the data object (classes, ascendancies, extra images, points).
- */
-function removeUnusedKeys(data: Record<string, any>) {
-    delete data.classes;
-    delete data.alternate_ascendancies;
-    delete data.extraImages;
-    delete data.points;
+function getSkillList(): number[] {
+    const replaceData = readJSON(replaceSkillsPath);
+    const additionData = readJSON(additionSkillsPath);
+    const data = [...replaceData, ...additionData];
+
+    let skillList = new Set();
+    data.forEach(value => {
+        const statsKeys = value.StatsKeys;
+        statsKeys.forEach(k => {
+            skillList.add(k)
+        });
+    });
+
+    return (Array.from(skillList) as number[]).sort((a, b) => {
+        return a > b ? 1 : -1;
+    });;
+}
+
+function parseStats(skillList: number[]): Map<string, number>
+{
+    const statsData = readJSON(statsPath);
+    const map = new Map<string, number>()
+
+    statsData.forEach(stat => {
+        if (skillList.includes(stat._rid)) {
+            map.set(stat.Id, stat._rid);
+        }
+    })
+
+    return map;
+}
+
+function readJSON(filepath: string): Record<string, any>[]
+{
+    const inputData = fs.readFileSync(filepath, 'utf-8');
+    return JSON.parse(inputData)
+}
+
+function parseDescriptions(statsCodes: Map<string, number>)
+{
+    const inputData = fs.readFileSync(descriptionPath, 'utf-16le');
+    const descriptions = inputData.split("\n")
+        .map(a => a.trim())
+        .filter(a => !a.startsWith('no_description'))
+        .join("\n")
+        .split("description\n");
+
+    const finalDescriptions = {}
+
+    descriptions.forEach(row => {
+        const rowData = row.split("\n").map(a => a.trim())
+        const match = rowData[0].match(/^\d\s+(.+)$/)
+        const skillId = match ? match[1] : null;
+        if (!statsCodes.has(skillId)) {
+            return;
+        }
+        const numberOfRowsToRead = Number(rowData[1])
+        const translations = rowData.slice(2, 2 + numberOfRowsToRead)
+        const regex = /^([^"]*?)\"([^\"]+)\"/
+        let statDescription = [];
+        translations.forEach(t => {
+            const matches = t.match(regex);
+            const type = matches[1].trim();
+            const translation = matches[2];
+            let from, to;
+            if (type === '#|-1') {
+                to = -1;
+            } else if (type === '#|1' || type === '1') {
+                from = to = 1;
+            } else if (type === '#|99' || type === '1|99') {
+                from = 0;
+                to = 99;
+            } else if (type === '1|#') {
+                from = 1;
+            } else if (type === '2|#') {
+                from = 2;
+            } else if (type === '100|#') {
+                from = 100;
+                to = 100;
+            }
+            statDescription.push({from: from, to: to, translation: translation})
+        })
+        finalDescriptions[skillId] = statDescription;
+    });
+    writeOutputFiles(finalDescriptions)
 }
 
 /**
@@ -43,13 +120,11 @@ function writeOutputFiles(data: Record<string, any>) {
  * Loads, cleans, and writes the processed data.
  */
 function cleanData() {
-    const raw = fs.readFileSync(inputPath, 'utf-8');
-    const data = JSON.parse(raw);
-    // todo: parse stats.json pour ne garder que les clé qu'on a besoin pour additions & replace '_rid' et 'Id', rename _rid en statId
-    // todo: parse stat_description en fonction de ce qu'on vient de parser, puis réussir à le lire (split par description, filtrer celles qu'on a besoin, puis bonne chance)
-    // todo: reformat ça bien pour avoir en sortie 1 json avec Statkey en clé, label en sortie (no care des trads). variable en %1 %2
-    
-    removeUnusedKeys(data);
+    const skillList = getSkillList();
+    const statsCodes = parseStats(skillList);
+    const descriptions = parseDescriptions(statsCodes);
+    //todo: changer les translation pour avoir un format clair de variable
+    // todo: ajouter un fichier pour le mapping skill _rid => Name
 }
 
 if (require.main === module) {
