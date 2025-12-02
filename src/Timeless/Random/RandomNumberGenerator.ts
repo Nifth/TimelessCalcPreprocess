@@ -1,7 +1,3 @@
-// Random/RandomNumberGenerator.ts
-import { PassiveSkill } from '../Data/Models/PassiveSkill';
-import { TimelessJewel } from '../Game/TimelessJewel';
-
 export class RandomNumberGenerator {
     private static readonly C0 = 0x40336050 >>> 0;
     private static readonly C1 = 0xCFA3723C >>> 0;
@@ -54,7 +50,6 @@ export class RandomNumberGenerator {
             do {
                 const rand = this.generateUInt();
 
-                // 2 * (value << 31) en 32 bits = (value << 1) & 0xFFFFFFFF
                 const rotated = (value << 1) >>> 0;
                 value = (rand | rotated) >>> 0;
 

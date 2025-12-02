@@ -91,9 +91,9 @@ function parseDescriptions(statsCodes: Map<string, number>)
                 from = 100;
                 to = 100;
             }
-            statDescription.push({from: from, to: to, translation: translation})
+            statDescription.push({from: from, to: to, translation: translation.replace('{0:+d}', '{0}')})
         })
-        finalDescriptions[skillId] = statDescription;
+        finalDescriptions[statsCodes.get(skillId)] = statDescription;
     });
     writeOutputFiles(finalDescriptions)
 }
@@ -122,8 +122,7 @@ function writeOutputFiles(data: Record<string, any>) {
 function cleanData() {
     const skillList = getSkillList();
     const statsCodes = parseStats(skillList);
-    const descriptions = parseDescriptions(statsCodes);
-    //todo: changer les translation pour avoir un format clair de variable
+    parseDescriptions(statsCodes);
     // todo: ajouter un fichier pour le mapping skill _rid => Name
 }
 

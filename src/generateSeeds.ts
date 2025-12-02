@@ -2,16 +2,16 @@ import { existsSync, mkdirSync, createWriteStream } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { createGzip } from 'node:zlib';
-import { DataManager } from './Data/DataManager';
-import { GeneratorSettings } from './GeneratorSettings';
-import { TimelessJewel } from './Game/TimelessJewel';
-import { AlternateTreeManager } from './Game/AlternateTreeManager';
+import { DataManager } from './Timeless/Data/DataManager';
+import { GeneratorSettings } from './Timeless/GeneratorSettings';
+import { TimelessJewel } from './Timeless/Game/TimelessJewel';
+import { AlternateTreeManager } from './Timeless/Game/AlternateTreeManager';
 
 const version = process.argv[2] || 'default';
 
 const loadTreeData = async (version: string) => {
   try {
-    const module = await import(`../../output/${version}/tree.json`);
+    const module = await import(`../output/${version}/tree.json`);
     return module.default;
   } catch (error) {
     console.error('Erreur lors du chargement des données:', error);
@@ -43,9 +43,9 @@ async function main() {
   console.log('Spinning up! DatafileGenerator → JSONL.gz\n');
 
   // --- Load data ---
-  GeneratorSettings.AlternatePassiveAdditionsFilePath = resolve(__dirname, `../../data/${version}/alternatepassiveadditions.json`);
-  GeneratorSettings.AlternatePassiveSkillsFilePath = resolve(__dirname, `../../data/${version}/alternatepassiveskills.json`);
-  GeneratorSettings.PassiveSkillsFilePath = resolve(__dirname, `../../data/${version}/data.json`);
+  GeneratorSettings.AlternatePassiveAdditionsFilePath = resolve(__dirname, `../data/${version}/alternatepassiveadditions.json`);
+  GeneratorSettings.AlternatePassiveSkillsFilePath = resolve(__dirname, `../data/${version}/alternatepassiveskills.json`);
+  GeneratorSettings.PassiveSkillsFilePath = resolve(__dirname, `../data/${version}/data.json`);
 
   if (!existsSync(GeneratorSettings.AlternatePassiveAdditionsFilePath)) {
     console.error('Missing file:', GeneratorSettings.AlternatePassiveAdditionsFilePath);
@@ -61,10 +61,8 @@ async function main() {
   console.log(`Additions: ${DataManager.AlternatePassiveAdditions?.length}`);
   console.log(`Replace: ${DataManager.AlternatePassiveSkills?.length}\n`);
 
-  // --- Création dossier public/data ---
   if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  // --- Génération par bijou ---
   for (const jewel of JEWELS) {
     const start = performance.now();
     await generateJewelJsonl(jewel);

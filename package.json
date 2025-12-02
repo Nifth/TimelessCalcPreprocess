@@ -6,7 +6,7 @@
   "scripts": {
     "parse-tree": "ts-node src/parseTree.ts",
     "generate-mods": "ts-node src/generateMods.ts",
-    "jewels": "ts-node src/DatafileGenerator/Program.ts"
+    "jewels": "ts-node src/generateSeeds.ts"
   },
   "dependencies": {
     "prompts": "^2.4.2"

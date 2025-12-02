@@ -1,7 +1,3 @@
-// DatafileGenerator/Data/DataManager.ts
-// Port complet du fichier C# DataManager.cs
-// Gère le chargement des données JSON et les filtres pour les Timeless Jewels
-
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { AlternatePassiveAddition } from './Models/AlternatePassiveAddition';
@@ -12,9 +8,6 @@ import { TreeDataFile } from './Models/TreeDataFile';
 import { TimelessJewel } from '../Game/TimelessJewel';
 import { GeneratorSettings } from '../GeneratorSettings';
 
-// --------------------------------------------------------------------------
-// Énumération des types de nœuds passifs (équivalent à PassiveSkillType en C#)
-// --------------------------------------------------------------------------
 export enum PassiveSkillType {
   None,
   SmallAttribute,
@@ -24,17 +17,12 @@ export enum PassiveSkillType {
   JewelSocket
 }
 
-// --------------------------------------------------------------------------
-// Classe DataManager (statique)
-// --------------------------------------------------------------------------
 export class DataManager {
-  // Collections immuables chargées une fois
   private static _alternatePassiveAdditions: readonly AlternatePassiveAddition[] | null = null;
   private static _alternatePassiveSkills: readonly AlternatePassiveSkill[] | null = null;
   private static _alternateTreeVersions: readonly AlternateTreeVersion[] | null = null;
   private static _passiveSkills: readonly PassiveSkillNode[] | null = null;
 
-  // Getters publics (lecture seule)
   public static get AlternatePassiveAdditions(): readonly AlternatePassiveAddition[] | null {
     return this._alternatePassiveAdditions;
   }
@@ -51,9 +39,6 @@ export class DataManager {
     return this._passiveSkills;
   }
 
-  // ----------------------------------------------------------------------
-  // Initialisation (appelée une fois au démarrage)
-  // ----------------------------------------------------------------------
   public static Initialize(): boolean {
     this._alternatePassiveAdditions = this.loadFromFile<AlternatePassiveAddition>(
       GeneratorSettings.AlternatePassiveAdditionsFilePath
@@ -67,7 +52,6 @@ export class DataManager {
     if (!treeData) {
       this._passiveSkills = null;
     } else {
-      // Supprime la racine et extrait les valeurs
       const { root, ...nodes } = treeData.nodes;
       this._passiveSkills = Object.values(nodes).map(raw => new PassiveSkillNode(raw as PassiveSkill));
     }
@@ -80,9 +64,6 @@ export class DataManager {
     );
   }
 
-  // ----------------------------------------------------------------------
-  // Génère les 5 versions d’arbre alternatif (1 à 5)
-  // ----------------------------------------------------------------------
   private static getAlternateTrees(): readonly AlternateTreeVersion[] {
     return [
       new AlternateTreeVersion(1),
@@ -93,9 +74,6 @@ export class DataManager {
     ];
   }
 
-  // ----------------------------------------------------------------------
-  // Récupère les ajouts applicables pour un nœud + bijou
-  // ----------------------------------------------------------------------
   public static GetApplicableAlternatePassiveAdditions(
     passiveSkill: PassiveSkillNode,
     timelessJewel: TimelessJewel
@@ -121,9 +99,6 @@ export class DataManager {
     return result;
   }
 
-  // ----------------------------------------------------------------------
-  // Récupère le remplacement Keystone (s’il existe)
-  // ----------------------------------------------------------------------
   public static GetAlternatePassiveSkillKeyStone(timelessJewel: TimelessJewel): AlternatePassiveSkill | null {
     if (!timelessJewel) throw new Error('timelessJewel is required');
 
@@ -141,9 +116,6 @@ export class DataManager {
     return candidate;
   }
 
-  // ----------------------------------------------------------------------
-  // Récupère les remplacements applicables pour un nœud + bijou
-  // ----------------------------------------------------------------------
   public static GetApplicableAlternatePassiveSkills(
     passiveSkill: PassiveSkillNode,
     timelessJewel: TimelessJewel
@@ -169,9 +141,6 @@ export class DataManager {
     return result;
   }
 
-  // ----------------------------------------------------------------------
-  // Détermine le type de nœud
-  // ----------------------------------------------------------------------
   public static GetPassiveSkillType(passiveSkill: PassiveSkillNode): PassiveSkillType {
     if (!passiveSkill) throw new Error('passiveSkill is required');
 
@@ -182,9 +151,6 @@ export class DataManager {
     return PassiveSkillType.SmallNormal;
   }
 
-  // ----------------------------------------------------------------------
-  // Chargement d’un tableau depuis un fichier JSON
-  // ----------------------------------------------------------------------
   private static loadFromFile<T>(filePath: string): readonly T[] | null {
     if (!filePath) throw new Error('filePath is required');
 
@@ -199,9 +165,6 @@ export class DataManager {
     }
   }
 
-  // ----------------------------------------------------------------------
-  // Chargement d’un objet unique depuis un fichier JSON
-  // ----------------------------------------------------------------------
   private static loadSingleFromFile<T>(filePath: string): T | null {
     if (!filePath) throw new Error('filePath is required');
 
@@ -215,12 +178,3 @@ export class DataManager {
     }
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Exemple d’initialisation                                                  */
-/* -------------------------------------------------------------------------- */
-
-// if (DataManager.Initialize()) {
-//   console.log('Data loaded successfully');
-//   console.log(`Notables: ${DataManager.PassiveSkills?.filter(s => s.IsNotable).length}`);
-// }

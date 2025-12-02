@@ -1,6 +1,5 @@
-// Game/AlternateTreeManager.ts
 import { DataManager, PassiveSkillType } from '../Data/DataManager';
-import { AlternatePassiveAddition } from '../Data/Models/AlternatePassiveAddition'; // Ajuste les imports selon structure
+import { AlternatePassiveAddition } from '../Data/Models/AlternatePassiveAddition';
 import { AlternatePassiveSkill } from '../Data/Models/AlternatePassiveSkill';
 import { PassiveSkillNode } from '../Data/Models/PassiveSkill';
 import { TimelessJewel } from './TimelessJewel';
@@ -19,9 +18,6 @@ export class AlternateTreeManager {
     this.TimelessJewel = timelessJewel;
   }
 
-  // ========================================================================
-  // IsPassiveSkillReplaced
-  // ========================================================================
   public IsPassiveSkillReplaced(): boolean {
     if (this.PassiveSkill.IsKeyStone) return true;
 
@@ -42,9 +38,6 @@ export class AlternateTreeManager {
     return this.TimelessJewel.AlternateTreeVersion.AreSmallNormalPassiveSkillsReplaced;
   }
 
-  // ========================================================================
-  // ReplacePassiveSkill
-  // ========================================================================
   public ReplacePassiveSkill(): AlternatePassiveSkillInformation {
     // --- Keystone ---
     if (this.PassiveSkill.IsKeyStone) {
@@ -129,9 +122,6 @@ export class AlternateTreeManager {
     return new AlternatePassiveSkillInformation(rolledSkill, statRolls, additions);
   }
 
-  // ========================================================================
-  // AugmentPassiveSkill
-  // ========================================================================
   public AugmentPassiveSkill(): readonly AlternatePassiveAdditionInformation[] {
     const rng = new RandomNumberGenerator(this.PassiveSkill, this.TimelessJewel);
 
@@ -175,9 +165,6 @@ export class AlternateTreeManager {
     return Object.freeze(additions);
   }
 
-  // ========================================================================
-  // RollAlternatePassiveAddition
-  // ========================================================================
   private RollAlternatePassiveAddition(rng: RandomNumberGenerator): AlternatePassiveAddition | null {
     if (!rng) throw new Error('rng is required');
 
