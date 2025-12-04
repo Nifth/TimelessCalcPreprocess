@@ -123,7 +123,7 @@ function cleanData() {
     const skillList = getSkillList();
     const statsCodes = parseStats(skillList);
     parseDescriptions(statsCodes);
-    // todo: ajouter un fichier pour le mapping skill _rid => Name
+    // ajouter un fichier qui liste jewelType => {_rid, stats[0]}[] pour pouvoir search
 }
 
 if (require.main === module) {
