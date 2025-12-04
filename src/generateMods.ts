@@ -8,7 +8,6 @@ const additionSkillsPath = path.resolve(__dirname, `../data/${version}/alternate
 const statsPath = path.resolve(__dirname, `../data/${version}/stats.json`);
 const descriptionPath = path.resolve(__dirname, `../data/${version}/stat_descriptions.txt`);
 const outputDir = path.resolve(__dirname, `../output/${version}`);
-const outputPath = path.join(outputDir, 'translation.json');
 
 
 function getSkillList(): number[] {
@@ -95,16 +94,45 @@ function parseDescriptions(statsCodes: Map<string, number>)
         })
         finalDescriptions[statsCodes.get(skillId)] = statDescription;
     });
-    writeOutputFiles(finalDescriptions)
+    writeOutputFiles(finalDescriptions, 'translation.json')
+}
+
+function writeJewelStats()
+{
+    const replaceData = readJSON(replaceSkillsPath);
+    const additionData = readJSON(additionSkillsPath);
+    const data = [...replaceData, ...additionData];
+    const mapping = {
+        1: 'vaal',
+        2: 'karui',
+        3: 'maraketh',
+        4: 'templar',
+        5: 'eternal'
+     }
+
+    let jewelData = {};
+
+    data.forEach(row => {
+        const jewelType = mapping[row.AlternateTreeVersionsKey];
+        if (!jewelData[jewelType]) {
+            jewelData[jewelType] = [];
+        }
+        if (row.StatsKeys[0]) {
+           jewelData[jewelType].push(row.StatsKeys[0])
+        }
+    })
+
+    writeOutputFiles(jewelData, 'jewelstats.json')
 }
 
 /**
  * Writes the cleaned data to a compact JSON file and a gzip-compressed version for frontend use.
  */
-function writeOutputFiles(data: Record<string, any>) {
+function writeOutputFiles(data: Record<string, any>, filename: string) {
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
+    const outputPath = path.join(outputDir, filename)
     fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8');
     console.log('Cleaned file written (compact):', outputPath);
     try {
@@ -123,6 +151,7 @@ function cleanData() {
     const skillList = getSkillList();
     const statsCodes = parseStats(skillList);
     parseDescriptions(statsCodes);
+    writeJewelStats();
     // ajouter un fichier qui liste jewelType => {_rid, stats[0]}[] pour pouvoir search
 }
 
