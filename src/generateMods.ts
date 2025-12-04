@@ -18,6 +18,9 @@ function getSkillList(): number[] {
     let skillList = new Set();
     data.forEach(value => {
         const statsKeys = value.StatsKeys;
+        if (value.PassiveType.includes('4')) {
+            return;
+        }
         statsKeys.forEach(k => {
             skillList.add(k)
         });
@@ -35,7 +38,11 @@ function parseStats(skillList: number[]): Map<string, number>
 
     statsData.forEach(stat => {
         if (skillList.includes(stat._rid)) {
-            map.set(stat.Id, stat._rid);
+            if (['base_dexterity', 'base_intelligence', 'base_strength'].includes(stat.Id)) {
+                map.set(stat.Id.replace('base_', 'additional_'), stat._rid)
+            } else {
+                map.set(stat.Id, stat._rid);
+            }
         }
     })
 
@@ -113,6 +120,7 @@ function writeJewelStats()
     let jewelData = {};
 
     data.forEach(row => {
+        if (row.PassiveType.includes(4)) return;
         const jewelType = mapping[row.AlternateTreeVersionsKey];
         if (!jewelData[jewelType]) {
             jewelData[jewelType] = [];
