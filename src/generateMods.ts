@@ -68,8 +68,8 @@ function parseDescriptions(statsCodes: Map<string, number>)
 
     descriptions.forEach(row => {
         const rowData = row.split("\n").map(a => a.trim())
-        const match = rowData[0].match(/^\d\s+(.+)$/)
-        const skillId = match ? match[1] : null;
+        const match = rowData[0].match(/^\d+\s+(\S+)(?:\s|$)/)
+        const skillId = match ? match[1].trim() : null;
         if (!statsCodes.has(skillId)) {
             return;
         }
@@ -82,11 +82,14 @@ function parseDescriptions(statsCodes: Map<string, number>)
             const type = matches[1].trim();
             const translation = matches[2];
             let from, to;
+            if (type === '# 1|#' || type === '100|# 0') {
+                return;
+            }
             if (type === '#|-1') {
                 to = -1;
             } else if (type === '#|1' || type === '1') {
                 from = to = 1;
-            } else if (type === '#|99' || type === '1|99') {
+            } else if (type === '#|99' || type === '1|99' || type === '1|99  0') {
                 from = 0;
                 to = 99;
             } else if (type === '1|#') {
@@ -101,6 +104,7 @@ function parseDescriptions(statsCodes: Map<string, number>)
         })
         finalDescriptions[statsCodes.get(skillId)] = statDescription;
     });
+    finalDescriptions[statsCodes.get('base_devotion')] = [{translation: "Devotion"}]
     writeOutputFiles(finalDescriptions, 'translation.json')
 }
 
