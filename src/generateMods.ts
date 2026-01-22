@@ -101,7 +101,7 @@ function parseDescriptions(statsCodes: Map<string, number>)
                 to = 100;
             }
             let divider = 1;
-            if (type.includes('divide_by_one_hundred')) {
+            if (t.includes('divide_by_one_hundred')) {
                 divider = 100;
             }
             statDescription.push({from: from, to: to, divider: divider, translation: translation.replace('{0:+d}', '{0}')})

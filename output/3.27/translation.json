@@ -877,7 +877,7 @@
   "2142": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Chaos Damage Leeched as Life"
     }
   ],
@@ -908,35 +908,35 @@
   "2707": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Attack Damage Leeched as Life"
     }
   ],
   "3122": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Physical Damage Leeched as Life"
     }
   ],
   "3123": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Fire Damage Leeched as Life"
     }
   ],
   "3124": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Cold Damage Leeched as Life"
     }
   ],
   "3125": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Lightning Damage Leeched as Life"
     }
   ],
@@ -1165,7 +1165,7 @@
   "8902": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 100,
       "translation": "{0}% of Spell Damage Leeched as Energy Shield"
     }
   ],
