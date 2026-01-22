@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, createWriteStream } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { performance } from 'node:perf_hooks';
-import { createGzip } from 'node:zlib';
+import { gzipSync } from 'fflate';
 import { DataManager } from './Timeless/Data/DataManager';
 import { GeneratorSettings } from './Timeless/GeneratorSettings';
 import { TimelessJewel } from './Timeless/Game/TimelessJewel';
@@ -20,7 +20,6 @@ const loadTreeData = async (version: string) => {
 };
 
 const OUTPUT_DIR = resolve(`output/${version}`);
-const FLUSH_EVERY = 100;
 const JEWELS = [
   { index: 1, name: 'GloriousVanity', min: 100, max: 8000, step: 1 },
   { index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
@@ -87,21 +86,10 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
 
   const filePath = join(OUTPUT_DIR, `${name}.jsonl.gz`);
   const writeStream = createWriteStream(filePath);
-  const gzip = createGzip();
   writeStream.on('error', err => console.error('Write error:', err));
-  gzip.on('error', err => console.error('Gzip error:', err));
 
-  gzip.pipe(writeStream);
-  let lineBuffer = '';
-  let lineCount = 0;
+  const lines: string[] = [];
 
-  const flush = () => {
-    if (lineBuffer) {
-      gzip.write(lineBuffer);
-      lineBuffer = '';
-      lineCount = 0;
-    }
-  };
 
   for (let seed = min; seed <= max; seed += step) {
     const timelessJewel = new TimelessJewel(version, seed);
@@ -114,7 +102,12 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
 
       if (replaced) {
         const res = manager.ReplacePassiveSkill();
-        const key = res.AlternatePassiveSkill._rid + '-' + JSON.stringify(res.StatRolls);
+
+        const stats = {};
+        Object.values(res.StatRolls).forEach((roll, index) => {
+          stats[res.AlternatePassiveSkill.StatsKeys[index]] = roll;
+        });
+        const key = res.AlternatePassiveSkill._rid + '-' + JSON.stringify(stats);
         if (!replacedMap[key]) {
           replacedMap[key] = [node.GraphIdentifier]
         } else {
@@ -124,7 +117,11 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
         const adds = manager.AugmentPassiveSkill();
         if (adds.length > 0) {
           const add = adds[0];
-          const key = add.AlternatePassiveAddition._rid + '-' + JSON.stringify(add.StatRolls);
+          const stats = {};
+          Object.values(add.StatRolls).forEach((roll, index) => {
+            stats[add.AlternatePassiveAddition.StatsKeys[index]] = roll;
+          });
+          const key = add.AlternatePassiveAddition._rid + '-' + JSON.stringify(stats);
           if (!addedMap[key]) {
             addedMap[key] = [node.GraphIdentifier]
           } else {
@@ -136,12 +133,8 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     let entry = {};
     entry = { r: replacedMap, a: addedMap }
 
-    lineBuffer += JSON.stringify(entry) + '\n';
-    lineCount++;
-
-    if (lineCount >= FLUSH_EVERY) {
-      flush();
-    }
+    const line = JSON.stringify(entry) + '\n';
+    lines.push(line);
     
     replacedMap = {};
     addedMap = {};
@@ -150,12 +143,15 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     // Log progression
     if ((seed - min) % (step * 100) === 0) {
       process.stdout.write(`\r  → Seed ${seed}...`);
-      flush(); // force flush
     }
   }
 
-  flush();
-  gzip.end();
+  console.log(`Lines count: ${lines.length}`);
+  const data = lines.join('');
+  const gzipped = gzipSync(new TextEncoder().encode(data));
+  console.log(`Data length: ${data.length}, gzipped length: ${gzipped.length}`);
+  writeStream.write(gzipped);
+  writeStream.end();
   await new Promise<void>((r, reject) => {
     writeStream.on('finish', () => r());
     writeStream.on('error', reject);

@@ -62,7 +62,6 @@ export class AlternateTreeManager {
       const roll = rng.generate(currentSpawnWeight);
       if (roll < skill.SpawnWeight) {
         rolledSkill = skill;
-        break;
       }
     }
 
