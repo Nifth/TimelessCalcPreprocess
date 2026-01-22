@@ -103,6 +103,8 @@ function parseDescriptions(statsCodes: Map<string, number>)
             let divider = 1;
             if (t.includes('divide_by_one_hundred')) {
                 divider = 100;
+            } else if (t.includes('per_minute_to_per_second')) {
+                divider = 60;
             }
             statDescription.push({from: from, to: to, divider: divider, translation: translation.replace('{0:+d}', '{0}')})
         })

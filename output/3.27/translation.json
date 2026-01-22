@@ -397,12 +397,12 @@
   "453": [
     {
       "from": 1,
-      "divider": 1,
+      "divider": 60,
       "translation": "Regenerate {0}% of Life per second"
     },
     {
       "to": -1,
-      "divider": 1,
+      "divider": 60,
       "translation": "Regenerate {0}% of Life per second"
     }
   ],
