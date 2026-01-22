@@ -100,7 +100,11 @@ function parseDescriptions(statsCodes: Map<string, number>)
                 from = 100;
                 to = 100;
             }
-            statDescription.push({from: from, to: to, translation: translation.replace('{0:+d}', '{0}')})
+            let divider = 1;
+            if (type.includes('divide_by_one_hundred')) {
+                divider = 100;
+            }
+            statDescription.push({from: from, to: to, divider: divider, translation: translation.replace('{0:+d}', '{0}')})
         })
         finalDescriptions[statsCodes.get(skillId)] = statDescription;
     });
