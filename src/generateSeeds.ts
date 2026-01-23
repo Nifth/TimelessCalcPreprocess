@@ -82,63 +82,75 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     .filter(n => n.IsNotable && n.IsModifiable)
     .filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
 
-  console.log(`${name}: ${nodes.length} nodes, seeds ${min}→${max} (step ${step})`);
+  const socketNodeIds = Object.keys(treeData.socketNodes) as string[];
+  const nodesBySocket: Record<string, typeof nodes> = {};
 
-  const filePath = join(OUTPUT_DIR, `${name}.jsonl.gz`);
-  const writeStream = createWriteStream(filePath);
-  writeStream.on('error', err => console.error('Write error:', err));
+  socketNodeIds.forEach(socketNodeId => {
+    const socketNodeIdsAsNumbers = treeData.socketNodes[socketNodeId].map((n: string) => Number(n));
+    nodesBySocket[socketNodeId] = nodes.filter(n =>
+      socketNodeIdsAsNumbers.includes(n.GraphIdentifier)
+    );
+  });
 
-  const lines: string[] = [];
+  console.log(`${name}: ${nodes.length} nodes, ${socketNodeIds.length} socket nodes, seeds ${min}→${max} (step ${step})`);
+
+  socketNodeIds.forEach(socketNodeId => {
+    const count = nodesBySocket[socketNodeId].length;
+    console.log(`  Socket ${socketNodeId}: ${count} nodes`);
+  });
+
+  const linesBySocket: Record<string, string[]> = {};
+  socketNodeIds.forEach(socketNodeId => {
+    linesBySocket[socketNodeId] = [];
+  });
 
 
   for (let seed = min; seed <= max; seed += step) {
     const timelessJewel = new TimelessJewel(version, seed);
-    let replacedMap = {};
-    let addedMap = {};
 
-    for (const node of nodes) {
-      const manager = new AlternateTreeManager(node, timelessJewel);
-      const replaced = manager.IsPassiveSkillReplaced();
+    for (const socketNodeId of socketNodeIds) {
+      const socketNodes = nodesBySocket[socketNodeId];
+      let replacedMap: Record<string, number[]> = {};
+      let addedMap: Record<string, number[]> = {};
 
-      if (replaced) {
-        const res = manager.ReplacePassiveSkill();
+      for (const node of socketNodes) {
+        const manager = new AlternateTreeManager(node, timelessJewel);
+        const replaced = manager.IsPassiveSkillReplaced();
 
-        const stats = {};
-        Object.values(res.StatRolls).forEach((roll, index) => {
-          stats[res.AlternatePassiveSkill.StatsKeys[index]] = roll;
-        });
-        const key = res.AlternatePassiveSkill._rid + '-' + JSON.stringify(stats);
-        if (!replacedMap[key]) {
-          replacedMap[key] = [node.GraphIdentifier]
-        } else {
-          replacedMap[key].push(node.GraphIdentifier)
-        }
-      } else {
-        const adds = manager.AugmentPassiveSkill();
-        if (adds.length > 0) {
-          const add = adds[0];
-          const stats = {};
-          Object.values(add.StatRolls).forEach((roll, index) => {
-            stats[add.AlternatePassiveAddition.StatsKeys[index]] = roll;
+        if (replaced) {
+          const res = manager.ReplacePassiveSkill();
+          const stats: Record<string, number> = {};
+          Object.values(res.StatRolls).forEach((roll, index) => {
+            stats[res.AlternatePassiveSkill.StatsKeys[index]] = roll;
           });
-          const key = add.AlternatePassiveAddition._rid + '-' + JSON.stringify(stats);
-          if (!addedMap[key]) {
-            addedMap[key] = [node.GraphIdentifier]
+          const key = res.AlternatePassiveSkill._rid + '-' + JSON.stringify(stats);
+          if (!replacedMap[key]) {
+            replacedMap[key] = [node.GraphIdentifier];
           } else {
-            addedMap[key].push(node.GraphIdentifier)
+            replacedMap[key].push(node.GraphIdentifier);
+          }
+        } else {
+          const adds = manager.AugmentPassiveSkill();
+          if (adds.length > 0) {
+            const add = adds[0];
+            const stats: Record<string, number> = {};
+            Object.values(add.StatRolls).forEach((roll, index) => {
+              stats[add.AlternatePassiveAddition.StatsKeys[index]] = roll;
+            });
+            const key = add.AlternatePassiveAddition._rid + '-' + JSON.stringify(stats);
+            if (!addedMap[key]) {
+              addedMap[key] = [node.GraphIdentifier];
+            } else {
+              addedMap[key].push(node.GraphIdentifier);
+            }
           }
         }
       }
-    }
-    let entry = {};
-    entry = { r: replacedMap, a: addedMap }
 
-    const line = JSON.stringify(entry) + '\n';
-    lines.push(line);
-    
-    replacedMap = {};
-    addedMap = {};
-    entry = {};
+      const entry = { r: replacedMap, a: addedMap };
+      const line = JSON.stringify(entry) + '\n';
+      linesBySocket[socketNodeId].push(line);
+    }
 
     // Log progression
     if ((seed - min) % (step * 100) === 0) {
@@ -146,17 +158,28 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
     }
   }
 
-  console.log(`Lines count: ${lines.length}`);
-  const data = lines.join('');
-  const gzipped = gzipSync(new TextEncoder().encode(data));
-  console.log(`Data length: ${data.length}, gzipped length: ${gzipped.length}`);
-  writeStream.write(gzipped);
-  writeStream.end();
-  await new Promise<void>((r, reject) => {
-    writeStream.on('finish', () => r());
-    writeStream.on('error', reject);
-  });
-  console.log(`\r  → ${name}.jsonl.gz generated`);
+  // Write and gzip each socket file
+  for (const socketNodeId of socketNodeIds) {
+    const lines = linesBySocket[socketNodeId];
+    console.log(`\nSocket ${socketNodeId}: Lines count: ${lines.length}`);
+
+    const data = lines.join('');
+    const gzipped = gzipSync(new TextEncoder().encode(data));
+    console.log(`  Data length: ${data.length}, gzipped length: ${gzipped.length}`);
+
+    const filePath = join(OUTPUT_DIR, `${name}-${socketNodeId}.jsonl.gz`);
+    const writeStream = createWriteStream(filePath);
+    writeStream.on('error', err => console.error('Write error:', err));
+
+    writeStream.write(gzipped);
+    writeStream.end();
+    await new Promise<void>((r, reject) => {
+      writeStream.on('finish', () => r());
+      writeStream.on('error', reject);
+    });
+
+    console.log(`  → ${name}-${socketNodeId}.jsonl.gz generated`);
+  }
 }
 
 main().catch(err => {
