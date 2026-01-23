@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const version = process.argv[2] || 'default';
-const inputPath = path.resolve(__dirname, `../data/${version}/data.json`);
 const replaceSkillsPath = path.resolve(__dirname, `../data/${version}/alternatepassiveskills.json`);
 const additionSkillsPath = path.resolve(__dirname, `../data/${version}/alternatepassiveadditions.json`);
 const statsPath = path.resolve(__dirname, `../data/${version}/stats.json`);
@@ -110,7 +109,7 @@ function parseDescriptions(statsCodes: Map<string, number>)
         })
         finalDescriptions[statsCodes.get(skillId)] = statDescription;
     });
-    finalDescriptions[statsCodes.get('base_devotion')] = [{translation: "Devotion"}]
+    finalDescriptions[statsCodes.get('base_devotion')] = [{translation: "+{0} to Devotion"}]
     writeOutputFiles(finalDescriptions, 'translation.json')
 }
 
@@ -144,7 +143,7 @@ function writeJewelStats()
 }
 
 /**
- * Writes the cleaned data to a compact JSON file and a gzip-compressed version for frontend use.
+ * Writes the cleaned data to a compact JSON file
  */
 function writeOutputFiles(data: Record<string, any>, filename: string) {
     if (!fs.existsSync(outputDir)) {
@@ -153,13 +152,6 @@ function writeOutputFiles(data: Record<string, any>, filename: string) {
     const outputPath = path.join(outputDir, filename)
     fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8');
     console.log('Cleaned file written (compact):', outputPath);
-    try {
-        const { gzipSync } = require('zlib');
-        fs.writeFileSync(outputPath + '.gz', gzipSync(JSON.stringify(data)));
-        console.log('Compressed file written:', outputPath + '.gz');
-    } catch (e) {
-        console.warn('Gzip compression not available (zlib)', e);
-    }
 }
 
 /**

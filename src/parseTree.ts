@@ -183,7 +183,7 @@ function shortenImageNames(data: Record<string, any>) {
 }
 
 /**
- * Writes the cleaned data to a compact JSON file and a gzip-compressed version for frontend use.
+ * Writes the cleaned data to a compact JSON file
  */
 function writeOutputFiles(data: Record<string, any>) {
     if (!fs.existsSync(outputDir)) {
@@ -191,13 +191,6 @@ function writeOutputFiles(data: Record<string, any>) {
     }
     fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8');
     console.log('Cleaned file written (compact):', outputPath);
-    try {
-        const { gzipSync } = require('zlib');
-        fs.writeFileSync(outputPath + '.gz', gzipSync(JSON.stringify(data)));
-        console.log('Compressed file written:', outputPath + '.gz');
-    } catch (e) {
-        console.warn('Gzip compression not available (zlib)', e);
-    }
 }
 
 function generateNodePosition(data: Record<string, any>)
