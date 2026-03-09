@@ -123,7 +123,8 @@ function writeJewelStats()
         2: 'karui',
         3: 'maraketh',
         4: 'templar',
-        5: 'eternal'
+        5: 'eternal',
+        6: 'kalguur',
      }
 
     let jewelData = {};

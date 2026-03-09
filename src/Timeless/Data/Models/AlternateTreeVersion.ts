@@ -26,6 +26,7 @@ export class AlternateTreeVersion {
       case 1: return 100;
       case 4: return 20;
       case 5: return 100;
+      case 6: return 100;
       default: return 0;
     }
   }

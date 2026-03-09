@@ -21,11 +21,12 @@ const loadTreeData = async (version: string) => {
 
 const OUTPUT_DIR = resolve(`output/${version}`);
 const JEWELS = [
-  { index: 1, name: 'GloriousVanity', min: 100, max: 8000, step: 1 },
-  { index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
-  { index: 3, name: 'BrutalRestraint', min: 500, max: 8000, step: 1 },
-  { index: 4, name: 'MilitantFaith', min: 2000, max: 10000, step: 1 },
-  { index: 5, name: 'ElegantHubris', min: 2000, max: 160000, step: 20 },
+  //{ index: 1, name: 'GloriousVanity', min: 100, max: 8000, step: 1 },
+  //{ index: 2, name: 'LethalPride', min: 10000, max: 18000, step: 1 },
+  //{ index: 3, name: 'BrutalRestraint', min: 500, max: 8000, step: 1 },
+  //{ index: 4, name: 'MilitantFaith', min: 2000, max: 10000, step: 1 },
+  //{ index: 5, name: 'ElegantHubris', min: 2000, max: 160000, step: 20 },
+  { index: 6, name: 'HeroicTragedy', min: 100, max: 8000, step: 1 },
 ] as const;
 
 let modifiableNodeIds = [];
@@ -77,7 +78,7 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
   const version = DataManager.AlternateTreeVersions!.find(v => v.Index === index);
   if (!version) throw new Error(`Version ${index} not found`);
 
-  let nodes = index === 1 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
+  let nodes = index !== 6 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
     : DataManager.PassiveSkills!
     .filter(n => n.IsNotable && n.IsModifiable)
     .filter(n => modifiableNodeIds.includes(n.GraphIdentifier))

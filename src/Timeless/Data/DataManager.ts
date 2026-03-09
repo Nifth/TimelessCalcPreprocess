@@ -71,6 +71,7 @@ export class DataManager {
       new AlternateTreeVersion(3),
       new AlternateTreeVersion(4),
       new AlternateTreeVersion(5),
+      new AlternateTreeVersion(6),
     ];
   }
 
