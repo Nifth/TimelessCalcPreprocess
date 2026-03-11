@@ -127,26 +127,32 @@ function writeJewelStats()
         6: 'kalguur',
      }
 
-    let jewelData = {};
+    let jewelData: Record<string, Set<number>> = {};
 
     data.forEach(row => {
         if (row.PassiveType.includes(4)) return;
         const jewelType = mapping[row.AlternateTreeVersionsKey];
         if (!jewelData[jewelType]) {
-            jewelData[jewelType] = [];
+            jewelData[jewelType] = new Set();
         }
-        if (row.StatsKeys[0]) {
-           jewelData[jewelType].push(row.StatsKeys[0])
+        if (row.StatsKeys) {
+            row.StatsKeys.forEach((s) => {
+                jewelData[jewelType].add(s);
+            })
         }
     })
 
-    writeOutputFiles(jewelData, 'jewelstats.json')
+    const dataToWrite = {};
+    Object.entries(jewelData).forEach(([k, s]) => {
+        dataToWrite[k] = Array.from(s);
+    })
+    writeOutputFiles(dataToWrite, 'jewelstats.json')
 }
 
 /**
  * Writes the cleaned data to a compact JSON file
  */
-function writeOutputFiles(data: Record<string, any>, filename: string) {
+function writeOutputFiles(data: Record<string, Set<number>>, filename: string) {
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
