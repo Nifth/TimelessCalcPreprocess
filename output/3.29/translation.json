@@ -1,0 +1,2728 @@
+{
+  "23": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Defences from Equipped Shield"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Defences from Equipped Shield"
+    }
+  ],
+  "25": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Spell Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Spell Damage"
+    }
+  ],
+  "26": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Global Physical Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Global Physical Damage"
+    }
+  ],
+  "30": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Physical Damage to Attacks"
+    }
+  ],
+  "42": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Fire Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Fire Damage"
+    }
+  ],
+  "45": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Fire Damage to Attacks"
+    }
+  ],
+  "49": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cold Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cold Damage"
+    }
+  ],
+  "52": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Cold Damage to Attacks"
+    }
+  ],
+  "56": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Lightning Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Lightning Damage"
+    }
+  ],
+  "59": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Lightning Damage to Attacks"
+    }
+  ],
+  "63": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Chaos Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Chaos Damage"
+    }
+  ],
+  "66": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Chaos Damage to Attacks"
+    }
+  ],
+  "70": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Attack Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Attack Speed"
+    }
+  ],
+  "83": [
+    {
+      "divider": 1,
+      "translation": "{0} to Accuracy Rating"
+    }
+  ],
+  "84": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Global Accuracy Rating"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Global Accuracy Rating"
+    }
+  ],
+  "95": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Global Critical Strike Multiplier"
+    }
+  ],
+  "97": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "You take {0}% reduced Extra Damage from Critical Strikes"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "You take {0}% increased Extra Damage from Critical Strikes"
+    }
+  ],
+  "108": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% reduced Enemy Stun Threshold"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% increased Enemy Stun Threshold"
+    }
+  ],
+  "116": [
+    {
+      "divider": 1,
+      "translation": "{0} to Armour"
+    }
+  ],
+  "117": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Armour"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Armour"
+    }
+  ],
+  "119": [
+    {
+      "divider": 1,
+      "translation": "{0} to Evasion Rating"
+    }
+  ],
+  "120": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Evasion Rating"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Evasion Rating"
+    }
+  ],
+  "122": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Evasion Rating per Frenzy Charge"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Evasion Rating per Frenzy Charge"
+    }
+  ],
+  "124": [
+    {
+      "divider": 1,
+      "translation": "{0} to maximum Life"
+    }
+  ],
+  "125": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased maximum Life"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced maximum Life"
+    }
+  ],
+  "126": [
+    {
+      "divider": 60,
+      "translation": "Regenerate {0} Life per second"
+    }
+  ],
+  "128": [
+    {
+      "divider": 1,
+      "translation": "{0} to maximum Mana"
+    }
+  ],
+  "129": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased maximum Mana"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced maximum Mana"
+    }
+  ],
+  "131": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Mana Regeneration Rate"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Mana Regeneration Rate"
+    }
+  ],
+  "132": [
+    {
+      "from": 1,
+      "divider": 60,
+      "translation": "Regenerate {0} Mana per second"
+    }
+  ],
+  "134": [
+    {
+      "divider": 1,
+      "translation": "{0} to maximum Energy Shield"
+    }
+  ],
+  "135": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased maximum Energy Shield"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced maximum Energy Shield"
+    }
+  ],
+  "139": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Energy Shield Recharge Rate"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Energy Shield Recharge Rate"
+    }
+  ],
+  "140": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% faster start of Energy Shield Recharge"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% slower start of Energy Shield Recharge"
+    }
+  ],
+  "142": [
+    {
+      "divider": 1,
+      "translation": "{0}% to all Elemental Resistances"
+    }
+  ],
+  "146": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Fire Resistance"
+    }
+  ],
+  "148": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Cold Resistance"
+    }
+  ],
+  "150": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Lightning Resistance"
+    }
+  ],
+  "152": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Chaos Resistance"
+    }
+  ],
+  "161": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% increased maximum Life"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions have {0}% reduced maximum Life"
+    }
+  ],
+  "177": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Projectile Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Projectile Speed"
+    }
+  ],
+  "179": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Movement Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Movement Speed"
+    }
+  ],
+  "188": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to gain a Frenzy Charge on Hit"
+    }
+  ],
+  "192": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Chilled"
+    }
+  ],
+  "193": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Frozen"
+    }
+  ],
+  "194": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Ignited"
+    }
+  ],
+  "195": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Shocked"
+    }
+  ],
+  "211": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Burning Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Burning Damage"
+    }
+  ],
+  "217": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Skill Effect Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Skill Effect Duration"
+    }
+  ],
+  "218": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cast Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cast Speed"
+    }
+  ],
+  "342": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Stun Duration on Enemies"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Stun Duration on Enemies"
+    }
+  ],
+  "412": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Wand Attacks"
+    }
+  ],
+  "414": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Wand Attacks"
+    }
+  ],
+  "416": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Wand Attacks"
+    }
+  ],
+  "420": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Endurance Charge Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Endurance Charge Duration"
+    }
+  ],
+  "423": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Frenzy Charge Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Frenzy Charge Duration"
+    }
+  ],
+  "429": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Power Charge Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Power Charge Duration"
+    }
+  ],
+  "436": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Area of Effect"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Area of Effect"
+    }
+  ],
+  "449": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Gain {0}% of Physical Damage as Extra Fire Damage"
+    }
+  ],
+  "450": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Gain {0}% of Physical Damage as Extra Cold Damage"
+    }
+  ],
+  "453": [
+    {
+      "from": 1,
+      "divider": 60,
+      "translation": "Regenerate {0}% of Life per second"
+    },
+    {
+      "to": -1,
+      "divider": 60,
+      "translation": "Regenerate {0}% of Life per second"
+    }
+  ],
+  "457": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Freeze"
+    }
+  ],
+  "462": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Flask Charges gained"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Flask Charges gained"
+    }
+  ],
+  "484": [
+    {
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Fire Damage"
+    }
+  ],
+  "485": [
+    {
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Cold Damage"
+    }
+  ],
+  "486": [
+    {
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Lightning Damage"
+    }
+  ],
+  "488": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Elemental Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Elemental Damage"
+    }
+  ],
+  "490": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions deal {0}% increased Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions deal {0}% reduced Damage"
+    }
+  ],
+  "492": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Melee Physical Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Melee Physical Damage"
+    }
+  ],
+  "500": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Projectile Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Projectile Damage"
+    }
+  ],
+  "556": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Global Critical Strike Chance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Global Critical Strike Chance"
+    }
+  ],
+  "558": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Spell Critical Strike Chance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Spell Critical Strike Chance"
+    }
+  ],
+  "576": [
+    {
+      "divider": 1,
+      "translation": "{0} to Strength"
+    }
+  ],
+  "579": [
+    {
+      "divider": 1,
+      "translation": "{0} to Intelligence"
+    }
+  ],
+  "582": [
+    {
+      "divider": 1,
+      "translation": "{0} to Dexterity"
+    }
+  ],
+  "595": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Damage Penetrates {0}% Fire Resistance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Your Hits treat Fire Resistance as {0}% higher than actual value"
+    }
+  ],
+  "596": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Damage Penetrates {0}% Cold Resistance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Your Hits treat Cold Resistance as {0}% higher than actual value"
+    }
+  ],
+  "597": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Damage Penetrates {0}% Lightning Resistance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Your Hits treat Lightning Resistance as {0}% higher than actual value"
+    }
+  ],
+  "607": [
+    {
+      "divider": 1,
+      "translation": "{0} to all Attributes"
+    }
+  ],
+  "613": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Ignite"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Always Ignite"
+    }
+  ],
+  "619": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% increased Movement Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions have {0}% reduced Movement Speed"
+    }
+  ],
+  "621": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Area Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Area Damage"
+    }
+  ],
+  "622": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid Elemental Ailments"
+    }
+  ],
+  "661": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Shock"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Always Shock"
+    }
+  ],
+  "741": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Flask Effect Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Flask Effect Duration"
+    }
+  ],
+  "846": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Area of Effect of Aura Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Area of Effect of Aura Skills"
+    }
+  ],
+  "944": [
+    {
+      "divider": 1,
+      "translation": "{0}% to maximum Fire Resistance"
+    }
+  ],
+  "945": [
+    {
+      "divider": 1,
+      "translation": "{0}% to maximum Cold Resistance"
+    }
+  ],
+  "946": [
+    {
+      "divider": 1,
+      "translation": "{0}% to maximum Lightning Resistance"
+    }
+  ],
+  "947": [
+    {
+      "divider": 1,
+      "translation": "{0}% to maximum Chaos Resistance"
+    }
+  ],
+  "976": [
+    {
+      "divider": 1,
+      "translation": "{0}% Global chance to Blind Enemies on hit"
+    }
+  ],
+  "1037": [
+    {
+      "divider": 1,
+      "translation": "{0}% additional Physical Damage Reduction"
+    }
+  ],
+  "1077": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% of Damage taken Recouped as Mana"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% of Damage taken Recouped as Mana"
+    }
+  ],
+  "1085": [
+    {
+      "divider": 1,
+      "translation": "{0}% Chance to Block Attack Damage"
+    }
+  ],
+  "1090": [
+    {
+      "divider": 1,
+      "translation": "{0}% Chance to Block Attack Damage"
+    }
+  ],
+  "1256": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to gain a Power Charge on Critical Strike"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Gain a Power Charge on Critical Strike"
+    }
+  ],
+  "1299": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Melee Critical Strike Multiplier"
+    }
+  ],
+  "1334": [
+    {
+      "divider": 1,
+      "translation": "Ignites you inflict deal Damage {0}% faster"
+    }
+  ],
+  "1348": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Totem Placement speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Totem Placement speed"
+    }
+  ],
+  "1358": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to gain a Frenzy Charge on Kill"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Gain a Frenzy Charge on Kill"
+    }
+  ],
+  "1360": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Melee Critical Strike Chance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Melee Critical Strike Chance"
+    }
+  ],
+  "1367": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Melee Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Melee Damage"
+    }
+  ],
+  "1370": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0} Life gained when you Block"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Lose {0} Life when you Block"
+    }
+  ],
+  "1390": [
+    {
+      "divider": 1,
+      "translation": "{0} to Strength and Intelligence"
+    }
+  ],
+  "1391": [
+    {
+      "divider": 1,
+      "translation": "{0} to Strength and Dexterity"
+    }
+  ],
+  "1392": [
+    {
+      "divider": 1,
+      "translation": "{0} to Dexterity and Intelligence"
+    }
+  ],
+  "1393": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of your Curses"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of your Curses"
+    }
+  ],
+  "1410": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "You gain Onslaught for {0} seconds on Kill"
+    }
+  ],
+  "1622": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Physical Damage to Spells"
+    }
+  ],
+  "1624": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Fire Damage to Spells"
+    }
+  ],
+  "1626": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Cold Damage to Spells"
+    }
+  ],
+  "1628": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Lightning Damage to Spells"
+    }
+  ],
+  "1630": [
+    {
+      "divider": 1,
+      "translation": "Adds {0} to {1} Chaos Damage to Spells"
+    }
+  ],
+  "1692": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage per Frenzy Charge"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage per Frenzy Charge"
+    }
+  ],
+  "1826": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Totem Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Totem Damage"
+    }
+  ],
+  "1901": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Fire and Cold Resistances"
+    }
+  ],
+  "1902": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Fire and Lightning Resistances"
+    }
+  ],
+  "1903": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Cold and Lightning Resistances"
+    }
+  ],
+  "1949": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Attack and Cast Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Attack and Cast Speed"
+    }
+  ],
+  "2020": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage over Time"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage over Time"
+    }
+  ],
+  "2075": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Dexterity"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Dexterity"
+    }
+  ],
+  "2076": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Strength"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Strength"
+    }
+  ],
+  "2136": [
+    {
+      "divider": 1,
+      "translation": "{0}% Chance to Block Spell Damage"
+    }
+  ],
+  "2137": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% increased Attack Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions have {0}% reduced Attack Speed"
+    }
+  ],
+  "2138": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% increased Cast Speed"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions have {0}% reduced Cast Speed"
+    }
+  ],
+  "2140": [
+    {
+      "from": 1,
+      "divider": 60,
+      "translation": "Minions Regenerate {0}% of Life per second"
+    }
+  ],
+  "2141": [
+    {
+      "divider": 1,
+      "translation": "Minions have {0}% to all Elemental Resistances"
+    }
+  ],
+  "2142": [
+    {
+      "divider": 1,
+      "translation": "Minions have {0}% to Chaos Resistance"
+    }
+  ],
+  "2178": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Chaos Damage Leeched as Life"
+    }
+  ],
+  "2256": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Bow Attacks"
+    }
+  ],
+  "2258": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Bow Attacks"
+    }
+  ],
+  "2654": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Attack Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Attack Damage"
+    }
+  ],
+  "2709": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Duration of Elemental Ailments on Enemies"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Duration of Elemental Ailments on Enemies"
+    }
+  ],
+  "2745": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Attack Damage Leeched as Life"
+    }
+  ],
+  "3160": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Physical Damage Leeched as Life"
+    }
+  ],
+  "3161": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Fire Damage Leeched as Life"
+    }
+  ],
+  "3162": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Cold Damage Leeched as Life"
+    }
+  ],
+  "3163": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Lightning Damage Leeched as Life"
+    }
+  ],
+  "3172": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "Minions Leech {0}% of Damage as Life"
+    }
+  ],
+  "3396": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cooldown Recovery Rate"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cooldown Recovery Rate"
+    }
+  ],
+  "3421": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage with Poison"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage with Poison"
+    }
+  ],
+  "3448": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage per Endurance Charge"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage per Endurance Charge"
+    }
+  ],
+  "3475": [
+    {
+      "divider": 1,
+      "translation": "{0}% Chance to Block Attack Damage if you were Damaged by a Hit Recently"
+    }
+  ],
+  "3622": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Chill"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Chill"
+    }
+  ],
+  "3623": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Shock"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Shock"
+    }
+  ],
+  "3779": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to gain Phasing for 4 seconds on Kill"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Gain Phasing for 4 seconds on Kill"
+    }
+  ],
+  "3899": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased effect of Non-Curse Auras from your Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced effect of Non-Curse Auras from your Skills"
+    }
+  ],
+  "3939": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to gain an Endurance Charge on Kill"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Gain an Endurance Charge on Kill"
+    }
+  ],
+  "4500": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid Bleeding"
+    }
+  ],
+  "5033": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Projectile Attack Damage"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Projectile Attack Damage"
+    }
+  ],
+  "5309": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to Poison Enemies on Hit"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Minions Poison Enemies on Hit"
+    }
+  ],
+  "5361": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Poisoned"
+    }
+  ],
+  "5623": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Warcry Buff Effect"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Warcry Buff Effect"
+    }
+  ],
+  "5925": [
+    {
+      "divider": 1,
+      "translation": "{0}% chance to deal Double Damage"
+    }
+  ],
+  "6154": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage with Bleeding"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage with Bleeding"
+    }
+  ],
+  "6160": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Fire Damage with Attack Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Fire Damage with Attack Skills"
+    }
+  ],
+  "6161": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cold Damage with Attack Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cold Damage with Attack Skills"
+    }
+  ],
+  "6162": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Lightning Damage with Attack Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Lightning Damage with Attack Skills"
+    }
+  ],
+  "6199": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% chance to Avoid being Stunned"
+    }
+  ],
+  "6251": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage per Power Charge"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage per Power Charge"
+    }
+  ],
+  "6426": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Non-Damaging Ailments"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Non-Damaging Ailments"
+    }
+  ],
+  "6772": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Wand Attacks"
+    }
+  ],
+  "6774": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Dagger Attacks"
+    }
+  ],
+  "6776": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Claw Attacks"
+    }
+  ],
+  "6778": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Sword Attacks"
+    }
+  ],
+  "6780": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Axe Attacks"
+    }
+  ],
+  "6782": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Mace or Sceptre Attacks"
+    }
+  ],
+  "6784": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Physical Damage with Staff Attacks"
+    }
+  ],
+  "6786": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Dagger Attacks"
+    }
+  ],
+  "6788": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Claw Attacks"
+    }
+  ],
+  "6790": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Bow Attacks"
+    }
+  ],
+  "6792": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Sword Attacks"
+    }
+  ],
+  "6794": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Axe Attacks"
+    }
+  ],
+  "6796": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Mace or Sceptre Attacks"
+    }
+  ],
+  "6798": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Lightning Damage with Staff Attacks"
+    }
+  ],
+  "6800": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Dagger Attacks"
+    }
+  ],
+  "6802": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Claw Attacks"
+    }
+  ],
+  "6804": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Sword Attacks"
+    }
+  ],
+  "6806": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Axe Attacks"
+    }
+  ],
+  "6808": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Mace or Sceptre Attacks"
+    }
+  ],
+  "6810": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Fire Damage with Staff Attacks"
+    }
+  ],
+  "6812": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Dagger Attacks"
+    }
+  ],
+  "6814": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Claw Attacks"
+    }
+  ],
+  "6816": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Bow Attacks"
+    }
+  ],
+  "6818": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Sword Attacks"
+    }
+  ],
+  "6820": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Axe Attacks"
+    }
+  ],
+  "6822": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Mace or Sceptre Attacks"
+    }
+  ],
+  "6824": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Cold Damage with Staff Attacks"
+    }
+  ],
+  "6830": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Fire Damage while Dual Wielding"
+    }
+  ],
+  "6832": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Cold Damage while Dual Wielding"
+    }
+  ],
+  "6834": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Lightning Damage while Dual Wielding"
+    }
+  ],
+  "6836": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Physical Damage while Dual Wielding"
+    }
+  ],
+  "6838": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Chaos Damage while Dual Wielding"
+    }
+  ],
+  "6840": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Fire Damage while wielding a Two Handed Weapon"
+    }
+  ],
+  "6842": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Cold Damage while wielding a Two Handed Weapon"
+    }
+  ],
+  "6844": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Lightning Damage while wielding a Two Handed Weapon"
+    }
+  ],
+  "6846": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Physical Damage while wielding a Two Handed Weapon"
+    }
+  ],
+  "6848": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Chaos Damage while wielding a Two Handed Weapon"
+    }
+  ],
+  "6850": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Fire Damage while holding a Shield"
+    }
+  ],
+  "6852": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Cold Damage while holding a Shield"
+    }
+  ],
+  "6854": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Lightning Damage while holding a Shield"
+    }
+  ],
+  "6856": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Physical Damage while holding a Shield"
+    }
+  ],
+  "6858": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Spell Chaos Damage while holding a Shield"
+    }
+  ],
+  "6860": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage over Time while Dual Wielding"
+    }
+  ],
+  "6861": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage over Time while wielding a Two Handed Weapon"
+    }
+  ],
+  "6862": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage over Time while holding a Shield"
+    }
+  ],
+  "6863": [
+    {
+      "divider": 1,
+      "translation": "Minions deal {0} to {1} additional Fire Damage"
+    }
+  ],
+  "6865": [
+    {
+      "divider": 1,
+      "translation": "Minions deal {0} to {1} additional Cold Damage"
+    }
+  ],
+  "6867": [
+    {
+      "divider": 1,
+      "translation": "Minions deal {0} to {1} additional Lightning Damage"
+    }
+  ],
+  "6869": [
+    {
+      "divider": 1,
+      "translation": "Minions deal {0} to {1} additional Physical Damage"
+    }
+  ],
+  "6871": [
+    {
+      "divider": 1,
+      "translation": "Minions deal {0} to {1} additional Chaos Damage"
+    }
+  ],
+  "6873": [
+    {
+      "divider": 1,
+      "translation": "Minions Regenerate {0} Life per second"
+    }
+  ],
+  "6874": [
+    {
+      "divider": 1,
+      "translation": "Regenerate {0} Energy Shield per second"
+    }
+  ],
+  "6882": [
+    {
+      "divider": 1,
+      "translation": "{0}% Chance to Block Spell Damage if you were Damaged by a Hit Recently"
+    }
+  ],
+  "6886": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Movement Speed if you haven't taken Damage Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Movement Speed if you haven't taken Damage Recently"
+    }
+  ],
+  "6891": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage if you've Killed Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage if you've Killed Recently"
+    }
+  ],
+  "6892": [
+    {
+      "divider": 1,
+      "translation": "{0}% to Critical Strike Multiplier if you've Killed Recently"
+    }
+  ],
+  "6895": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Damage Penetrates {0}% Elemental Resistances if you haven't Killed Recently"
+    }
+  ],
+  "6896": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cast Speed if a Minion has been Killed Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cast Speed if a Minion has been Killed Recently"
+    }
+  ],
+  "6899": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions deal {0}% increased Damage if you've used a Minion Skill Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions deal {0}% reduced Damage if you've used a Minion Skill Recently"
+    }
+  ],
+  "6902": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Evasion Rating while moving"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Evasion Rating while moving"
+    }
+  ],
+  "6903": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Mana Regeneration Rate while moving"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Mana Regeneration Rate while moving"
+    }
+  ],
+  "6904": [
+    {
+      "divider": 60,
+      "translation": "Regenerate {0}% of Life per second while moving"
+    }
+  ],
+  "6906": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Attack Speed if you've dealt a Critical Strike Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Attack Speed if you've dealt a Critical Strike Recently"
+    }
+  ],
+  "6907": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Cast Speed if you've dealt a Critical Strike Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Cast Speed if you've dealt a Critical Strike Recently"
+    }
+  ],
+  "6908": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Critical Strike Chance if you haven't dealt a Critical Strike Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Critical Strike Chance if you haven't dealt a Critical Strike Recently"
+    }
+  ],
+  "6909": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% increased Attack and Cast Speed if you or your Minions have Killed Recently"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Minions have {0}% reduced Attack and Cast Speed if you or your Minions have Killed Recently"
+    }
+  ],
+  "6912": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Blind Enemies on Hit with Attacks"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Blind Enemies on Hit with Attacks"
+    }
+  ],
+  "6913": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Taunt Enemies on Hit with Attacks"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Taunt Enemies on Hit with Attacks"
+    }
+  ],
+  "6914": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Hinder Enemies on Hit with Spells"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Hinder Enemies on Hit with Spells"
+    }
+  ],
+  "6915": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to Blind on Hit with Attacks"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Minions Blind on Hit with Attacks"
+    }
+  ],
+  "6916": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to Taunt on Hit with Attacks"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Minions Taunt on Hit with Attacks"
+    }
+  ],
+  "6917": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to Hinder Enemies on Hit with Spells"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Minions Hinder Enemies on Hit with Spells"
+    }
+  ],
+  "6919": [
+    {
+      "divider": 1,
+      "translation": "{0}% additional Physical Damage Reduction if you weren't Damaged by a Hit Recently"
+    }
+  ],
+  "7628": [
+    {
+      "from": 1,
+      "to": 1,
+      "divider": 1,
+      "translation": "Gain {0} Endurance Charge every second if you've been Hit Recently"
+    },
+    {
+      "from": 2,
+      "divider": 1,
+      "translation": "Gain {0} Endurance Charges every second if you've been Hit Recently"
+    }
+  ],
+  "8318": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to Intimidate Enemies for 4 seconds on Hit"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Intimidate Enemies for 4 seconds on Hit"
+    }
+  ],
+  "8360": [
+    {
+      "divider": 1,
+      "translation": "{0}% increased Armour per Endurance Charge"
+    }
+  ],
+  "8362": [
+    {
+      "divider": 1,
+      "translation": "{0}% increased Energy Shield per Power Charge"
+    }
+  ],
+  "8589": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Impale Effect"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Impale Effect"
+    }
+  ],
+  "8985": [
+    {
+      "from": 1,
+      "divider": 100,
+      "translation": "{0}% of Spell Damage Leeched as Energy Shield"
+    }
+  ],
+  "9041": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Curse Skills have {0}% increased Skill Effect Duration"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Curse Skills have {0}% reduced Skill Effect Duration"
+    }
+  ],
+  "9223": [
+    {
+      "divider": 1,
+      "translation": "Poisons you inflict deal Damage {0}% faster"
+    }
+  ],
+  "9224": [
+    {
+      "divider": 1,
+      "translation": "Bleeding you inflict deals Damage {0}% faster"
+    }
+  ],
+  "9531": [
+    {
+      "divider": 1,
+      "translation": "Inner Conviction"
+    }
+  ],
+  "9541": [
+    {
+      "divider": 1,
+      "translation": "Eternal Youth"
+    }
+  ],
+  "9583": [
+    {
+      "divider": 1,
+      "translation": "Corrupted Soul"
+    }
+  ],
+  "9584": [
+    {
+      "divider": 1,
+      "translation": "The Agnostic"
+    }
+  ],
+  "9585": [
+    {
+      "divider": 1,
+      "translation": "Divine Flesh"
+    }
+  ],
+  "9714": [
+    {
+      "divider": 1,
+      "translation": "Glancing Blows"
+    }
+  ],
+  "9723": [
+    {
+      "divider": 1,
+      "translation": "Supreme Decadence"
+    }
+  ],
+  "9759": [
+    {
+      "translation": "+{0} to Devotion"
+    }
+  ],
+  "9767": [
+    {
+      "divider": 1,
+      "translation": "Wind Dancer"
+    }
+  ],
+  "9849": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Fire Damage while you have at least 150 Devotion"
+    }
+  ],
+  "9850": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Cold Damage while you have at least 150 Devotion"
+    }
+  ],
+  "9851": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% of Physical Damage Converted to Lightning Damage while you have at least 150 Devotion"
+    }
+  ],
+  "9852": [
+    {
+      "divider": 1,
+      "translation": "Gain {0}% of Maximum Mana as Extra Maximum Energy Shield while you have at least 150 Devotion"
+    }
+  ],
+  "9853": [
+    {
+      "divider": 1,
+      "translation": "Gain Arcane Surge on Hit with Spells if you have at least 150 Devotion"
+    }
+  ],
+  "9854": [
+    {
+      "divider": 1,
+      "translation": "{0} to Minimum Endurance Charges while you have at least 150 Devotion"
+    }
+  ],
+  "9855": [
+    {
+      "divider": 1,
+      "translation": "{0} to Minimum Power Charges while you have at least 150 Devotion"
+    }
+  ],
+  "9856": [
+    {
+      "divider": 1,
+      "translation": "{0} to Minimum Frenzy Charges while you have at least 150 Devotion"
+    }
+  ],
+  "9857": [
+    {
+      "divider": 1,
+      "translation": "Immune to Elemental Ailments while on Consecrated Ground if you have at least 150 Devotion"
+    }
+  ],
+  "9858": [
+    {
+      "divider": 1,
+      "translation": "{0}% additional Physical Damage Reduction while you have at least 150 Devotion"
+    }
+  ],
+  "9859": [
+    {
+      "divider": 1,
+      "translation": "{0}% to all maximum Resistances if you have at least 150 Devotion"
+    }
+  ],
+  "9860": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to inflict Fire Exposure on Hit if you have at least 150 Devotion"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Inflict Fire Exposure on Hit if you have at least 150 Devotion"
+    }
+  ],
+  "9861": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to inflict Cold Exposure on Hit if you have at least 150 Devotion"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Inflict Cold Exposure on Hit if you have at least 150 Devotion"
+    }
+  ],
+  "9862": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to inflict Lightning Exposure on Hit if you have at least 150 Devotion"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Inflict Lightning Exposure on Hit if you have at least 150 Devotion"
+    }
+  ],
+  "9878": [
+    {
+      "divider": 1,
+      "translation": "Supreme Ego"
+    }
+  ],
+  "9910": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to inflict Withered for 2 seconds on Hit"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Inflict Withered for 2 seconds on Hit"
+    }
+  ],
+  "11160": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to Ignite"
+    }
+  ],
+  "12061": [
+    {
+      "divider": 1,
+      "translation": "Transcendence"
+    }
+  ],
+  "12221": [
+    {
+      "divider": 1,
+      "translation": "Immortal Ambition"
+    },
+    {
+      "divider": 1,
+      "translation": "Your Energy Shield starts at zero"
+    }
+  ],
+  "12264": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "{0}% chance to gain Alchemist's Genius when you use a Flask"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Gain Alchemist's Genius when you use a Flask"
+    }
+  ],
+  "12431": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Curses on you while on Consecrated Ground"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Curses on you while on Consecrated Ground"
+    }
+  ],
+  "12433": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Enemies Hindered by you have {0}% increased Life Regeneration rate"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Enemies Hindered by you have {0}% reduced Life Regeneration rate"
+    }
+  ],
+  "12435": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Enemies Maimed by you take {0}% increased Damage Over Time"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Enemies Maimed by you take {0}% reduced Damage Over Time"
+    }
+  ],
+  "12438": [
+    {
+      "divider": 1,
+      "translation": "Enemies Withered by you have {0}% to all Resistances"
+    }
+  ],
+  "12439": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Enemies Blinded by you have {0}% increased Critical Strike Chance"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Enemies Blinded by you have {0}% reduced Critical Strike Chance"
+    }
+  ],
+  "12440": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "Enemies Intimidated by you have {0}% increased duration of stuns against them"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "Enemies Intimidated by you have {0}% reduced duration of stuns against them"
+    }
+  ],
+  "12602": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Cold Ailments"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Cold Ailments"
+    }
+  ],
+  "12603": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Effect of Lightning Ailments"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Effect of Lightning Ailments"
+    }
+  ],
+  "14154": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Chaos Damage with Claw Attacks"
+    }
+  ],
+  "14156": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Chaos Damage with Dagger Attacks"
+    }
+  ],
+  "14158": [
+    {
+      "divider": 1,
+      "translation": "{0} to {1} Added Chaos Damage with Bow Attacks"
+    }
+  ],
+  "14543": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Ward"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Ward"
+    }
+  ],
+  "14548": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% faster Restoration of Ward"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% slower Restoration of Ward"
+    }
+  ],
+  "14924": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Mana Reservation Efficiency of Skills"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Mana Reservation Efficiency of Skills"
+    }
+  ],
+  "14960": [
+    {
+      "divider": 1,
+      "translation": "{0}% chance to Suppress Spell Damage"
+    }
+  ],
+  "15037": [
+    {
+      "divider": 1,
+      "translation": "{0} to maximum Fortification"
+    }
+  ],
+  "16937": [
+    {
+      "from": 0,
+      "to": 99,
+      "divider": 1,
+      "translation": "Minions have {0}% chance to cause Bleeding with Attacks"
+    },
+    {
+      "from": 100,
+      "to": 100,
+      "divider": 1,
+      "translation": "Minions cause Bleeding with Attacks"
+    }
+  ],
+  "20828": [
+    {
+      "divider": 1,
+      "translation": "Gain {0} Rage on Melee Hit"
+    }
+  ],
+  "21931": [
+    {
+      "divider": 1,
+      "translation": "{0}% increased Ward from Equipped Armour Items"
+    }
+  ],
+  "22553": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Ward during any Flask Effect"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Ward during any Flask Effect"
+    }
+  ],
+  "22554": [
+    {
+      "divider": 1,
+      "translation": "{0}% chance for Ward to be Restored when you Use a Flask"
+    }
+  ],
+  "22555": [
+    {
+      "from": 1,
+      "to": 1,
+      "divider": 1,
+      "translation": "Gain {0} Endurance Charge when Ward Breaks"
+    },
+    {
+      "from": 2,
+      "divider": 1,
+      "translation": "Gain {0} Endurance Charges when Ward Breaks"
+    }
+  ],
+  "22556": [
+    {
+      "from": 1,
+      "to": 1,
+      "divider": 1,
+      "translation": "Gain {0} Power Charge when Ward Breaks"
+    },
+    {
+      "from": 2,
+      "divider": 1,
+      "translation": "Gain {0} Power Charges when Ward Breaks"
+    }
+  ],
+  "22557": [
+    {
+      "from": 1,
+      "to": 1,
+      "divider": 1,
+      "translation": "Gain {0} Frenzy Charge when Ward Breaks"
+    },
+    {
+      "from": 2,
+      "divider": 1,
+      "translation": "Gain {0} Frenzy Charges when Ward Breaks"
+    }
+  ],
+  "22558": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Armour while you have Unbroken Ward"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Armour while you have Unbroken Ward"
+    }
+  ],
+  "22559": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Evasion Rating while you have Unbroken Ward"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Evasion Rating while you have Unbroken Ward"
+    }
+  ],
+  "22561": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "+{0} to Ward per 10 Armour on Equipped Helmet"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0} to Ward per 10 Armour on Equipped Helmet"
+    }
+  ],
+  "22562": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "+{0} to Ward per 10 Evasion Rating on Equipped Gloves"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0} to Ward per 10 Evasion Rating on Equipped Gloves"
+    }
+  ],
+  "22563": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "+{0} to Ward per 10 Energy Shield on Equipped Boots"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0} to Ward per 10 Energy Shield on Equipped Boots"
+    }
+  ],
+  "22564": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased Damage while you have Unbroken Ward"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced Damage while you have Unbroken Ward"
+    }
+  ],
+  "22565": [
+    {
+      "divider": 1,
+      "translation": "Damage Penetrates {0}% Elemental Resistances while your Ward is Broken"
+    }
+  ],
+  "22566": [
+    {
+      "from": 1,
+      "divider": 1,
+      "translation": "{0}% increased effect of Non-Curse Auras from your skills while your Ward is Broken"
+    },
+    {
+      "to": -1,
+      "divider": 1,
+      "translation": "{0}% reduced effect of Non-Curse Auras from your skills while your Ward is Broken"
+    }
+  ],
+  "22567": [
+    {
+      "divider": 1,
+      "translation": "{0}% chance to Restore Ward when you Block"
+    }
+  ],
+  "22568": [
+    {
+      "from": 1,
+      "to": 1,
+      "divider": 1,
+      "translation": "Iron Flasks gain {0} charge when your Ward Breaks"
+    },
+    {
+      "from": 2,
+      "divider": 1,
+      "translation": "Iron Flasks gain {0} charges when your Ward Breaks"
+    }
+  ],
+  "22570": [
+    {
+      "divider": 1,
+      "translation": "Remove a random Damaging Ailment when Ward is Restored"
+    }
+  ],
+  "22577": [
+    {
+      "divider": 1,
+      "translation": "Black Scythe Training"
+    }
+  ],
+  "22578": [
+    {
+      "divider": 1,
+      "translation": "Celestial Mathematics"
+    }
+  ],
+  "22579": [
+    {
+      "divider": 1,
+      "translation": "The Unbreaking Circle"
+    }
+  ]
+}
