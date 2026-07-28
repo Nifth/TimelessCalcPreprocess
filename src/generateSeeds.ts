@@ -78,7 +78,7 @@ async function generateJewelJsonl(jewel: typeof JEWELS[number]) {
   const version = DataManager.AlternateTreeVersions!.find(v => v.Index === index);
   if (!version) throw new Error(`Version ${index} not found`);
 
-  let nodes = index !== 6 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
+  let nodes = index === 1 ? DataManager.PassiveSkills!.filter(n => n.IsModifiable).filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
     : DataManager.PassiveSkills!
     .filter(n => n.IsNotable && n.IsModifiable)
     .filter(n => modifiableNodeIds.includes(n.GraphIdentifier))
